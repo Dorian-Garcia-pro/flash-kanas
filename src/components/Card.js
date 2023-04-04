@@ -1,6 +1,5 @@
 import React from "react";
 import './Card.scss';
-import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { flipCard } from "../cardSlice.js";
 

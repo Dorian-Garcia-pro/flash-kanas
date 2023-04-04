@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Card from "./Card.js";
 import { useSelector, useDispatch } from 'react-redux'; 
 import { rndCard,rndRectoVerso, flipCard, invertInfinite } from "../cardSlice.js";
