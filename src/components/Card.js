@@ -12,7 +12,7 @@ function Card({ front, back, rndRectoVerso}) {
   };
 
   return (
-    <div className={`card ${cardStore.rectoVerso ? "flipped" : ""}`} onClick={handleClick}>
+    <div className={`card ${cardStore.rectoVerso ? "" : "flipped"}`} onClick={handleClick}>
       <div className="front"><p>{front}</p></div>
       <div className="back"><p>{back}</p></div>
     </div>
