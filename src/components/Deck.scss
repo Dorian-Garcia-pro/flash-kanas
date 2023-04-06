@@ -1,0 +1,89 @@
+.leftCol {
+    display: none;
+}
+
+.deck-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+}
+.deckBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.btn {
+    background-color: grey; /* couleur de fond */
+    color: #fff; /* couleur du texte */
+    border: 1px solid #ccc; /* bordure */
+    padding: 10px 20px; /* espacement intérieur */
+    border-radius: 4px; /* bordure arrondie */
+    text-decoration: none; /* pas de soulignement de texte */
+    font-size: 16px; /* taille du texte */
+    font-weight: bold; /* graisse du texte */
+    cursor: pointer; /* curseur en forme de main au survol */
+    transition: all 0.2s ease-in-out; /* animation de transition au survol */
+  }
+  .allFiltersBtnToggleAll {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem 0;
+    & > button {
+        width: 100%;
+      
+    }
+  }
+
+ .selectKanas { 
+min-width: 20rem;
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0.5rem;
+grid-row-gap: 0.5rem;
+  & > p{
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 2px;
+        background-color: transparent;
+        color: whitesmoke;
+        border: 1px solid whitesmoke;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+        &.kanaSelected {
+            padding: 4px;
+            border-radius: 2px;
+            background-color: #5bbb5e;
+            color: whitesmoke;
+        }
+    }
+}
+
+@media (orientation: landscape) {
+.deck-container {
+    display: flex;
+    flex-direction: row;
+    & > div {
+        width: 100%;
+    }
+}
+.leftCol {
+    display: flex;
+    justify-content: center;
+    color: transparent;
+}
+}
