@@ -5,7 +5,7 @@ const initialState = {
   InitNbCard: 0,
   rectoVerso: true,
   infiniteMode: true,
-  displayfilters: true,
+  displayfilters: false,
   listHiraganas: [
     { kana: "あ", romaji: "a", nb: 0, selected: true },
     { kana: "い", romaji: "i", nb: 1, selected: true },
