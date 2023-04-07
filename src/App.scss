@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(226, 223, 219);
   padding: 0 2rem;
 }
 
@@ -34,11 +34,12 @@ input[type="checkbox"] {
   height: 2rem;
   border: 2px solid whitesmoke;
   border-radius: 4px;
-  outline: none;
+  border-color: rgb(51, 55, 57);
+  outline-color: initial;
   cursor: pointer;
 }
 
 input[type="checkbox"]:checked {
-  background-color: #5bbb5e;
-  border-color: #5bbb5e;
+  background-color: rgb(56, 134, 77);
+  border-color: rgb(56, 134, 77);
 }

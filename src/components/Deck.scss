@@ -27,8 +27,6 @@
   justify-content: center;
 }
 .btn {
-  background-color: grey; /* couleur de fond */
-  color: #fff; /* couleur du texte */
   border: 1px solid #ccc; /* bordure */
   padding: 10px 20px; /* espacement intérieur */
   border-radius: 4px; /* bordure arrondie */
@@ -37,6 +35,11 @@
   font-weight: bold; /* graisse du texte */
   cursor: pointer; /* curseur en forme de main au survol */
   transition: all 0.2s ease-in-out; /* animation de transition au survol */
+
+  background-color: rgb(96, 104, 108);
+  border-color: rgb(62, 68, 70);
+  color: rgb(232, 230, 227);
+  text-decoration-color: initial;
 }
 
 .filtersContainer {
@@ -63,13 +66,15 @@
   }
   &.hiraganasSubFilters {
     display: flex;
-    justify-content: flex-start;
-    gap: 3rem;
+    flex-direction: column;
+    justify-content: space-between;
     & > label {
       display: flex;
       align-items: center;
+      flex-direction: row-reverse;
+      gap: 0.5rem;
       & > input {
-        margin-right: 0.5rem;
+        margin-right: 0;
       }
     }
   }
@@ -88,14 +93,16 @@
     background-color: transparent;
     color: whitesmoke;
     border: 1px solid whitesmoke;
+    border-color: rgb(51, 55, 57);
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
     &.kanaSelected {
       padding: 4px;
       border-radius: 2px;
-      background-color: #5bbb5e;
-      color: whitesmoke;
+
+      background-color: rgb(56, 134, 77);
+      color: rgb(226, 223, 219);
     }
   }
 }
@@ -114,8 +121,9 @@
   padding: 0.5rem;
   font-size: large;
   cursor: pointer;
-  color: black;
-  background-color: #ccc;
+
+  background-color: rgb(53, 57, 59);
+  color: rgb(232, 230, 227);
 }
 
 @media (orientation: landscape) {
@@ -148,6 +156,25 @@
     display: flex;
     gap: 0.5rem;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
+    & > button {
+      width: 100%;
+    }
+    &.hiraganasSubFilters {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      & > label {
+        display: flex;
+        align-items: center;
+
+        flex-direction: row-reverse;
+        gap: 0.5rem;
+        & > input {
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
