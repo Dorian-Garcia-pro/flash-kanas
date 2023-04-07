@@ -7,7 +7,6 @@ import {
   resetToRecto,
   selectedToggleKanaFilter,
   selectedToggleAll,
-  togglefilters,
   toggleSubFilters,
   selectedToggleHiraganasCombis,
   selectedToggleHiraganasDakuten,
