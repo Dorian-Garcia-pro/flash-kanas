@@ -8,6 +8,9 @@ import {
   selectedToggleKanaFilter,
   selectedToggleAll,
   togglefilters,
+  toggleSubFilters,
+  selectedToggleHiraganasCombis,
+  selectedToggleHiraganasDakuten,
 } from "../cardSlice.js";
 
 function Deck({ front, back }) {
@@ -25,13 +28,14 @@ function Deck({ front, back }) {
     cardStore.rectoVerso ? dispatch(flipCard()) : handleRndInvertInfinite();
   };
 
-  /*   const test = (kana) => {}; */
-
   return (
     <div className="deck-container">
+      {/*========================== LEFT COLUMN - START ========================== */}
       <div className="leftCol">
         <p>Ok</p>
       </div>
+      {/*========================== LEFT COLUMN - END ========================== */}
+      {/*========================== MID COLUMN - START ========================== */}
       <div className="card-container">
         <Card />
 
@@ -44,56 +48,105 @@ function Deck({ front, back }) {
               : selectedInfinite()
           }
         >
-          Selected Infinite
+          Next
         </button>
       </div>
-
+      {/*========================== MID COLUMN - END ========================== */}
+      {/*========================== RIGHT COLUMN - START ========================== */}
       <div className="filtersContainer">
-        <button className="btn" onClick={() => dispatch(togglefilters())}>
+        {/*         <button className="btn" onClick={() => dispatch(togglefilters())}>
           Filtres
-        </button>
-        {cardStore.displayfilters ? (
-          <div className="allFilters">
-            <div className="allFiltersBtnToggleAll">
-              <button
-                className="btn"
-                onClick={() => dispatch(selectedToggleAll(true))}
-              >
-                Select All
-              </button>
-              <button
-                className="btn"
-                onClick={() => dispatch(selectedToggleAll(false))}
-              >
-                Unselect All
-              </button>
+        </button> */}
+        {/*================== ALL FILTERS - START ================== */}
+
+        <div className="allFilters">
+          {/*============== HIRAGANAS FILTERS - START ============== */}
+          <button
+            className="btn btnToggleFilterHiraganas"
+            onClick={() => dispatch(toggleSubFilters("toggleFilterHiraganas"))}
+          >
+            {cardStore.toggleFilterHiraganas ? "- " : "+ "}
+            Hiraganas
+          </button>
+          {cardStore.toggleFilterHiraganas ? (
+            <div className={"allFiltersHiraganas"}>
+              <div className="allFiltersBtnToggleAll">
+                <button
+                  className="btn"
+                  onClick={() => dispatch(selectedToggleAll(true))}
+                >
+                  Select All
+                </button>
+                <button
+                  className="btn"
+                  onClick={() => dispatch(selectedToggleAll(false))}
+                >
+                  Unselect All
+                </button>
+              </div>
+              <div className="selectKanas">
+                {cardStore.listHiraganas
+                  .filter((kana) => kana.combi !== true)
+                  .filter((kana) => kana.dakuten !== true)
+                  .map((kana) =>
+                    kana.selected ? (
+                      <p
+                        key={kana.nb}
+                        className="kanaSelected"
+                        onClick={() => dispatch(selectedToggleKanaFilter(kana))}
+                      >
+                        {kana.kana}
+                      </p>
+                    ) : (
+                      <p
+                        key={kana.nb}
+                        className=""
+                        onClick={() => dispatch(selectedToggleKanaFilter(kana))}
+                      >
+                        {kana.kana}
+                      </p>
+                    )
+                  )}
+              </div>
+              <div className="allFiltersHiraganas">
+                <div className="allFiltersBtnToggleAll hiraganasSubFilters">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="myCheckbox"
+                      onChange={() => dispatch(selectedToggleHiraganasCombis())}
+                    />
+                    Combinaisons
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="myCheckbox"
+                      onChange={() =>
+                        dispatch(selectedToggleHiraganasDakuten())
+                      }
+                    />
+                    Modifs("°)
+                  </label>
+                </div>
+              </div>
             </div>
-            <div className="selectKanas">
-              {cardStore.listHiraganas
-                .filter((kana) => kana.cat !== "combinaisons")
-                .map((kana) =>
-                  kana.selected ? (
-                    <p
-                      key={kana.nb}
-                      className="kanaSelected"
-                      onClick={() => dispatch(selectedToggleKanaFilter(kana))}
-                    >
-                      {kana.kana}
-                    </p>
-                  ) : (
-                    <p
-                      key={kana.nb}
-                      className=""
-                      onClick={() => dispatch(selectedToggleKanaFilter(kana))}
-                    >
-                      {kana.kana}
-                    </p>
-                  )
-                )}
-            </div>
-          </div>
-        ) : null}
+          ) : null}
+          <button
+            className="btn btnToggleFilterHiraganas"
+            /*    onClick={() =>
+                dispatch(toggleSubFilters("toggleFilterHiraganas"))
+              } */
+          >
+            {/*      {cardStore.toggleFilterHiraganas ? "- " : "+ "} */}+
+            Katakanas (Soon)
+          </button>
+          {/*============== HIRAGANAS FILTERS - END ============== */}
+        </div>
+
+        {/*================== ALL FILTERS - END ================== */}
       </div>
+      {/*========================== RIGHT COLUMN - END ========================== */}
     </div>
   );
 }

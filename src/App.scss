@@ -25,15 +25,19 @@
   padding:  0 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid whitesmoke;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="checkbox"]:checked {
+  background-color: #5bbb5e;
+  border-color: #5bbb5e;
 }

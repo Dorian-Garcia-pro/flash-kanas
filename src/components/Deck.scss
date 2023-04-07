@@ -1,89 +1,153 @@
 .leftCol {
-    display: none;
+  display: none;
 }
 
 .deck-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 .card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  & > .btn {
+    min-width: 200px;
+    width: 300px;
+  }
 }
 .deckBtnContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .btn {
-    background-color: grey; /* couleur de fond */
-    color: #fff; /* couleur du texte */
-    border: 1px solid #ccc; /* bordure */
-    padding: 10px 20px; /* espacement intérieur */
-    border-radius: 4px; /* bordure arrondie */
-    text-decoration: none; /* pas de soulignement de texte */
-    font-size: 16px; /* taille du texte */
-    font-weight: bold; /* graisse du texte */
-    cursor: pointer; /* curseur en forme de main au survol */
-    transition: all 0.2s ease-in-out; /* animation de transition au survol */
+  background-color: grey; /* couleur de fond */
+  color: #fff; /* couleur du texte */
+  border: 1px solid #ccc; /* bordure */
+  padding: 10px 20px; /* espacement intérieur */
+  border-radius: 4px; /* bordure arrondie */
+  text-decoration: none; /* pas de soulignement de texte */
+  font-size: 16px; /* taille du texte */
+  font-weight: bold; /* graisse du texte */
+  cursor: pointer; /* curseur en forme de main au survol */
+  transition: all 0.2s ease-in-out; /* animation de transition au survol */
+}
+
+.filtersContainer {
+  width: 300px;
+}
+
+.allFilters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  & > button {
+    width: 100%;
   }
+}
+
+.allFiltersBtnToggleAll {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+  & > button {
+    width: 100%;
+  }
+  &.hiraganasSubFilters {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+    & > label {
+      display: flex;
+      align-items: center;
+      & > input {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+.selectKanas {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  & > p {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: transparent;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    &.kanaSelected {
+      padding: 4px;
+      border-radius: 2px;
+      background-color: #5bbb5e;
+      color: whitesmoke;
+    }
+  }
+}
+
+.allFiltersHiraganas {
+  display: block;
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.btnToggleFilterHiraganas {
+  width: 100%;
+  text-align: start;
+  padding: 0.5rem;
+  font-size: large;
+  cursor: pointer;
+  color: black;
+  background-color: #ccc;
+}
+
+@media (orientation: landscape) {
+  .deck-container {
+    display: flex;
+    flex-direction: row;
+    & > div {
+      width: 100%;
+    }
+  }
+  .leftCol {
+    display: flex;
+    justify-content: center;
+    color: transparent;
+  }
+
+  .filtersContainer {
+    width: auto;
+    height: 100%;
+    display: flex;
+  }
+  .allFilters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .allFiltersBtnToggleAll {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
     padding: 1rem 0;
-    & > button {
-        width: 100%;
-      
-    }
   }
-
- .selectKanas { 
-min-width: 20rem;
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0.5rem;
-grid-row-gap: 0.5rem;
-  & > p{
-        cursor: pointer;
-        padding: 4px;
-        border-radius: 2px;
-        background-color: transparent;
-        color: whitesmoke;
-        border: 1px solid whitesmoke;
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none; /* IE 10 and IE 11 */
-        user-select: none; /* Standard syntax */
-        &.kanaSelected {
-            padding: 4px;
-            border-radius: 2px;
-            background-color: #5bbb5e;
-            color: whitesmoke;
-        }
-    }
-}
-
-@media (orientation: landscape) {
-.deck-container {
-    display: flex;
-    flex-direction: row;
-    & > div {
-        width: 100%;
-    }
-}
-.leftCol {
-    display: flex;
-    justify-content: center;
-    color: transparent;
-}
 }
