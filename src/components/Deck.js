@@ -128,7 +128,7 @@ function Deck({ front, back }) {
                         dispatch(selectedToggleHiraganasDakuten())
                       }
                     />
-                    Modifs("°)
+                    Modifications("°)
                   </label>
                 </div>
               </div>

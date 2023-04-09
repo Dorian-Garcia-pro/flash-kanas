@@ -153,6 +153,10 @@
     color: transparent;
   }
 
+  .selectKanas {
+    grid-row-gap: 0.1rem;
+    grid-column-gap: 0.1rem;
+  }
   .filtersContainer {
     width: auto;
     height: 100%;
@@ -169,7 +173,6 @@
     display: flex;
     gap: 0.5rem;
     justify-content: center;
-    padding: 0 0 1rem 0;
     & > button {
       width: 100%;
     }
@@ -177,6 +180,9 @@
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+      &:last-child {
+        margin: 0;
+      }
 
       & > label {
         display: flex;
