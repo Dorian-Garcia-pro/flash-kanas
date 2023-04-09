@@ -11,6 +11,7 @@ const initialState = {
   toggleFilterHiraganasDakuten: false,
   toggleFilterKatakanas: false,
   toggleFilterKatakanasCombis: false,
+  toggleFilterKatakanasDakuten: false,
   listHiraganas: [
     {
       kana: "あ",
@@ -618,28 +619,28 @@ const initialState = {
       kana: "ア",
       romaji: "a",
       nb: 0,
-      selected: true,
+      selected: false,
       img: "/assets/katakanas/a.jpg",
     },
     {
       kana: "イ",
       romaji: "i",
       nb: 1,
-      selected: true,
+      selected: false,
       img: "/assets/katakanas/i.jpg",
     },
     {
       kana: "ウ",
       romaji: "u",
       nb: 2,
-      selected: true,
+      selected: false,
       img: "/assets/katakanas/u.jpg",
     },
     {
       kana: "エ",
       romaji: "e",
       nb: 3,
-      selected: true,
+      selected: false,
       img: "/assets/katakanas/e.jpg",
     },
     {
@@ -1419,29 +1420,58 @@ const cardSlice = createSlice({
         ].selected;
     },
     selectedToggleHiraganasCombis: (state) => {
-      state.listHiraganas
-        .filter((e) => e.combi === true)
-        .map((a) => (a.selected = !a.selected));
       state.toggleFilterHiraganasCombis = !state.toggleFilterHiraganasCombis;
+      if (state.toggleFilterHiraganasCombis === false) {
+        state.listHiraganas
+          .filter((e) => e.combi === true)
+          .filter((e) => e.dakuten !== true)
+          .map((a) => (a.selected = state.toggleFilterHiraganasCombis));
+      } else {
+        state.listHiraganas
+          .filter((e) => e.combi === true)
+          .map((a) => (a.selected = state.toggleFilterHiraganasCombis));
+      }
     },
     selectedToggleKatakanasCombis: (state) => {
-      state.listKatakanas
-        .filter((e) => e.combi === true)
-        .map((a) => (a.selected = !a.selected));
       state.toggleFilterKatakanasCombis = !state.toggleFilterKatakanasCombis;
+      if (state.toggleFilterKatakanasDakuten === false) {
+        state.listKatakanas
+          .filter((e) => e.combi === true)
+          .filter((e) => e.dakuten !== true)
+          .map((a) => (a.selected = state.toggleFilterKatakanasCombis));
+      } else {
+        state.listKatakanas
+          .filter((e) => e.combi === true)
+          .map((a) => (a.selected = state.toggleFilterKatakanasCombis));
+      }
     },
 
     selectedToggleHiraganasDakuten: (state) => {
-      state.listHiraganas
-        .filter((e) => e.dakuten === true)
-        .map((a) => (a.selected = !a.selected));
       state.toggleFilterHiraganasDakuten = !state.toggleFilterHiraganasDakuten;
+      if (state.toggleFilterHiraganasCombis === false) {
+        state.listHiraganas
+          .filter((e) => e.dakuten === true)
+          .filter((e) => e.combi !== true)
+          .map((a) => (a.selected = state.toggleFilterHiraganasDakuten));
+      } else {
+        state.listHiraganas
+          .filter((e) => e.dakuten === true)
+          .map((a) => (a.selected = state.toggleFilterHiraganasDakuten));
+      }
     },
+
     selectedToggleKatakanasDakuten: (state) => {
-      state.listKatakanas
-        .filter((e) => e.dakuten === true)
-        .map((a) => (a.selected = !a.selected));
       state.toggleFilterKatakanasDakuten = !state.toggleFilterKatakanasDakuten;
+      if (state.toggleFilterKatakanasCombis === false) {
+        state.listKatakanas
+          .filter((e) => e.dakuten === true)
+          .filter((e) => e.combi !== true)
+          .map((a) => (a.selected = state.toggleFilterKatakanasDakuten));
+      } else {
+        state.listKatakanas
+          .filter((e) => e.dakuten === true)
+          .map((a) => (a.selected = state.toggleFilterKatakanasDakuten));
+      }
     },
     selectedToggleAll: (state, { payload }) => {
       state.listHiraganas
@@ -1473,6 +1503,7 @@ export const {
   selectedToggleKatakanasCombis,
   selectedToggleKatakanasDakuten,
   toggleFilterHiraganasDakuten,
+  toggleFilterKatakanasDakuten,
   listKatakanas,
   selectedToggleKatakanasFilter,
   selectedToggleAllKatakanas,

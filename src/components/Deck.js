@@ -63,7 +63,9 @@ function Deck({ front, back }) {
             onClick={() => dispatch(toggleSubFilters("toggleFilterHiraganas"))}
           >
             {cardStore.toggleFilterHiraganas ? "- " : "+ "}
-            Hiraganas
+            Hiraganas ({" "}
+            {cardStore.listHiraganas.filter((e) => e.selected).length} /{" "}
+            {cardStore.listHiraganas.length} )
           </button>
           {cardStore.toggleFilterHiraganas ? <FilterHiraganas /> : null}
           <button
@@ -71,7 +73,9 @@ function Deck({ front, back }) {
             onClick={() => dispatch(toggleSubFilters("toggleFilterKatakanas"))}
           >
             {cardStore.toggleFilterKatakanas ? "- " : "+ "}
-            Katakanas
+            Katakanas ({" "}
+            {cardStore.listKatakanas.filter((e) => e.selected).length} /{" "}
+            {cardStore.listKatakanas.length} )
           </button>
           {cardStore.toggleFilterKatakanas ? <FilterKatakanas /> : null}
           {/*============== HIRAGANAS FILTERS - END ============== */}
