@@ -11,12 +11,12 @@ function Card({ front, back, rndRectoVerso }) {
     dispatch(flipCard());
   };
 
-  let chosneNb = cardStore.listHiraganas.filter((e) => e.selected === true)[
-    cardStore.InitNbCard
-  ]
-    ? cardStore.listHiraganas.filter((e) => e.selected === true)[
-        cardStore.InitNbCard
-      ]
+  let chosneNb = cardStore.listHiraganas
+    .concat(cardStore.listKatakanas)
+    .filter((e) => e.selected === true)[cardStore.InitNbCard]
+    ? cardStore.listHiraganas
+        .concat(cardStore.listKatakanas)
+        .filter((e) => e.selected === true)[cardStore.InitNbCard]
     : cardStore.listHiraganas[0];
 
   return (

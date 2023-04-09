@@ -5,14 +5,11 @@ import {
   rndCard,
   flipCard,
   resetToRecto,
-  selectedToggleKanaFilter,
-  selectedToggleAll,
   toggleSubFilters,
-  selectedToggleHiraganasCombis,
-  selectedToggleHiraganasDakuten,
 } from "../cardSlice.js";
-/* import a from "../assets/hiraganas/a.png";
- */
+import FilterHiraganas from "./FilterHiraganas.js";
+import FilterKatakanas from "./FilterKatakanas.js";
+
 function Deck({ front, back }) {
   const cardStore = useSelector((store) => store.card);
   const dispatch = useDispatch();
@@ -38,12 +35,12 @@ function Deck({ front, back }) {
       {/*========================== MID COLUMN - START ========================== */}
       <div className="card-container">
         <Card />
-
         <button
           className="btn"
           onClick={() =>
-            cardStore.listHiraganas.filter((e) => e.selected === true).length <=
-            1
+            cardStore.listHiraganas
+              .concat(cardStore.listKatakanas)
+              .filter((e) => e.selected === true).length <= 1
               ? dispatch(flipCard())
               : selectedInfinite()
           }
@@ -68,81 +65,15 @@ function Deck({ front, back }) {
             {cardStore.toggleFilterHiraganas ? "- " : "+ "}
             Hiraganas
           </button>
-          {cardStore.toggleFilterHiraganas ? (
-            <div className={"allFiltersHiraganas"}>
-              <div className="allFiltersBtnToggleAll">
-                <button
-                  className="btn"
-                  onClick={() => dispatch(selectedToggleAll(true))}
-                >
-                  Select All
-                </button>
-                <button
-                  className="btn"
-                  onClick={() => dispatch(selectedToggleAll(false))}
-                >
-                  Unselect All
-                </button>
-              </div>
-              <div className="selectKanas">
-                {cardStore.listHiraganas
-                  .filter((kana) => kana.combi !== true)
-                  .filter((kana) => kana.dakuten !== true)
-                  .map((kana) =>
-                    kana.selected ? (
-                      <p
-                        key={kana.nb}
-                        className="kanaSelected"
-                        onClick={() => dispatch(selectedToggleKanaFilter(kana))}
-                      >
-                        {kana.kana}
-                      </p>
-                    ) : (
-                      <p
-                        key={kana.nb}
-                        className=""
-                        onClick={() => dispatch(selectedToggleKanaFilter(kana))}
-                      >
-                        {kana.kana}
-                      </p>
-                    )
-                  )}
-              </div>
-              <div className="allFiltersHiraganas">
-                <div className="allFiltersBtnToggleAll hiraganasSubFilters">
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="myCheckbox"
-                      checked={cardStore.toggleFilterHiraganasCombis}
-                      onChange={() => dispatch(selectedToggleHiraganasCombis())}
-                    />
-                    Combinaisons
-                  </label>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="myCheckbox"
-                      checked={cardStore.toggleFilterHiraganasDakuten}
-                      onChange={() =>
-                        dispatch(selectedToggleHiraganasDakuten())
-                      }
-                    />
-                    Modifications("°)
-                  </label>
-                </div>
-              </div>
-            </div>
-          ) : null}
+          {cardStore.toggleFilterHiraganas ? <FilterHiraganas /> : null}
           <button
             className="btn btnToggleFilterHiraganas"
-            /*    onClick={() =>
-                dispatch(toggleSubFilters("toggleFilterHiraganas"))
-              } */
+            onClick={() => dispatch(toggleSubFilters("toggleFilterKatakanas"))}
           >
-            {/*      {cardStore.toggleFilterHiraganas ? "- " : "+ "} */}+
-            Katakanas (Soon)
+            {cardStore.toggleFilterKatakanas ? "- " : "+ "}
+            Katakanas
           </button>
+          {cardStore.toggleFilterKatakanas ? <FilterKatakanas /> : null}
           {/*============== HIRAGANAS FILTERS - END ============== */}
         </div>
 
