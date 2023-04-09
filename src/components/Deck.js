@@ -11,7 +11,8 @@ import {
   selectedToggleHiraganasCombis,
   selectedToggleHiraganasDakuten,
 } from "../cardSlice.js";
-
+/* import a from "../assets/hiraganas/a.png";
+ */
 function Deck({ front, back }) {
   const cardStore = useSelector((store) => store.card);
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function Deck({ front, back }) {
     <div className="deck-container">
       {/*========================== LEFT COLUMN - START ========================== */}
       <div className="leftCol">
-        <p>Ok</p>
+        <p>{cardStore.listHiraganas[0].img}</p>
       </div>
       {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
@@ -113,6 +114,7 @@ function Deck({ front, back }) {
                     <input
                       type="checkbox"
                       name="myCheckbox"
+                      checked={cardStore.toggleFilterHiraganasCombis}
                       onChange={() => dispatch(selectedToggleHiraganasCombis())}
                     />
                     Combinaisons
@@ -121,6 +123,7 @@ function Deck({ front, back }) {
                     <input
                       type="checkbox"
                       name="myCheckbox"
+                      checked={cardStore.toggleFilterHiraganasDakuten}
                       onChange={() =>
                         dispatch(selectedToggleHiraganasDakuten())
                       }

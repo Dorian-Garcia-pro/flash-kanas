@@ -28,7 +28,11 @@ function Card({ front, back, rndRectoVerso }) {
         <p>{chosneNb.kana}</p>
       </div>
       <div className="back">
-        <p>{chosneNb.romaji}</p>
+        {chosneNb.img ? (
+          <img src={chosneNb.img} alt={chosneNb.romaji} />
+        ) : (
+          <p>{chosneNb.romaji}</p>
+        )}
       </div>
     </div>
   );
