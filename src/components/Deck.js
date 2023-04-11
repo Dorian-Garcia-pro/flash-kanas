@@ -9,6 +9,8 @@ import {
 } from "../cardSlice.js";
 import FilterHiraganas from "./FilterHiraganas.js";
 import FilterKatakanas from "./FilterKatakanas.js";
+import GramCombis from "./GramCombis.js";
+import GramModifs from "./GramModifs.js";
 
 function Deck({ front, back }) {
   const cardStore = useSelector((store) => store.card);
@@ -29,7 +31,26 @@ function Deck({ front, back }) {
     <div className="deck-container">
       {/*========================== LEFT COLUMN - START ========================== */}
       <div className="leftCol">
-        <p>{cardStore.listHiraganas[0].img}</p>
+        <div className="allFilters">
+          {/*============== GRAMMAR - START ============== */}
+          <button
+            className="btn btnToggleFilterHiraganas"
+            onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
+          >
+            {cardStore.toggleGramCombis ? "- " : "+ "}
+            Combinaisons
+          </button>
+          {cardStore.toggleGramCombis ? <GramCombis /> : null}
+          <button
+            className="btn btnToggleFilterHiraganas"
+            onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
+          >
+            {cardStore.toggleGramModifs ? "- " : "+ "}
+            Modifications
+          </button>
+          {cardStore.toggleGramModifs ? <GramModifs /> : null}
+          {/*============== GRAMMAR - END ============== */}
+        </div>
       </div>
       {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}

@@ -6,6 +6,8 @@ const initialState = {
   rectoVerso: true,
   infiniteMode: true,
   displayfilters: false,
+  toggleGramCombis: false,
+  toggleGramModifs: false,
   toggleFilterHiraganas: false,
   toggleFilterHiraganasCombis: false,
   toggleFilterHiraganasDakuten: false,
@@ -1391,6 +1393,14 @@ const cardSlice = createSlice({
         case "toggleFilterKatakanasCombis":
           state.toggleFilterKatakanasCombis =
             !state.toggleFilterKatakanasCombis;
+          break;
+        case "toggleGramCombis":
+          state.toggleGramCombis = !state.toggleGramCombis;
+          state.toggleGramModifs = false;
+          break;
+        case "toggleGramModifs":
+          state.toggleGramModifs = !state.toggleGramModifs;
+          state.toggleGramCombis = false;
           break;
         default:
           console.log("Today is not Sunday, Monday, Tuesday, or Wednesday");

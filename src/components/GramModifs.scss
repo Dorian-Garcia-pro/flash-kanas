@@ -1,0 +1,60 @@
+.modifsContainer {
+  color: rgb(226, 223, 219);
+  text-align: start;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modifsExplication {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.allModifs {
+  display: flex;
+
+  /*   flex-direction: row;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 0.5rem;
+  align-items: center;
+}
+
+.modifs {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+
+  font-size: medium;
+}
+
+/* <div class="tooltip">Hover me
+  <span class="tooltip-text">Tooltip text</span>
+</div>
+
+
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip-text {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.tooltip:hover .tooltip-text {
+  display: block;
+} */
