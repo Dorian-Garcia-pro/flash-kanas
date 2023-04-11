@@ -1,11 +1,11 @@
 import "./Deck.scss";
 import "./GramModifs.scss";
-import { useSelector, useDispatch } from "react-redux";
+/* import { useSelector, useDispatch } from "react-redux";*/
 import {} from "../cardSlice.js";
 
 function GramModfis() {
-  const cardStore = useSelector((store) => store.card);
-  const dispatch = useDispatch();
+  /*   const cardStore = useSelector((store) => store.card);
+  const dispatch = useDispatch(); */
 
   const dakutenHiraganas = [
     { kana: "が", romaji: "ga" },

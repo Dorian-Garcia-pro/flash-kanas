@@ -1,12 +1,12 @@
 import "./Deck.scss";
 import "./GramCombis.scss";
-import { useSelector, useDispatch } from "react-redux";
+/* import { useSelector, useDispatch } from "react-redux"; */
 import {} from "../cardSlice.js";
 
 function GramCombis() {
-  const cardStore = useSelector((store) => store.card);
+  /*   const cardStore = useSelector((store) => store.card);
   const dispatch = useDispatch();
-
+ */
   const digrammesHiragana = [
     {
       kana: "きゃ",
