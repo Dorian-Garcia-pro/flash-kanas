@@ -33,21 +33,44 @@ function Deck({ front, back }) {
       <div className="leftCol">
         <div className="allFilters">
           {/*============== GRAMMAR - START ============== */}
-          <button
+          <div className="buttonsFiltersContainer">
+            <div
+              className={
+                cardStore.toggleGramCombis
+                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                  : "btn btnToggleFilterHiraganas"
+              }
+              onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
+            >
+              <p>Combinaisons</p>
+            </div>
+            <div
+              className={
+                cardStore.toggleGramModifs
+                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                  : "btn btnToggleFilterHiraganas"
+              }
+              onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
+            >
+              <p>Modifications</p>
+            </div>
+          </div>
+
+          {/*           <button
             className="btn btnToggleFilterHiraganas"
             onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
           >
             {cardStore.toggleGramCombis ? "- " : "+ "}
             Combinaisons
-          </button>
+          </button> */}
           {cardStore.toggleGramCombis ? <GramCombis /> : null}
-          <button
+          {/*           <button
             className="btn btnToggleFilterHiraganas"
             onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
           >
             {cardStore.toggleGramModifs ? "- " : "+ "}
             Modifications
-          </button>
+          </button> */}
           {cardStore.toggleGramModifs ? <GramModifs /> : null}
           {/*============== GRAMMAR - END ============== */}
         </div>
@@ -72,32 +95,47 @@ function Deck({ front, back }) {
       {/*========================== MID COLUMN - END ========================== */}
       {/*========================== RIGHT COLUMN - START ========================== */}
       <div className="filtersContainer">
-        {/*         <button className="btn" onClick={() => dispatch(togglefilters())}>
-          Filtres
-        </button> */}
         {/*================== ALL FILTERS - START ================== */}
 
         <div className="allFilters">
           {/*============== HIRAGANAS FILTERS - START ============== */}
-          <button
-            className="btn btnToggleFilterHiraganas"
-            onClick={() => dispatch(toggleSubFilters("toggleFilterHiraganas"))}
-          >
-            {cardStore.toggleFilterHiraganas ? "- " : "+ "}
-            Hiraganas ({" "}
-            {cardStore.listHiraganas.filter((e) => e.selected).length} /{" "}
-            {cardStore.listHiraganas.length} )
-          </button>
+          <div className="buttonsFiltersContainer">
+            <div
+              className={
+                cardStore.toggleFilterHiraganas
+                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                  : "btn btnToggleFilterHiraganas"
+              }
+              onClick={() =>
+                dispatch(toggleSubFilters("toggleFilterHiraganas"))
+              }
+            >
+              <p>ひらがな</p>
+              <p>
+                ( {cardStore.listHiraganas.filter((e) => e.selected).length} /{" "}
+                {cardStore.listHiraganas.length} )
+              </p>
+            </div>
+            <div
+              className={
+                cardStore.toggleFilterKatakanas
+                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                  : "btn btnToggleFilterHiraganas"
+              }
+              onClick={() =>
+                dispatch(toggleSubFilters("toggleFilterKatakanas"))
+              }
+            >
+              <p>カタカナ</p>
+              <p>
+                ( {cardStore.listKatakanas.filter((e) => e.selected).length} /{" "}
+                {cardStore.listKatakanas.length} )
+              </p>
+            </div>
+          </div>
+
           {cardStore.toggleFilterHiraganas ? <FilterHiraganas /> : null}
-          <button
-            className="btn btnToggleFilterHiraganas"
-            onClick={() => dispatch(toggleSubFilters("toggleFilterKatakanas"))}
-          >
-            {cardStore.toggleFilterKatakanas ? "- " : "+ "}
-            Katakanas ({" "}
-            {cardStore.listKatakanas.filter((e) => e.selected).length} /{" "}
-            {cardStore.listKatakanas.length} )
-          </button>
+
           {cardStore.toggleFilterKatakanas ? <FilterKatakanas /> : null}
           {/*============== HIRAGANAS FILTERS - END ============== */}
         </div>
