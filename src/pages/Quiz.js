@@ -304,6 +304,7 @@ function Quiz() {
               value={inputValue}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
+              placeholder="Press Enter to submit"
               autoFocus
             />
           </label>
