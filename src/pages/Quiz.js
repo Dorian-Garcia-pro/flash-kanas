@@ -169,7 +169,7 @@ const words = [
     romaji: "denwa",
     english: "le téléphone",
   },
-  {
+  /*   {
     hiragana: "パソコン",
     romaji: "pasokon",
     english: "l'ordinateur",
@@ -178,7 +178,7 @@ const words = [
     hiragana: "テレビ",
     romaji: "terebi",
     english: "la télévision",
-  },
+  }, */
   {
     hiragana: "あか",
     romaji: "aka",
