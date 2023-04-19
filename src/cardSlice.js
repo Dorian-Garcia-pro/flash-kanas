@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   InitNbCard: 0,
   rectoVerso: true,
+  cardSwipe: false,
   infiniteMode: true,
   displayfilters: false,
   toggleGramCombis: false,
@@ -1376,6 +1377,9 @@ const cardSlice = createSlice({
     flipCard: (state) => {
       state.rectoVerso = !state.rectoVerso;
     },
+    swipeCard: (state) => {
+      state.cardSwipe = !state.cardSwipe;
+    },
     toggleSubFilters: (state, { payload }) => {
       switch (payload) {
         case "toggleFilterHiraganas":
@@ -1502,6 +1506,7 @@ export const {
   rndCard,
   rndRectoVerso,
   flipCard,
+  swipeCard,
   togglefilters,
   invertInfinite,
   resetToRecto,

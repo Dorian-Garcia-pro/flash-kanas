@@ -21,7 +21,9 @@ function Card({ front, back, rndRectoVerso }) {
 
   return (
     <div
-      className={`card ${cardStore.rectoVerso ? "" : "flipped"}`}
+      className={`card ${cardStore.rectoVerso ? "" : "flipped"} ${
+        cardStore.cardSwipe ? "swipped" : ""
+      } `}
       onClick={leFlip}
     >
       <div className="front">

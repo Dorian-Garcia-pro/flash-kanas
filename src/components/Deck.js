@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   rndCard,
   flipCard,
+  swipeCard,
   resetToRecto,
   toggleSubFilters,
 } from "../cardSlice.js";
@@ -17,10 +18,14 @@ function Deck({ front, back }) {
   const dispatch = useDispatch();
 
   function handleRndInvertInfinite() {
-    dispatch(resetToRecto());
+    dispatch(rndCard());
     setTimeout(() => {
-      dispatch(rndCard());
-    }, 120);
+      dispatch(resetToRecto());
+    }, 1);
+    dispatch(swipeCard());
+    setTimeout(() => {
+      dispatch(swipeCard());
+    }, 500);
   }
 
   const selectedInfinite = (kana) => {
@@ -77,8 +82,10 @@ function Deck({ front, back }) {
       </div>
       {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
-      <div className="card-container">
-        <Card />
+      <div className="midCol">
+        <div className="card-container">
+          <Card />
+        </div>
         <button
           className="btn"
           onClick={() =>
@@ -92,6 +99,7 @@ function Deck({ front, back }) {
           Next
         </button>
       </div>
+
       {/*========================== MID COLUMN - END ========================== */}
       {/*========================== RIGHT COLUMN - START ========================== */}
       <div className="filtersContainer">

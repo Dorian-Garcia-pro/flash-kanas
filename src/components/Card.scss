@@ -23,6 +23,24 @@
   transform: rotateY(180deg);
 }
 
+.card.swipped {
+  animation-name: swipe-left;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes swipe-left {
+  0% {
+    transform: translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateX(-2%) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
 .front,
 .back {
   position: absolute;
