@@ -61,21 +61,8 @@ function Deck({ front, back }) {
             </div>
           </div>
 
-          {/*           <button
-            className="btn btnToggleFilterHiraganas"
-            onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
-          >
-            {cardStore.toggleGramCombis ? "- " : "+ "}
-            Combinaisons
-          </button> */}
           {cardStore.toggleGramCombis ? <GramCombis /> : null}
-          {/*           <button
-            className="btn btnToggleFilterHiraganas"
-            onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
-          >
-            {cardStore.toggleGramModifs ? "- " : "+ "}
-            Modifications
-          </button> */}
+
           {cardStore.toggleGramModifs ? <GramModifs /> : null}
           {/*============== GRAMMAR - END ============== */}
         </div>

@@ -1,4 +1,5 @@
 import "./App.scss";
+import Nav from "./components/Nav.js";
 import Deck from "./components/Deck.js";
 import Card from "./components/Card.js";
 import Quiz from "./pages/Quiz";
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
+          <Nav />
           <Routes>
             <Route path="/" element={<Deck />} />
             <Route path="/kanas" element={<Deck />} />

@@ -152,7 +152,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   box-shadow: $soft-shadow;
 }
 
-@media (orientation: landscape) {
+@media only screen and (min-width: 1050px) and (orientation: landscape) {
   .deck-container {
     display: flex;
     flex-direction: row;

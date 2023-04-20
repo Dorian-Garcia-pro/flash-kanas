@@ -154,11 +154,7 @@ const words = [
     romaji: "hondana",
     english: "l'étagère à livres",
   },
-  {
-    hiragana: "がいたん",
-    romaji: "gaitan",
-    english: "l'armoire",
-  },
+
   {
     hiragana: "かがみ",
     romaji: "kagami",
@@ -254,6 +250,476 @@ const words = [
     romaji: "oden",
     english: "pot-au-feu japonais",
   },
+  {
+    hiragana: "くつ",
+    romaji: "kutsu",
+    english: "chaussures",
+  },
+  {
+    hiragana: "かばん",
+    romaji: "kaban",
+    english: "sac",
+  },
+  {
+    hiragana: "てがみ",
+    romaji: "tegami",
+    english: "lettre",
+  },
+  {
+    hiragana: "かぎ",
+    romaji: "kagi",
+    english: "clé",
+  },
+  {
+    hiragana: "かさ",
+    romaji: "kasa",
+    english: "parapluie",
+  },
+  {
+    hiragana: "めがね",
+    romaji: "megane",
+    english: "lunettes",
+  },
+  {
+    hiragana: "くつした",
+    romaji: "kutsushita",
+    english: "chaussettes",
+  },
+  {
+    hiragana: "はこ",
+    romaji: "hako",
+    english: "boîte",
+  },
+  {
+    hiragana: "はし",
+    romaji: "hashi",
+    english: "baguettes",
+  },
+  {
+    hiragana: "こんにちは",
+    romaji: "konnichiha",
+    english: "bonjour",
+  },
+  {
+    hiragana: "ありがとう",
+    romaji: "arigatou",
+    english: "merci",
+  },
+  {
+    hiragana: "はい",
+    romaji: "hai",
+    english: "oui",
+  },
+  {
+    hiragana: "いいえ",
+    romaji: "iie",
+    english: "non",
+  },
+  {
+    hiragana: "すみません",
+    romaji: "sumimasen",
+    english: "excusez-moi / pardon",
+  },
+  {
+    hiragana: "おはよう",
+    romaji: "ohayou",
+    english: "bonjour (le matin)",
+  },
+  {
+    hiragana: "こんばんは",
+    romaji: "konbanha",
+    english: "bonsoir",
+  },
+  {
+    hiragana: "おいしい",
+    romaji: "oishii",
+    english: "délicieux",
+  },
+  {
+    hiragana: "がくせい",
+    romaji: "gakusei",
+    english: "étudiant",
+  },
+  {
+    hiragana: "いしゃ",
+    romaji: "isha",
+    english: "médecin",
+  },
+  {
+    hiragana: "はいしゃ",
+    romaji: "haisha",
+    english: "dentiste",
+  },
+  {
+    hiragana: "まど",
+    romaji: "mado",
+    english: "fenêtre",
+  },
+  {
+    hiragana: "ひこうき",
+    romaji: "hikouki",
+    english: "avion",
+  },
+  {
+    hiragana: "くうこう",
+    romaji: "kuukou",
+    english: "aéroport",
+  },
+  {
+    hiragana: "あつい",
+    romaji: "atsui",
+    english: "chaud",
+  },
+  {
+    hiragana: "さむい",
+    romaji: "samui",
+    english: "froid",
+  },
+  {
+    hiragana: "とおい",
+    romaji: "tooi",
+    english: "loin",
+  },
+  {
+    hiragana: "ちかい",
+    romaji: "chikai",
+    english: "proche",
+  },
+  {
+    hiragana: "おもい",
+    romaji: "omoi",
+    english: "lourd",
+  },
+  {
+    hiragana: "かるい",
+    romaji: "karui",
+    english: "léger",
+  },
+  {
+    hiragana: "ちいさい",
+    romaji: "chiisai",
+    english: "petit",
+  },
+  {
+    hiragana: "おおきい",
+    romaji: "ookii",
+    english: "grand",
+  },
+  {
+    hiragana: "つよい",
+    romaji: "tsuyoi",
+    english: "fort",
+  },
+  {
+    hiragana: "よわい",
+    romaji: "yowai",
+    english: "faible",
+  },
+  {
+    hiragana: "おもしろい",
+    romaji: "omoshiroi",
+    english: "drôle",
+  },
+  {
+    hiragana: "はは",
+    romaji: "haha",
+    english: "maman",
+  },
+  {
+    hiragana: "ちち",
+    romaji: "chichi",
+    english: "papa",
+  },
+  {
+    hiragana: "おじ",
+    romaji: "oji",
+    english: "oncle",
+  },
+  {
+    hiragana: "おば",
+    romaji: "oba",
+    english: "tante",
+  },
+  {
+    hiragana: "おとうと",
+    romaji: "otouto",
+    english: "petit-frère",
+  },
+  {
+    hiragana: "あに",
+    romaji: "ani",
+    english: "grand-frère",
+  },
+  {
+    hiragana: "いもうと",
+    romaji: "imouto",
+    english: "petite sœur",
+  },
+  {
+    hiragana: "あね",
+    romaji: "ane",
+    english: "grande sœur",
+  },
+  {
+    hiragana: "いとこ",
+    romaji: "itoko",
+    english: "cousin",
+  },
+  {
+    hiragana: "おばあちゃん",
+    romaji: "obaachan",
+    english: "grand-mère",
+  },
+  {
+    hiragana: "おじいちゃん",
+    romaji: "ojiichan",
+    english: "grand-père",
+  },
+  {
+    hiragana: "わたし",
+    romaji: "watashi",
+    english: "je",
+  },
+  {
+    hiragana: "あなた",
+    romaji: "anata",
+    english: "tu",
+  },
+  {
+    hiragana: "かれ",
+    romaji: "kare",
+    english: "il",
+  },
+  {
+    hiragana: "かのじょ",
+    romaji: "kanojo",
+    english: "elle",
+  },
+  {
+    hiragana: "すき",
+    romaji: "suki",
+    english: "aimer",
+  },
+  {
+    hiragana: "きらい",
+    romaji: "kirai",
+    english: "détester",
+  },
+  {
+    hiragana: "て",
+    romaji: "te",
+    english: "main",
+  },
+  {
+    hiragana: "あし",
+    romaji: "ashi",
+    english: "pied",
+  },
+  {
+    hiragana: "ふるい",
+    romaji: "furui",
+    english: "vieux",
+  },
+  {
+    hiragana: "あたらしい",
+    romaji: "atarashii",
+    english: "nouveau",
+  },
+  {
+    hiragana: "まえ",
+    romaji: "mae",
+    english: "avant",
+  },
+  {
+    hiragana: "あと",
+    romaji: "ato",
+    english: "après",
+  },
+  {
+    hiragana: "あるく",
+    romaji: "aruku",
+    english: "marcher",
+  },
+  {
+    hiragana: "いう",
+    romaji: "iu",
+    english: "dire",
+  },
+  {
+    hiragana: "はなす",
+    romaji: "hanasu",
+    english: "parler",
+  },
+  {
+    hiragana: "いく",
+    romaji: "iku",
+    english: "aller",
+  },
+  {
+    hiragana: "いす",
+    romaji: "isu",
+    english: "chaise",
+  },
+  {
+    hiragana: "どこ",
+    romaji: "doko",
+    english: "où",
+  },
+  {
+    hiragana: "いつ",
+    romaji: "itsu",
+    english: "quand",
+  },
+  {
+    hiragana: "どうやって",
+    romaji: "douyatte",
+    english: "comment",
+  },
+  {
+    hiragana: "なぜ",
+    romaji: "naze",
+    english: "pourquoi",
+  },
+  {
+    hiragana: "だれ",
+    romaji: "dare",
+    english: "qui",
+  },
+  {
+    hiragana: "いま",
+    romaji: "ima",
+    english: "maintenant",
+  },
+  {
+    hiragana: "いりぐち",
+    romaji: "iriguchi",
+    english: "entrée",
+  },
+  {
+    hiragana: "でぐち",
+    romaji: "deguchi",
+    english: "sortie",
+  },
+  {
+    hiragana: "えいご",
+    romaji: "eigo",
+    english: "la langue anglaise",
+  },
+  {
+    hiragana: "おさけ",
+    romaji: "osake",
+    english: "alcool",
+  },
+  {
+    hiragana: "おなか",
+    romaji: "onaka",
+    english: "ventre",
+  },
+  {
+    hiragana: "おちゃ",
+    romaji: "ocha",
+    english: "thé",
+  },
+  {
+    hiragana: "はやい",
+    romaji: "hayai",
+    english: "rapide",
+  },
+  {
+    hiragana: "おそい",
+    romaji: "osoi",
+    english: "lent",
+  },
+  {
+    hiragana: "はじめる",
+    romaji: "hajimeru",
+    english: "commencer",
+  },
+  {
+    hiragana: "おわる",
+    romaji: "owaru",
+    english: "finir",
+  },
+  {
+    hiragana: "えいが",
+    romaji: "eiga",
+    english: "film",
+  },
+  {
+    hiragana: "かいだん",
+    romaji: "kaidan",
+    english: "escalier",
+  },
+  {
+    hiragana: "かく",
+    romaji: "kaku",
+    english: "écrire",
+  },
+  {
+    hiragana: "かぜ",
+    romaji: "kaze",
+    english: "vent",
+  },
+  {
+    hiragana: "かぞく",
+    romaji: "kazoku",
+    english: "famille",
+  },
+  {
+    hiragana: "げつようび",
+    romaji: "getsuyoubi",
+    english: "lundi",
+  },
+  {
+    hiragana: "かようび",
+    romaji: "kayoubi",
+    english: "mardi",
+  },
+  {
+    hiragana: "すいようび",
+    romaji: "suiyoubi",
+    english: "mercredi",
+  },
+  {
+    hiragana: "もくようび",
+    romaji: "mokuyoubi",
+    english: "jeudi",
+  },
+  {
+    hiragana: "きんようび",
+    romaji: "kinyoubi",
+    english: "vendredi",
+  },
+  {
+    hiragana: "どようび",
+    romaji: "doyoubi",
+    english: "samedi",
+  },
+  {
+    hiragana: "にちようび",
+    romaji: "nichiyoubi",
+    english: "dimanche",
+  },
+  {
+    hiragana: "しゅう",
+    romaji: "shuu",
+    english: "semaine",
+  },
+  {
+    hiragana: "つき",
+    romaji: "tsuki",
+    english: "mois / lune",
+  },
+  {
+    hiragana: "からい",
+    romaji: "karai",
+    english: "épicé",
+  },
+  /*   {
+    hiragana: "コップ",
+    romaji: "koppu",
+    english: "verre",
+  }, */
 ];
 
 function Quiz() {
@@ -263,6 +729,8 @@ function Quiz() {
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
   const [isCorrect, setIsCorrect] = useState(true);
+  const [mauvaiseReponse, setMauvaiseReponse] = useState("");
+  const [streak, setStreak] = useState(0);
   const formRef = useRef(null);
 
   const handleInputChange = (event) => {
@@ -282,17 +750,17 @@ function Quiz() {
       const nextWordIndex = Math.floor(Math.random() * words.length);
       setCurrentWord(words[nextWordIndex]);
       setInputValue("");
+      setStreak((prev) => prev + 1);
     } else if (event.keyCode === 13 && inputValue !== currentWord) {
       setIsCorrect(false);
+      setMauvaiseReponse(inputValue);
       setInputValue("");
+      setStreak(0);
     }
   };
 
   return (
     <div className="quiz-container">
-      {/*========================== LEFT COLUMN - START ========================== */}
-      <div className="leftCol"></div>
-      {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
       <div className="midCol-quiz">
         <p> {currentWord.hiragana}</p>
@@ -304,16 +772,16 @@ function Quiz() {
               value={inputValue}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
-              placeholder="Press Enter to submit"
+              placeholder="Entrée pour valider"
               autoFocus
             />
           </label>
         </form>
 
-        {!isCorrect && <div>Déso frérot</div>}
+        {!isCorrect && <div>M'enfin frérot c'est pas {mauvaiseReponse}</div>}
+
         {previousWord ? (
           <div className="previousWord">
-            <p> Mot précedent :</p>
             <p>
               {previousWord ? previousWord.hiragana : ""} (
               {previousWord ? previousWord.romaji : ""})
@@ -323,47 +791,9 @@ function Quiz() {
         ) : (
           ""
         )}
+        <p id="streakCounter">Streak : {streak}</p>
       </div>
-
       {/*========================== MID COLUMN - END ========================== */}
-      {/*========================== RIGHT COLUMN - START ========================== */}
-      <div className="filtersContainer">
-        {/*         <div className="allFilters">
-          <div className="buttonsFiltersContainer">
-            <div
-              className={
-                cardStore.toggleFilterHiraganas
-                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                  : "btn btnToggleFilterHiraganas"
-              }
-            >
-              <p>ひらがな</p>
-              <p>
-                ( {cardStore.listHiraganas.filter((e) => e.selected).length} /{" "}
-                {cardStore.listHiraganas.length} )
-              </p>
-            </div>
-            <div
-              className={
-                cardStore.toggleFilterKatakanas
-                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                  : "btn btnToggleFilterHiraganas"
-              }
-            >
-              <p>カタカナ</p>
-              <p>
-                ( {cardStore.listKatakanas.filter((e) => e.selected).length} /{" "}
-                {cardStore.listKatakanas.length} )
-              </p>
-            </div>
-          </div>
-
-          {cardStore.toggleFilterHiraganas ? <FilterHiraganas /> : null}
-
-          {cardStore.toggleFilterKatakanas ? <FilterKatakanas /> : null}
-        </div> */}
-      </div>
-      {/*========================== RIGHT COLUMN - END ========================== */}
     </div>
   );
 }
