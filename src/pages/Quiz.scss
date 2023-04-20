@@ -20,7 +20,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   gap: 1rem;
   min-width: 12ch;
   width: 80%;
-  height: 40vh;
+  height: 65vh;
   & label,
   form,
   input {
@@ -49,7 +49,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   font-size: 1.5rem;
 }
 
-@media only screen and (min-width: 1050px) and (orientation: landscape) {
+@media only screen and (min-width: 500px) and (orientation: landscape) {
   .quiz-container {
     height: 25vh;
     display: flex;
