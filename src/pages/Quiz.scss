@@ -24,8 +24,8 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   & label,
   form,
   input {
-    min-width: 32ch;
-    max-width: 64ch;
+    min-width: 16ch;
+    max-width: 32ch;
   }
   & form {
     display: flex;
