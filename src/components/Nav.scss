@@ -6,9 +6,11 @@
   right: 12px;
   z-index: 1300;
   align-items: flex-end;
+
   & img {
     fill: rgb(232, 230, 227);
-    width: 4rem;
+
+    width: 3rem;
     cursor: pointer;
   }
 }
