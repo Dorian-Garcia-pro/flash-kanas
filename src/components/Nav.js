@@ -37,7 +37,7 @@ function Nav() {
               <Link to="/quiz">Quiz</Link>
             </li>
             <li>
-              <Link to="/">Autres</Link>
+              <Link to="/histoires">Histoires</Link>
             </li>
           </ul>
         </nav>

@@ -1,0 +1,109 @@
+#histoiresMainContainer {
+  margin: 2rem 0 0 0;
+}
+
+#histoiresMainContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+#histoiresContainer {
+  display: grid;
+  /*   margin: 24px 0 0 0;
+ */
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 12px;
+  & > img {
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+#modalHistoires {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(24, 24, 24, 0.85);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  & > img {
+    width: 80%;
+  }
+  & > p {
+    width: 80%;
+  }
+}
+
+.filterHistoires {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 0 2rem 0;
+  & > div {
+    width: 100px;
+  }
+}
+
+.histoire {
+  user-select: none;
+}
+@media only screen and (min-width: 450px) {
+  #histoiresMainContainer {
+    margin: 2rem 0 0 0;
+  }
+
+  #histoiresContainer {
+    padding: 0rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    & > img {
+      width: 5rem;
+    }
+  }
+
+  #modalHistoires {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(24, 24, 24, 0.85);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    & > img {
+      height: 90vh;
+      width: auto;
+      min-width: 300px;
+    }
+    & > p {
+      width: 80%;
+    }
+  }
+
+  .filterHistoires {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 0 2rem 0;
+    & > div {
+      width: 200px;
+    }
+  }
+}

@@ -21,6 +21,7 @@ const initialState = {
       romaji: "a",
       nb: 0,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/a.png",
     },
     {
@@ -28,6 +29,7 @@ const initialState = {
       romaji: "i",
       nb: 1,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/i.png",
     },
     {
@@ -35,6 +37,7 @@ const initialState = {
       romaji: "u",
       nb: 2,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/u.png",
     },
     {
@@ -42,6 +45,7 @@ const initialState = {
       romaji: "e",
       nb: 3,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/e.png",
     },
     {
@@ -49,6 +53,7 @@ const initialState = {
       romaji: "o",
       nb: 4,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/o.png",
     },
     {
@@ -56,6 +61,7 @@ const initialState = {
       romaji: "ka",
       nb: 5,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ka.png",
     },
     {
@@ -63,6 +69,7 @@ const initialState = {
       romaji: "ki",
       nb: 6,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ki.png",
     },
     {
@@ -70,6 +77,7 @@ const initialState = {
       romaji: "ku",
       nb: 7,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ku.png",
     },
     {
@@ -77,6 +85,7 @@ const initialState = {
       romaji: "ke",
       nb: 8,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ke.png",
     },
     {
@@ -84,6 +93,7 @@ const initialState = {
       romaji: "ko",
       nb: 9,
       selected: true,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ko.png",
     },
     {
@@ -91,6 +101,7 @@ const initialState = {
       romaji: "sa",
       nb: 10,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/sa.png",
     },
     {
@@ -98,6 +109,7 @@ const initialState = {
       romaji: "shi",
       nb: 11,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/shi.png",
     },
     {
@@ -105,6 +117,7 @@ const initialState = {
       romaji: "su",
       nb: 12,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/su.png",
     },
     {
@@ -112,6 +125,7 @@ const initialState = {
       romaji: "se",
       nb: 13,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/se.png",
     },
     {
@@ -119,6 +133,7 @@ const initialState = {
       romaji: "so",
       nb: 14,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/so.png",
     },
     {
@@ -126,6 +141,7 @@ const initialState = {
       romaji: "ta",
       nb: 15,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ta.png",
     },
     {
@@ -133,6 +149,7 @@ const initialState = {
       romaji: "chi",
       nb: 16,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/chi.png",
     },
     {
@@ -140,6 +157,7 @@ const initialState = {
       romaji: "tsu",
       nb: 17,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/tsu.png",
     },
     {
@@ -147,6 +165,7 @@ const initialState = {
       romaji: "te",
       nb: 18,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/te.png",
     },
     {
@@ -154,6 +173,7 @@ const initialState = {
       romaji: "to",
       nb: 19,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/to.png",
     },
     {
@@ -161,6 +181,7 @@ const initialState = {
       romaji: "na",
       nb: 20,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/na.png",
     },
     {
@@ -168,6 +189,7 @@ const initialState = {
       romaji: "ni",
       nb: 21,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ni.png",
     },
     {
@@ -175,6 +197,7 @@ const initialState = {
       romaji: "nu",
       nb: 22,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/nu.png",
     },
     {
@@ -182,6 +205,7 @@ const initialState = {
       romaji: "ne",
       nb: 23,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ne.png",
     },
     {
@@ -189,6 +213,7 @@ const initialState = {
       romaji: "no",
       nb: 24,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/no.png",
     },
     {
@@ -196,6 +221,7 @@ const initialState = {
       romaji: "ha",
       nb: 25,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ha.png",
     },
     {
@@ -203,6 +229,7 @@ const initialState = {
       romaji: "hi",
       nb: 26,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/hi.png",
     },
     {
@@ -210,6 +237,7 @@ const initialState = {
       romaji: "fu",
       nb: 27,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/fu.png",
     },
     {
@@ -217,6 +245,7 @@ const initialState = {
       romaji: "he",
       nb: 28,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/he.png",
     },
     {
@@ -224,6 +253,7 @@ const initialState = {
       romaji: "ho",
       nb: 29,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ho.png",
     },
     {
@@ -231,6 +261,7 @@ const initialState = {
       romaji: "ma",
       nb: 30,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ma.png",
     },
     {
@@ -238,6 +269,7 @@ const initialState = {
       romaji: "mi",
       nb: 31,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/mi.png",
     },
     {
@@ -245,6 +277,7 @@ const initialState = {
       romaji: "mu",
       nb: 32,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/mu.png",
     },
     {
@@ -252,6 +285,7 @@ const initialState = {
       romaji: "me",
       nb: 33,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/me.png",
     },
     {
@@ -259,6 +293,7 @@ const initialState = {
       romaji: "mo",
       nb: 34,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/mo.png",
     },
     {
@@ -266,6 +301,7 @@ const initialState = {
       romaji: "ya",
       nb: 35,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ya.png",
     },
     {
@@ -273,6 +309,7 @@ const initialState = {
       romaji: "yu",
       nb: 36,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/yu.png",
     },
     {
@@ -280,6 +317,7 @@ const initialState = {
       romaji: "yo",
       nb: 37,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/yo.png",
     },
     {
@@ -287,6 +325,7 @@ const initialState = {
       romaji: "ra",
       nb: 38,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ra.png",
     },
     {
@@ -294,6 +333,7 @@ const initialState = {
       romaji: "ri",
       nb: 39,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ri.png",
     },
     {
@@ -301,6 +341,7 @@ const initialState = {
       romaji: "ru",
       nb: 40,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ru.png",
     },
     {
@@ -308,6 +349,7 @@ const initialState = {
       romaji: "re",
       nb: 41,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/re.png",
     },
     {
@@ -315,6 +357,7 @@ const initialState = {
       romaji: "ro",
       nb: 42,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/ro.png",
     },
     {
@@ -322,6 +365,7 @@ const initialState = {
       romaji: "wa",
       nb: 43,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/wa.png",
     },
     {
@@ -329,6 +373,7 @@ const initialState = {
       romaji: "wo",
       nb: 44,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/wo.png",
     },
     {
@@ -336,6 +381,7 @@ const initialState = {
       romaji: "n",
       nb: 45,
       selected: false,
+      histoire: "Je ne suis qu'un renard semblable a cent-milles renards",
       img: "/assets/hiraganas/n.png",
     },
     {

@@ -4,6 +4,7 @@ import Deck from "./components/Deck.js";
 import Card from "./components/Card.js";
 import Quiz from "./pages/Quiz";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Histoires from "./pages/Histoires";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Deck />} />
             <Route path="/kanas" element={<Deck />} />
             <Route path="/quiz" element={<Quiz />} />
+            <Route path="/histoires" element={<Histoires />} />
 
             <Route path="*" element={<Card />} />
           </Routes>

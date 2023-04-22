@@ -44,7 +44,8 @@ body::-webkit-scrollbar {
 
 @media (orientation: landscape) {
 	body::-webkit-scrollbar {
-		width: 1rem; /* taille de la scrollbar (pour les navigateurs basés sur WebKit) */
+		width: 0rem;
+
 	}
 }
 
