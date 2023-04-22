@@ -20,6 +20,13 @@ function Nav() {
     }
   };
 
+  const routes = [
+    { name: "Kanas", route: "/kanas" },
+    { name: "Quiz", route: "/quiz" },
+    { name: "Quiz Daz", route: "/quiz/daz" },
+    { name: "Histoires", route: "/histoires" },
+  ];
+
   return (
     <div ref={myRef} id="navMenu">
       <img
@@ -30,15 +37,11 @@ function Nav() {
       {openNav ? (
         <nav id="drawer">
           <ul>
-            <li>
-              <Link to="/kanas">Kanas</Link>
-            </li>
-            <li>
-              <Link to="/quiz">Quiz</Link>
-            </li>
-            <li>
-              <Link to="/histoires">Histoires</Link>
-            </li>
+            {routes.map((route, index) => (
+              <li key={route.route}>
+                <Link to={route.route}>{route.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       ) : null}
