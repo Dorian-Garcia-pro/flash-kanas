@@ -60,6 +60,7 @@ function Histoires() {
                   src={e.img}
                   alt={e.kana}
                   className="histoire"
+                  preload="auto"
                   onClick={() => openModalHistoiresHandle(index)}
                 />
               ))
