@@ -27,10 +27,13 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     min-width: 16ch;
     max-width: 32ch;
   }
-  & form {
+  & label {
     display: flex;
-    justify-content: center;
+    > button {
+      display: block;
+    }
   }
+
   & input {
     padding: 4px 8px;
     box-sizing: border-box;

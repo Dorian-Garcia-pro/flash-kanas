@@ -28,6 +28,15 @@ function Quiz() {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+  const handleSkip = (event) => {
+    setIsCorrect(false);
+    setPreviousWord(currentWord);
+    const nextWordIndex = Math.floor(Math.random() * targetQuiz.length);
+    setCurrentWord(targetQuiz[nextWordIndex]);
+    setMauvaiseReponse(inputValue);
+    setInputValue("");
+    setStreak(0);
+  };
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13 && inputValue === currentWord.romaji) {
@@ -61,6 +70,7 @@ function Quiz() {
               placeholder="Entrée pour valider"
               autoFocus
             />
+            <button onClick={handleSkip}>Skip</button>
           </label>
         </form>
 
