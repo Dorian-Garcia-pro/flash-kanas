@@ -156,14 +156,34 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   .deck-container {
     display: flex;
     flex-direction: row;
+    height: 100vh;
+
     & > div {
       width: 100%;
+      flex-grow: 1;
     }
   }
   .leftCol {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: transparent;
+  }
+
+  .buttonsFiltersContainer {
+    flex-direction: column;
+    & > div {
+      flex-grow: 1;
+    }
+    &.rightColKanas {
+      flex-direction: row;
+    }
+  }
+
+  .leftColBtnRowAll {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
   }
 
   .selectKanas {
@@ -179,6 +199,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
   }
 

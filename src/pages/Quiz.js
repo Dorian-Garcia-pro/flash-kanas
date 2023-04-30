@@ -78,7 +78,7 @@ function Quiz() {
         </form>
 
         {!isCorrect && (
-          <p id="errorQuiz">M'enfin frérot c'est pas {mauvaiseReponse}</p>
+          <p id="errorQuiz">FAUX ! C'est pas : {mauvaiseReponse}</p>
         )}
 
         {previousWord ? (

@@ -9,6 +9,8 @@ const initialState = {
   displayfilters: false,
   toggleGramCombis: false,
   toggleGramModifs: false,
+  toggleAllongements: false,
+  toggleGramPauses: false,
   toggleFilterHiraganas: false,
   toggleFilterHiraganasCombis: false,
   toggleFilterHiraganasDakuten: false,
@@ -1447,18 +1449,33 @@ const cardSlice = createSlice({
         case "toggleGramCombis":
           state.toggleGramCombis = !state.toggleGramCombis;
           state.toggleGramModifs = false;
+          state.toggleAllongements = false;
+          state.toggleGramPauses = false;
           break;
         case "toggleGramModifs":
           state.toggleGramModifs = !state.toggleGramModifs;
           state.toggleGramCombis = false;
+          state.toggleAllongements = false;
+          state.toggleGramPauses = false;
+
+          break;
+        case "toggleAllongements":
+          state.toggleAllongements = !state.toggleAllongements;
+          state.toggleGramCombis = false;
+          state.toggleGramModifs = false;
+          state.toggleGramPauses = false;
+          break;
+        case "toggleGramPauses":
+          state.toggleGramPauses = !state.toggleGramPauses;
+          state.toggleGramCombis = false;
+          state.toggleGramModifs = false;
+          state.toggleAllongements = false;
           break;
         default:
-          console.log("Today is not Sunday, Monday, Tuesday, or Wednesday");
+          console.log("Oui");
       }
 
       state.payload = !state.payload;
-      console.log(state.payload);
-      console.log(payload);
     },
     resetToRecto: (state) => {
       state.rectoVerso = true;

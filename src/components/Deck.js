@@ -12,6 +12,8 @@ import FilterHiraganas from "./FilterHiraganas.js";
 import FilterKatakanas from "./FilterKatakanas.js";
 import GramCombis from "./GramCombis.js";
 import GramModifs from "./GramModifs.js";
+import GramPauses from "./GramPauses.js";
+import GramAllongs from "./GramAllongs.js";
 
 function Deck({ front, back }) {
   const cardStore = useSelector((store) => store.card);
@@ -39,31 +41,58 @@ function Deck({ front, back }) {
         <div className="allFilters">
           {/*============== GRAMMAR - START ============== */}
           <div className="buttonsFiltersContainer">
-            <div
-              className={
-                cardStore.toggleGramCombis
-                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                  : "btn btnToggleFilterHiraganas"
-              }
-              onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
-            >
-              <p>Combinaisons</p>
+            <div className="leftColBtnRowAll">
+              <div
+                className={
+                  cardStore.toggleGramCombis
+                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                    : "btn btnToggleFilterHiraganas"
+                }
+                onClick={() => dispatch(toggleSubFilters("toggleGramCombis"))}
+              >
+                <p>Combinaisons</p>
+              </div>
+              <div
+                className={
+                  cardStore.toggleGramModifs
+                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                    : "btn btnToggleFilterHiraganas"
+                }
+                onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
+              >
+                <p>Modifications</p>
+              </div>
             </div>
-            <div
-              className={
-                cardStore.toggleGramModifs
-                  ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                  : "btn btnToggleFilterHiraganas"
-              }
-              onClick={() => dispatch(toggleSubFilters("toggleGramModifs"))}
-            >
-              <p>Modifications</p>
+
+            <div className="leftColBtnRowAll ">
+              <div
+                className={
+                  cardStore.toggleAllongements
+                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                    : "btn btnToggleFilterHiraganas"
+                }
+                onClick={() => dispatch(toggleSubFilters("toggleAllongements"))}
+              >
+                <p>Allongements</p>
+              </div>
+              <div
+                className={
+                  cardStore.toggleGramPauses
+                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
+                    : "btn btnToggleFilterHiraganas"
+                }
+                onClick={() => dispatch(toggleSubFilters("toggleGramPauses"))}
+              >
+                <p>Pauses</p>
+              </div>
             </div>
           </div>
 
           {cardStore.toggleGramCombis ? <GramCombis /> : null}
-
           {cardStore.toggleGramModifs ? <GramModifs /> : null}
+          {cardStore.toggleGramPauses ? <GramPauses /> : null}
+          {cardStore.toggleAllongements ? <GramAllongs /> : null}
+
           {/*============== GRAMMAR - END ============== */}
         </div>
       </div>
@@ -94,7 +123,7 @@ function Deck({ front, back }) {
 
         <div className="allFilters">
           {/*============== HIRAGANAS FILTERS - START ============== */}
-          <div className="buttonsFiltersContainer">
+          <div className="buttonsFiltersContainer rightColKanas">
             <div
               className={
                 cardStore.toggleFilterHiraganas

@@ -3,6 +3,7 @@ import Nav from "./components/Nav.js";
 import Deck from "./components/Deck.js";
 import Card from "./components/Card.js";
 import Quiz from "./pages/Quiz";
+import Grammaire from "./pages/Grammaire";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Histoires from "./pages/Histoires";
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/quiz/daz" element={<Quiz />} />
             <Route path="/histoires" element={<Histoires />} />
+            <Route path="/grammaire" element={<Grammaire />} />
 
             <Route path="*" element={<Card />} />
           </Routes>
