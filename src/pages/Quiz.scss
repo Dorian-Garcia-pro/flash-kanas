@@ -29,8 +29,8 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
   & label {
     display: flex;
-    > button {
-      display: block;
+    > .btn {
+      border-radius: 0 4px 4px 0;
     }
   }
 
@@ -41,6 +41,10 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
+#errorQuiz {
+  color: red;
+  font-size: small;
+}
 .previousWord {
   display: flex;
   flex-direction: column;

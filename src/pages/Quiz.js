@@ -16,7 +16,7 @@ function Quiz() {
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
   const [isCorrect, setIsCorrect] = useState(true);
-  const [mauvaiseReponse, setMauvaiseReponse] = useState("");
+  const [mauvaiseReponse, setMauvaiseReponse] = useState("aeazez");
   const [streak, setStreak] = useState(0);
   const formRef = useRef(null);
 
@@ -29,6 +29,7 @@ function Quiz() {
     event.preventDefault();
   };
   const handleSkip = (event) => {
+    event.preventDefault();
     setIsCorrect(false);
     setPreviousWord(currentWord);
     const nextWordIndex = Math.floor(Math.random() * targetQuiz.length);
@@ -70,11 +71,15 @@ function Quiz() {
               placeholder="Entrée pour valider"
               autoFocus
             />
-            <button onClick={handleSkip}>Skip</button>
+            <div className="btn" onClick={handleSkip}>
+              Skip
+            </div>
           </label>
         </form>
 
-        {!isCorrect && <div>M'enfin frérot c'est pas {mauvaiseReponse}</div>}
+        {!isCorrect && (
+          <p id="errorQuiz">M'enfin frérot c'est pas {mauvaiseReponse}</p>
+        )}
 
         {previousWord ? (
           <div className="previousWord">
