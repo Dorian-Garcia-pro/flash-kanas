@@ -17,7 +17,7 @@ function App() {
             <Route path="/" element={<Deck />} />
             <Route path="/kanas" element={<Deck />} />
             <Route path="/quiz" element={<Quiz />} />
-            <Route path="/quiz/daz" element={<Quiz />} />
+            {/*    <Route path="/quiz/daz" element={<Quiz />} /> */}
             <Route path="/histoires" element={<Histoires />} />
             <Route path="/grammaire" element={<Grammaire />} />
 

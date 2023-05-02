@@ -4,8 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Nav() {
-  const [openNav, setopenNav] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
   const myRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (myRef.current && !myRef.current.contains(event.target)) {
+      setOpenNav(false);
+    }
+  };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -14,29 +20,36 @@ function Nav() {
     };
   }, []);
 
-  const handleClickOutside = (event) => {
-    if (myRef.current && !myRef.current.contains(event.target)) {
-      setopenNav(false);
-    }
-  };
-
   const routes = [
     { name: "Kanas", route: "/kanas" },
-    { name: "Quiz", route: "/quiz" },
-    { name: "Quiz Daz", route: "/quiz/daz" },
+    { name: "Quizs", route: "/quiz" },
+    /*     { name: "Quiz Daz", route: "/quiz/daz" }, */
     { name: "Histoires", route: "/histoires" },
     { name: "Grammaire", route: "/grammaire" },
   ];
 
   return (
-    <div ref={myRef} id="navMenu">
-      <img
-        src="/assets/icons/menu.svg"
-        alt="menuburger"
-        onClick={() => setopenNav((prev) => !prev)}
-      />
-      {openNav ? (
-        <nav id="drawer">
+    <>
+      <div ref={myRef} id="navMenu">
+        <img
+          src="/assets/icons/menu.svg"
+          alt="menuburger"
+          onClick={() => setOpenNav((prev) => !prev)}
+        />
+        {openNav ? (
+          <nav id="drawer">
+            <ul>
+              {routes.map((route, index) => (
+                <li key={route.route}>
+                  <Link to={route.route}>{route.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
+      </div>
+      <div id="navMenuDesktop">
+        <nav id="drawerDesktop">
           <ul>
             {routes.map((route, index) => (
               <li key={route.route}>
@@ -45,8 +58,8 @@ function Nav() {
             ))}
           </ul>
         </nav>
-      ) : null}
-    </div>
+      </div>
+    </>
   );
 }
 

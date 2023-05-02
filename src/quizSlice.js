@@ -834,7 +834,7 @@ const initialState = {
     },
     {
       hiragana: "もえるゴミ",
-      romaji: "moeru gomi",
+      romaji: "moerugomi",
       english: "déchets inflammables",
     },
     {
@@ -1005,7 +1005,7 @@ const initialState = {
     },
     {
       hiragana: "使います",
-      romaji: "tsukemasu",
+      romaji: "tsukaimasu",
       english: "utiliser",
     },
 
