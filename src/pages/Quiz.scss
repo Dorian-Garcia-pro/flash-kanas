@@ -65,8 +65,8 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 .switch {
   position: absolute;
   display: inline-block;
-  width: 80px;
-  height: 40px;
+  width: 70px;
+  height: 35px;
   bottom: 1rem;
   right: 1rem;
   input {
@@ -87,8 +87,8 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     &:before {
       position: absolute;
       content: "";
-      height: 38px;
-      width: 38px;
+      height: 32px;
+      width: 32px;
       left: 2px;
       bottom: 2px;
       background-color: white;
@@ -100,7 +100,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     background-color: #2196f3;
   }
   input:checked + .slider:before {
-    transform: translateX(40px);
+    transform: translateX(35px);
   }
 
   &::before {
