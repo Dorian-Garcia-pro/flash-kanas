@@ -10,6 +10,26 @@ function Histoires() {
   const [kanasSelected, setKanasSelected] = useState(true);
   const modalRef = useRef(null);
 
+  const checkKey = (e) => {
+    e = e || window.event;
+
+    switch (e.keyCode) {
+      case 27: // escape key
+        setopenModalHistoires(false);
+        break;
+      case 37: // left arrow key
+        carrouPrevSuiv("prev");
+        break;
+      case 39: // right arrow key
+        carrouPrevSuiv("suiv");
+        break;
+      default:
+        break;
+    }
+  };
+
+  document.onkeydown = checkKey;
+
   const openModalHistoiresHandle = (kana) => {
     setopenModalHistoires(true);
     setHistoireSelected(kana);
@@ -31,6 +51,14 @@ function Histoires() {
       body.style.overflow = "auto";
     }
   }, [openModalHistoires]);
+
+  const handleKeyDown = (event) => {
+    if (event.keyCode === "37") {
+      carrouPrevSuiv("prev");
+    } else if (event.keyCode === "39") {
+      carrouPrevSuiv("suiv");
+    }
+  };
 
   return (
     <div id="histoiresMainContainer">
@@ -85,7 +113,7 @@ function Histoires() {
               ))}
       </div>
       {openModalHistoires ? (
-        <div id="modalHistoires">
+        <div id="modalHistoires" onKeyDown={handleKeyDown}>
           <div
             className="btnCarrouselPrevSuiv prev"
             onClick={() => carrouPrevSuiv("prev")}

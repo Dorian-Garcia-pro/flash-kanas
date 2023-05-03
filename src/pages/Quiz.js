@@ -10,8 +10,8 @@ function Quiz() {
   const [currentWord, setCurrentWord] = useState(targetQuiz[0]);
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
-  const [isCorrect, setIsCorrect] = useState("");
-  const [mauvaiseReponse, setMauvaiseReponse] = useState("aeazez");
+  const [isCorrect, setIsCorrect] = useState();
+  const [mauvaiseReponse, setMauvaiseReponse] = useState();
   const [streak, setStreak] = useState(0);
   const formRef = useRef(null);
 
@@ -20,7 +20,7 @@ function Quiz() {
     if (isCorrect) {
       return;
     } else {
-      setIsCorrect("");
+      setIsCorrect();
     }
   };
 
@@ -46,6 +46,7 @@ function Quiz() {
       setCurrentWord(targetQuiz[nextWordIndex]);
       setInputValue("");
       setStreak((prev) => prev + 1);
+      setMauvaiseReponse();
     } else if (event.keyCode === 13 && inputValue !== currentWord) {
       setIsCorrect(false);
       setMauvaiseReponse(inputValue);
@@ -87,7 +88,9 @@ function Quiz() {
           </label>
         </form>
 
-        {!isCorrect && <p id="errorQuiz">Ce n'est pas : {mauvaiseReponse}</p>}
+        {mauvaiseReponse && (
+          <p id="errorQuiz">Ce n'est pas : {mauvaiseReponse}</p>
+        )}
 
         {previousWord ? (
           <div className="previousWord">
