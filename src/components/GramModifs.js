@@ -44,11 +44,12 @@ function GramModfis() {
           modifier sa prononciation.
         </p>
         <p>k > g , s > j , t > d , h > b/p</p>
+        <br />
         <p>Exemple :</p>
-        <p>"ka" (か) devient "ga" (が) lorsqu'on lui ajoute le dakuten(").</p>
-        <p>"hi" (ひ) devient "bi" (び) lorsqu'on lui ajoute le dakuten(").</p>
+        <p>「か」(ka) devient「が」(ga) lorsqu'on lui ajoute le dakuten(").</p>
+        <p>「ひ」(hi) devient「び」(bi) lorsqu'on lui ajoute le dakuten(").</p>
         <p>
-          "hi" (ひ) devient "pi" (ぴ) lorsqu'on lui ajoute le handakuten(°).
+          「ひ」(hi) devient「ぴ」(pi) lorsqu'on lui ajoute le handakuten(°).
         </p>
       </div>
       <div className="allModifs">
@@ -56,16 +57,6 @@ function GramModfis() {
           <div className="modifs">
             <p>{digramme.kana}</p>
             <p>({digramme.romaji})</p>
-
-            {/*           <div className="digrammeCompos">
-            <p>
-              {digramme.kana1} ({digramme.romaji1})
-            </p>
-            <p> + </p>
-            <p>
-              {digramme.kana2} ({digramme.romaji2})
-            </p>
-          </div> */}
           </div>
         ))}
       </div>

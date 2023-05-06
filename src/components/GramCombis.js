@@ -237,8 +237,8 @@ function GramCombis() {
         </p>
         <p>Exemple :</p>
         <p>
-          "きゃ" (kya), "きゅ" (kyu) et "きょ" (kyo) sont des exemples de yoon
-          de la consonne "k".
+          「きゃ」(kya), 「きゅ」(kyu) et 「きょ」(kyo) sont des exemples de
+          yoon de la consonne "k".
         </p>
       </div>
       <div className="allDigrammes">

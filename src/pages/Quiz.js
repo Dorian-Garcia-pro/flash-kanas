@@ -65,6 +65,23 @@ function Quiz() {
         ></input>
         <span className="slider"></span>
       </label>
+      {/*========================== LEFT COLUMN - START ========================== */}
+      <div className="leftCol-quiz">
+        {" "}
+        {previousWord ? (
+          <div className="previousWord">
+            <p className=""> Mot précédent :</p>
+            <p>
+              {previousWord ? previousWord.hiragana : ""} (
+              {previousWord ? previousWord.romaji : ""})
+            </p>
+            <p> {previousWord ? previousWord.english : ""}</p>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
       <div className="midCol-quiz">
         <p> {currentWord.hiragana}</p>
@@ -88,25 +105,17 @@ function Quiz() {
           </label>
         </form>
 
-        {mauvaiseReponse && (
-          <p id="errorQuiz">Ce n'est pas : {mauvaiseReponse}</p>
-        )}
-
-        {previousWord ? (
-          <div className="previousWord">
-            <p className=""> Mot précédent :</p>
-            <p>
-              {previousWord ? previousWord.hiragana : ""} (
-              {previousWord ? previousWord.romaji : ""})
-            </p>
-            <p> {previousWord ? previousWord.english : ""}</p>
-          </div>
-        ) : (
-          ""
-        )}
         <p id="streakCounter">Streak : {streak}</p>
+        {mauvaiseReponse ? (
+          <p id="errorQuiz">Ce n'est pas : {mauvaiseReponse}</p>
+        ) : (
+          <p></p>
+        )}
       </div>
       {/*========================== MID COLUMN - END ========================== */}
+      {/*========================== RIGHT COLUMN - START ========================== */}
+      <div className="rightCol-quiz"></div>
+      {/*========================== RIGHT COLUMN - END ========================== */}
     </div>
   );
 }

@@ -15,16 +15,19 @@ function GramAllongs() {
           en "u" et "o" s'allongent avec 「う」
         </p>
         <p>Exemple :</p>
+        <ul>
+          <li>「か」(ka) s'allonge avec「あ」pour former「かあ」(kaa)</li>
+          <li>「き」(ki) s'allonge avec「い」pour former「きい」(kii)</li>
+          <li>「こ」(ko) s'allonge avec「う」pour former「こう」(kou)</li>
+        </ul>
         <p>
-          「か」 (ka) peut être prolongé en ajoutant 「あ」 pour former 「かあ」
-          (kaa), ou 「き」 (ki) peut être prolongé en ajoutant 「い」 pour
-          former 「きい」 (kii). Il est important de garder le son d'une voyelle
-          assez longtemps pour éviter des confusions, comme dire "ici"（ここ）
-          au lieu de "lycée"（こうこう） ou "femme d'âge moyen ou
-          tante"（おばさん） au lieu de "grand-mère"（おばあさん）. Il y a de
-          rares exceptions où un son de voyelle / e / est allongé en ajoutant
-          「え」 ou un son de voyelle / o / est allongé par 「お」, comme dans
-          les mots 「おねえさん」、「おおい」 et 「おおきい」.
+          Il est important de garder le son d'une voyelle assez longtemps pour
+          éviter des confusions, comme dire "ici"（ここ） au lieu de
+          "lycée"（こうこう） ou "femme d'âge moyen ou tante"（おばさん） au
+          lieu de "grand-mère"（おばあさん）. Il y a de rares exceptions où un
+          son de voyelle / e / est allongé en ajoutant 「え」 ou un son de
+          voyelle / o / est allongé par 「お」, comme dans les mots
+          「おねえさん」、「おおい」 et 「おおきい」.
         </p>
       </div>
       <div className="allDigrammes"></div>

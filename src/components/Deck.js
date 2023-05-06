@@ -64,7 +64,7 @@ function Deck({ front, back }) {
               </div>
             </div>
 
-            <div className="leftColBtnRowAll ">
+            {/*             <div className="leftColBtnRowAll ">
               <div
                 className={
                   cardStore.toggleAllongements
@@ -85,7 +85,7 @@ function Deck({ front, back }) {
               >
                 <p>Pauses</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {cardStore.toggleGramCombis ? <GramCombis /> : null}
