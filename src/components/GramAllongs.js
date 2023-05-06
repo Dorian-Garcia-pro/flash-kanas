@@ -14,6 +14,10 @@ function GramAllongs() {
           syllabes en "i" et "e" s'allongent avec 「い」 <br></br> Les syllabes
           en "u" et "o" s'allongent avec 「う」
         </p>
+        <p>
+          En romaji un allongement peut etre representé par une barre
+          horizontale au dessus de la voyelle allongée. 「どうも」= Dōmo
+        </p>
         <p>Exemple :</p>
         <ul>
           <li>「か」(ka) s'allonge avec「あ」pour former「かあ」(kaa)</li>
