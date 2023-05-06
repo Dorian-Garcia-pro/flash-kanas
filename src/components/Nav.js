@@ -1,11 +1,12 @@
 import React from "react";
 import "./Nav.scss";
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Nav() {
   const [openNav, setOpenNav] = useState(false);
   const myRef = useRef(null);
+  const location = useLocation();
 
   const handleClickOutside = (event) => {
     if (myRef.current && !myRef.current.contains(event.target)) {
@@ -30,14 +31,14 @@ function Nav() {
 
   return (
     <>
-      <div ref={myRef} id="navMenu">
+      <div id="navMenu">
         <img
           src="/assets/icons/menu.svg"
           alt="menuburger"
           onClick={() => setOpenNav((prev) => !prev)}
         />
         {openNav ? (
-          <nav id="drawer">
+          <nav ref={myRef} id="drawer">
             <ul>
               {routes.map((route, index) => (
                 <li key={route.route}>
@@ -53,7 +54,12 @@ function Nav() {
           <ul>
             {routes.map((route, index) => (
               <li key={route.route}>
-                <Link to={route.route}>{route.name}</Link>
+                <Link
+                  to={route.route}
+                  className={location.pathname === route.route ? "active" : ""}
+                >
+                  {route.name}
+                </Link>
               </li>
             ))}
           </ul>
