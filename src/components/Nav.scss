@@ -52,13 +52,16 @@
 
   #navMenuDesktop {
     display: flex;
-    width: 100%;
+    /*     width: 100%;
+ */
     position: absolute;
     top: 0;
+    right: 0;
+    justify-content: flex-end;
   }
 
   #drawerDesktop {
-    width: 100%;
+    /*     width: 100%; */
     padding-right: 1rem;
 
     & > ul {

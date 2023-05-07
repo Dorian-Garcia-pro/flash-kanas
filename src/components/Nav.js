@@ -23,10 +23,10 @@ function Nav() {
 
   const routes = [
     { name: "Kanas", route: "/kanas" },
-    { name: "Quizs", route: "/quiz" },
-    /*     { name: "Quiz Daz", route: "/quiz/daz" }, */
     { name: "Histoires", route: "/histoires" },
     { name: "Grammaire", route: "/grammaire" },
+    { name: "Quizs", route: "/quiz" },
+    /*     { name: "Quiz Daz", route: "/quiz/daz" }, */
   ];
 
   return (

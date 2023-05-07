@@ -1,10 +1,15 @@
 import "./App.scss";
 import Nav from "./components/Nav.js";
 import Deck from "./components/Deck.js";
-import Card from "./components/Card.js";
 import Quiz from "./pages/Quiz";
 import Grammaire from "./pages/Grammaire";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
 import Histoires from "./pages/Histoires";
 
 function App() {
@@ -14,14 +19,12 @@ function App() {
         <Router>
           <Nav />
           <Routes>
-            <Route path="/" element={<Deck />} />
+            <Route path="/" element={<Navigate to="/kanas" />} />
             <Route path="/kanas" element={<Deck />} />
             <Route path="/quiz" element={<Quiz />} />
-            {/*    <Route path="/quiz/daz" element={<Quiz />} /> */}
             <Route path="/histoires" element={<Histoires />} />
             <Route path="/grammaire" element={<Grammaire />} />
-
-            <Route path="*" element={<Card />} />
+            <Route path="*" element={<Deck />} />
           </Routes>
         </Router>
       </header>
