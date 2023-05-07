@@ -82,3 +82,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+u {
+	text-underline-offset: 2px;
+}

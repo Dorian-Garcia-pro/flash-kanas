@@ -240,7 +240,9 @@ function GramCombis() {
           La version "petite" des kanas「や」,「ゆ」ou「よ」sont rajoutés aprés
           le kana de base pour former le yoon.
         </p>
-        <p>Exemple :</p>
+        <p>
+          <u>Exemple :</u>
+        </p>
         <p>
           En hiragana :「き<span style={{ color: "red" }}>ゃ</span>」(kya), 「き
           <span style={{ color: "red" }}>ゅ</span>」(kyu) et 「き
