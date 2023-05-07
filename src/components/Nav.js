@@ -26,7 +26,6 @@ function Nav() {
     { name: "Histoires", route: "/histoires" },
     { name: "Grammaire", route: "/grammaire" },
     { name: "Quizs", route: "/quiz" },
-    /*     { name: "Quiz Daz", route: "/quiz/daz" }, */
   ];
 
   return (
