@@ -35,7 +35,9 @@ function GramPauses() {
             savais".
           </p>
         </article>
-        <p>Exemple :</p>
+        <p>
+          <u>Exemples :</u>
+        </p>
         <p>
           <ul>
             <li>

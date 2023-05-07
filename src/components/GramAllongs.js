@@ -20,7 +20,9 @@ function GramAllongs() {
           <span style={{ color: "red" }}>う</span>も」= D
           <span style={{ color: "red" }}>ō</span>mo
         </p>
-        <p>Exemple :</p>
+        <p>
+          <u>Exemples :</u>
+        </p>
         <ul>
           <li>
             「か」(ka) s'allonge avec「あ」pour former「か

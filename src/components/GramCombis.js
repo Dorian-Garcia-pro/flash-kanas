@@ -241,7 +241,7 @@ function GramCombis() {
           le kana de base pour former le yoon.
         </p>
         <p>
-          <u>Exemple :</u>
+          <u>Exemples :</u>
         </p>
         <p>
           En hiragana :「き<span style={{ color: "red" }}>ゃ</span>」(kya), 「き
