@@ -11,7 +11,18 @@
 .modifsExplication {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
+  & section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    & p:nth-child(1) {
+      text-decoration: underline;
+    }
+    & p:nth-child(2) {
+      /* padding-left: 1rem; */
+    }
+  }
 }
 .allModifs {
   display: flex;

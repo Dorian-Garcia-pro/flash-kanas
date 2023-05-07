@@ -7,10 +7,10 @@ import GramPauses from "../components/GramPauses.js";
 import GramAllongs from "../components/GramAllongs.js";
 
 function Grammaire() {
-  const [grammmaireChapitre, setGrammmaireChapitre] = useState("pauses");
+  const [grammmaireChapitre, setGrammmaireChapitre] = useState("modifications");
   const grammaireChapitresList = [
-    { id: 1, nom: "combinaisons" },
-    { id: 2, nom: "modifications" },
+    { id: 1, nom: "modifications" },
+    { id: 2, nom: "combinaisons" },
     { id: 3, nom: "pauses" },
     { id: 4, nom: "allongements" },
   ];

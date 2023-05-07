@@ -24,23 +24,25 @@ function GramPauses() {
         <p>
           <ul>
             <li>
-              か<span style={{ color: "red" }}>っ</span>こいい (cool, classe)
+              か<span style={{ color: "red" }}>っ</span>こいい (kakkoi) = cool,
+              classe
             </li>
             <li>
-              き<span style={{ color: "red" }}>っ</span>と (certainement)
+              き<span style={{ color: "red" }}>っ</span>と (kitto) =
+              certainement
             </li>
             <li>
-              あ<span style={{ color: "red" }}>っ</span>ち (là-bas)
+              あ<span style={{ color: "red" }}>っ</span>ち (acchi) = là-bas
             </li>
             <li>
-              き<span style={{ color: "red" }}>っ</span>ぷ (billet)
+              き<span style={{ color: "red" }}>っ</span>ぷ (kippu) = billet
             </li>
             <li>
-              が<span style={{ color: "red" }}>っ</span>かり (déçu)
+              が<span style={{ color: "red" }}>っ</span>かり (gakkari) = déçu
             </li>
             <li>
-              か<span style={{ color: "red" }}>っ</span>ぱ (kappa, créature
-              mythique japonaise)
+              か<span style={{ color: "red" }}>っ</span>ぱ (kappa) = un kappa,
+              créature mythique japonaise
             </li>
           </ul>
         </p>

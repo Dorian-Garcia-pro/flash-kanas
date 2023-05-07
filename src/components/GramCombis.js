@@ -229,16 +229,29 @@ function GramCombis() {
     <div className="containerDigrammes">
       <div className="digrammesExplication">
         <p>
-          Les combinaisons ou "yoon" sont des syllabes japonaises constituées
-          d'une consonne (ou consonne + semi-voyelle) suivie d'une voyelle "ya",
-          "yu" ou "yo". Les yoon sont souvent utilisés dans la langue japonaise
-          pour former des mots et sont écrits avec les mêmes caractères
-          hiraganas ou katakanas que les autres syllabes.
+          Les combinaisons ou "yoon" sont des hiraganas ou katakanas se
+          combinant, fusionnant avec une voyelle "ya" "yu" ou "yo".
+        </p>
+        <p>
+          Respectivement 「や」,「ゆ」et「よ」en hirgana et
+          「ヤ」,「ユ」et「ヨ」en katakana.
+        </p>
+        <p>
+          La version "petite" des kanas「や」,「ゆ」ou「よ」sont rajoutés aprés
+          le kana de base pour former le yoon.
         </p>
         <p>Exemple :</p>
         <p>
-          「きゃ」(kya), 「きゅ」(kyu) et 「きょ」(kyo) sont des exemples de
-          yoon de la consonne "k".
+          En hiragana :「き<span style={{ color: "red" }}>ゃ</span>」(kya), 「き
+          <span style={{ color: "red" }}>ゅ</span>」(kyu) et 「き
+          <span style={{ color: "red" }}>ょ</span>」(kyo) sont les yoon de la
+          consonne "k".
+        </p>
+        <p>
+          En katakana :「キ<span style={{ color: "red" }}>ャ</span>」(kya), 「キ
+          <span style={{ color: "red" }}>ュ</span>」(kyu) et 「キ
+          <span style={{ color: "red" }}>ョ</span>」(kyo) sont les yoon de la
+          consonne "k".
         </p>
       </div>
       <div className="allDigrammes">

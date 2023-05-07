@@ -39,18 +39,27 @@ function GramModfis() {
     <div className="modifsContainer">
       <div className="modifsExplication">
         <p>
-          Les dakuten(") et les handakuten(°) sont des petits signes que l'on
-          ajoute sur le coin supérieur droit d'un hiragana ou katakana pour
-          modifier sa prononciation.
+          Les dakuten(") et les handakuten(°) sont des petits symboles que l'on
+          ajoute en haut à droite d'un hiragana ou katakana pour modifier sa
+          prononciation.
         </p>
-        <p>k > g , s > j , t > d , h > b/p</p>
-        <br />
-        <p>Exemple :</p>
-        <p>「か」(ka) devient「が」(ga) lorsqu'on lui ajoute le dakuten(").</p>
-        <p>「ひ」(hi) devient「び」(bi) lorsqu'on lui ajoute le dakuten(").</p>
-        <p>
-          「ひ」(hi) devient「ぴ」(pi) lorsqu'on lui ajoute le handakuten(°).
-        </p>
+        <section>
+          <p>Les syllabes en K deviennent des G</p>
+          <p>「か」(ka) devient「が」(ga) lorsqu'on lui ajoute「"」.</p>
+        </section>
+        <section>
+          <p>Les syllabes en S deviennent des J</p>
+          <p>「し」(shi) devient「じ」(ji) lorsqu'on lui ajoute「"」.</p>
+        </section>
+        <section>
+          <p>Les syllabes en T deviennent des D</p>
+          <p>「と」(to) devient「ど」(do) lorsqu'on lui ajoute「"」.</p>
+        </section>
+        <section>
+          <p>Les syllabes en H deviennent des B ou des P</p>
+          <p>「ひ」(hi) devient「び」(bi) lorsqu'on lui ajoute「"」.</p>
+          <p>「ひ」(hi) devient「ぴ」(pi) lorsqu'on lui ajoute「°」.</p>
+        </section>
       </div>
       <div className="allModifs">
         {dakutenHiraganas.map((digramme) => (
