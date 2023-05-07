@@ -23,12 +23,25 @@ function GramPauses() {
         <p>Exemple :</p>
         <p>
           <ul>
-            <li>かっこいい (cool, classe)</li>
-            <li>きっと (certainement)</li>
-            <li>あっち (là-bas)</li>
-            <li>きっぷ (billet)</li>
-            <li>がっかり (déçu)</li>
-            <li>かっぱ (kappa, une créature mythique japonaise)</li>
+            <li>
+              か<span style={{ color: "red" }}>っ</span>こいい (cool, classe)
+            </li>
+            <li>
+              き<span style={{ color: "red" }}>っ</span>と (certainement)
+            </li>
+            <li>
+              あ<span style={{ color: "red" }}>っ</span>ち (là-bas)
+            </li>
+            <li>
+              き<span style={{ color: "red" }}>っ</span>ぷ (billet)
+            </li>
+            <li>
+              が<span style={{ color: "red" }}>っ</span>かり (déçu)
+            </li>
+            <li>
+              か<span style={{ color: "red" }}>っ</span>ぱ (kappa, créature
+              mythique japonaise)
+            </li>
           </ul>
         </p>
       </div>
