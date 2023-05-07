@@ -6,7 +6,7 @@ import {} from "../quizSlice.js";
 function Quiz() {
   const quizStore = useSelector((store) => store.quiz);
   const [isOn, setIsOn] = useState(false);
-  const targetQuiz = isOn ? quizStore.quizDaz : quizStore.quizHiraganas;
+  const targetQuiz = isOn ? quizStore.quizMinnaVocab : quizStore.quizHiraganas;
   const [currentWord, setCurrentWord] = useState(targetQuiz[0]);
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
@@ -55,6 +55,21 @@ function Quiz() {
     }
   };
 
+  const checkKey = (e) => {
+    e = e || window.event;
+
+    switch (e.keyCode) {
+      case 222: // escape key
+        handleSkip(e);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  document.onkeydown = checkKey;
+
   return (
     <div className="quiz-container">
       <label className="switch">
@@ -84,7 +99,7 @@ function Quiz() {
       {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
       <div className="midCol-quiz">
-        <p> {currentWord.hiragana}</p>
+        <p> {isOn ? currentWord.english : currentWord.hiragana}</p>
         <form onSubmit={handleSubmit} ref={formRef}>
           <label
             className={` ${isCorrect ? "correct " : ""} ${
