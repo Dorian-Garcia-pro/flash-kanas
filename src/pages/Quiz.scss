@@ -127,6 +127,52 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
 }
 
+#filtersQuiz {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  & > p {
+    font-size: 1rem;
+    /*     margin-bottom: 0.5rem; */
+    text-align: start;
+  }
+}
+.filterQuizCat {
+  & > button {
+    background-color: rgb(96, 104, 108);
+    color: rgb(232, 230, 227);
+    font-size: 1rem;
+    border: none;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    outline: 1px solid rgb(96, 104, 108);
+    -webkit-tap-highlight-color: transparent;
+    &.fliterQuizButtonSelected {
+      background-color: transparent;
+    }
+  }
+}
+
+#filterQuizHiraKata {
+  width: 100%;
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: row;
+  > button {
+    width: 100%;
+    outline: 1px solid rgb(96, 104, 108);
+    background-color: transparent;
+  }
+}
+#filterQuizOthers {
+  display: flex;
+  gap: 0.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 500px) and (orientation: landscape) {
   .quiz-container {
     display: grid;

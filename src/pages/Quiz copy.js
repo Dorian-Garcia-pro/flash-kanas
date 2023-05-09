@@ -5,49 +5,30 @@ import {} from "../quizSlice.js";
 
 function Quiz() {
   const quizStore = useSelector((store) => store.quiz);
-  const [isOn, setIsOn] = useState(false);
-
-  /*   let selectedQuizzesContent =  */
-  const [allQuizs, setAllQuizs] = useState([
-    {
-      selected: false,
-      type: "lecture",
-      name: "hiraganas",
-      content: quizStore.quizHiraganas,
-    },
-    {
-      selected: false,
-      type: "lecture",
-      name: "katakanas",
-      content: quizStore.quizKatakanas,
-    },
-    {
-      selected: false,
-      type: "lecture",
-      name: "kanjis",
-      content: quizStore.quizKatakanas,
-    },
-    { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
-    { selected: true, name: "couleurs", content: quizStore.quizColors },
-    { selected: true, name: "animaux", content: quizStore.quizAnimals },
-    { selected: true, name: "objets", content: quizStore.quizObjects },
-    { selected: false, name: "adjectifs", content: quizStore.quizAdjectives },
-    { selected: false, name: "verbes", content: quizStore.quizVerbs },
-    { selected: false, name: "nourriture", content: quizStore.quizFood },
-    { selected: false, name: "vetements", content: quizStore.quizClothes },
-  ]);
-
-  const selectedQuizzesContent = allQuizs
-    .filter((quiz) => quiz.selected === true)
-    .reduce((acc, quiz) => acc.concat(quiz.content), []);
-
-  const [currentWord, setCurrentWord] = useState(selectedQuizzesContent[0]);
+  const [isOn, setIsOn] = useState(true);
+  const [targetQuiz, setTargetQuiz] = useState(
+    isOn ? quizStore.quizMinnaVocab : quizStore.quizHiraganas
+  );
+  /*   let targetQuiz =  */
+  const [currentWord, setCurrentWord] = useState(targetQuiz[0]);
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
   const [isCorrect, setIsCorrect] = useState();
   const [mauvaiseReponse, setMauvaiseReponse] = useState();
   const [streak, setStreak] = useState(0);
   const formRef = useRef(null);
+  const allQuizs = [
+    { selected: true, name: "hiraganas", content: quizStore.quizHiraganas },
+    { selected: true, name: "katakanas", content: quizStore.quizMinnaVocab },
+    { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
+    { selected: false, name: "couleurs", content: quizStore.quizMinnaVocab },
+    { selected: true, name: "animaux", content: quizStore.quizMinnaVocab },
+    { selected: true, name: "nourriture", content: quizStore.quizMinnaVocab },
+  ];
+
+  const selectedQuizzesContent = allQuizs
+    .filter((quiz) => quiz.selected)
+    .reduce((acc, quiz) => acc.concat(quiz.content), []);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value.toLowerCase());
@@ -64,14 +45,11 @@ function Quiz() {
   const handleSkip = () => {
     /*     event.preventDefault(); */
     setPreviousWord(currentWord);
-    const nextWordIndex = Math.floor(
-      Math.random() * selectedQuizzesContent.length
-    );
-    setCurrentWord(selectedQuizzesContent[nextWordIndex]);
+    const nextWordIndex = Math.floor(Math.random() * targetQuiz.length);
+    setCurrentWord(targetQuiz[nextWordIndex]);
     setMauvaiseReponse(inputValue);
     setInputValue("");
     setStreak(0);
-    console.log(selectedQuizzesContent);
   };
 
   const handleKeyDown = (event) => {
@@ -79,10 +57,8 @@ function Quiz() {
       handleSubmit(event);
       setIsCorrect(true);
       setPreviousWord(currentWord);
-      const nextWordIndex = Math.floor(
-        Math.random() * selectedQuizzesContent.length
-      );
-      setCurrentWord(selectedQuizzesContent[nextWordIndex]);
+      const nextWordIndex = Math.floor(Math.random() * targetQuiz.length);
+      setCurrentWord(targetQuiz[nextWordIndex]);
       setInputValue("");
       setStreak((prev) => prev + 1);
       setMauvaiseReponse();
@@ -107,7 +83,7 @@ function Quiz() {
 
   document.onkeydown = checkKey;
 
-  /*   const handleQuizChange = (event) => {
+  const handleQuizChange = (event) => {
     let temp = event.target.value;
     switch (event.target.value) {
       case "hiragana":
@@ -128,35 +104,13 @@ function Quiz() {
       default:
         break;
     }
-    selectedQuizzesContent = temp;
-  }; */
+    setTargetQuiz(temp);
+  };
 
   useEffect(() => {
     handleSkip();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [allQuizs]);
-
-  const handleToggleSelected = (name) => {
-    const selectedCount = allQuizs.reduce((count, quiz) => {
-      if (quiz.selected) {
-        return count + 1;
-      } else {
-        return count;
-      }
-    }, 0);
-
-    const updatedQuizs = allQuizs.map((quiz) => {
-      if (quiz.name === name && selectedCount > 1) {
-        return { ...quiz, selected: !quiz.selected };
-      } else if (quiz.name === name && selectedCount > 0) {
-        return { ...quiz, selected: true };
-      } else {
-        return quiz;
-      }
-    });
-
-    setAllQuizs(updatedQuizs);
-  };
+  }, [targetQuiz]);
 
   return (
     <div className="quiz-container">
@@ -228,25 +182,24 @@ function Quiz() {
         </select> */}
 
         <div id="filtersQuiz">
-          <p>Lecture : </p>
-          <div className="filterQuizCat" id="filterQuizHiraKata">
+          <div id="filterQuizHiraKata">
             {allQuizs
-              .filter((quiz) => quiz.type === "lecture")
+              .filter(
+                (quiz) => quiz.name === "hiraganas" || quiz.name === "katakanas"
+              )
               .map((quiz) => (
                 <button>
                   {quiz.name.charAt(0).toUpperCase() + quiz.name.slice(1)}
                 </button>
               ))}
           </div>
-          <p>Categories : </p>
-          <div className="filterQuizCat" id="filterQuizOthers">
+          <div id="filterQuizOthers">
             {allQuizs
-              .filter((quiz) => quiz.type !== "lecture")
+              .filter(
+                (quiz) => quiz.name !== "hiraganas" && quiz.name !== "katakanas"
+              )
               .map((quiz) => (
-                <button
-                  className={quiz.selected ? "" : "fliterQuizButtonSelected"}
-                  onClick={() => handleToggleSelected(quiz.name)}
-                >
+                <button>
                   {quiz.name.charAt(0).toUpperCase() + quiz.name.slice(1)}
                 </button>
               ))}
