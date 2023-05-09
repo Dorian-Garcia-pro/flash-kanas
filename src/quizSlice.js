@@ -730,7 +730,7 @@ const initialState = {
     {
       hiragana: "やります",
       romaji: "yarimasu",
-      english: "faire",
+      english: "faire (familier)",
     },
     {
       hiragana: "広います",
@@ -1092,7 +1092,7 @@ const initialState = {
       english: "danse traditionnelle japonaise en cercle",
     },
     {
-      hiragana: "フリイーマーケット",
+      hiragana: "フリーマーケット",
       romaji: "furiimaaketto",
       english: "marché aux puces",
     },
@@ -1174,7 +1174,7 @@ const initialState = {
     {
       hiragana: "だします",
       romaji: "dashimasu",
-      english: "sortir (poubelles)",
+      english: "sortir qlq chose, sortir (poubelles)",
     },
     {
       hiragana: "もえるごみ",
@@ -1216,11 +1216,7 @@ const initialState = {
       romaji: "kowai",
       english: "effrayant",
     },
-    {
-      hiragana: "ちがいます",
-      romaji: "chigaimasu",
-      english: "se tromper",
-    },
+
     {
       hiragana: "うちゅうひこうし",
       romaji: "uchuuhikoushi",
@@ -1282,9 +1278,9 @@ const initialState = {
       english: "outil",
     },
     {
-      hiragana: "かた",
-      romaji: "kata",
-      english: "direction, person, alternative",
+      hiragana: "~のほう",
+      romaji: "nohou",
+      english: "direction, alternative",
     },
     {
       hiragana: "ご",
@@ -1595,12 +1591,12 @@ const initialState = {
     {
       hiragana: "こわれます",
       romaji: "kowaremasu",
-      english: "se briser, etre cassé (immateriel)",
+      english: "se briser, se casser, etre cassé, detruit (immatériel)",
     },
     {
       hiragana: "われます",
       romaji: "waremasu",
-      english: "se briser, etre cassé (materiel)",
+      english: "briser, casser (vaisselle)",
     },
     {
       hiragana: "おれます",
@@ -1620,22 +1616,23 @@ const initialState = {
     {
       hiragana: "はずれます",
       romaji: "hazuremasu",
-      english: "se détacher",
+      english:
+        "etre détaché, être déconnecté, défaire (bouton de chemise qui saute)",
     },
     {
       hiragana: "とまります",
       romaji: "tomarimasu",
-      english: "arrêter",
+      english: "s'arreter, etre arreté",
     },
     {
       hiragana: "まちがえます",
       romaji: "machigaemasu",
-      english: "se tromper",
+      english: "faire une erreur, se tromper",
     },
     {
       hiragana: "おとしました",
       romaji: "otoshimasu",
-      english: "faire tomber",
+      english: "faire tomber, laisser tomber, perdre",
     },
     {
       hiragana: "かかります",
@@ -1645,12 +1642,12 @@ const initialState = {
     {
       hiragana: "ふきます",
       romaji: "fukimasu",
-      english: "essuyer",
+      english: "essuyer qlq chose",
     },
     {
       hiragana: "とりかえます",
       romaji: "torikaemasu",
-      english: "échanger",
+      english: "echanger qlq chose (taille de vetement etc)",
     },
     {
       hiragana: "かたづけます",
@@ -1744,7 +1741,7 @@ const initialState = {
     },
     {
       hiragana: "さします",
-      romaji: "sashimashu",
+      romaji: "sashimasu",
       english: "pointer du doigt",
     },
     {
@@ -2060,7 +2057,191 @@ const initialState = {
       romaji: "juuni",
       english: "librement",
     },
+    {
+      hiragana: "落ちる",
+      romaji: "ochimasu",
+      english: "tomber",
+    },
+    {
+      hiragana: "出る",
+      romaji: "demasu",
+      english: "sortir soi meme",
+    },
+    {
+      hiragana: "入る",
+      romaji: "hairimasu",
+      english: "entrer dans",
+    },
+    {
+      hiragana: "開ける",
+      romaji: "akemasu",
+      english: "ouvrir qlq chose",
+    },
+    {
+      hiragana: "閉める",
+      romaji: "shimemasu",
+      english: "fermer qlq chose",
+    },
+    {
+      hiragana: "閉まる",
+      romaji: "shimarimasu",
+      english: "etre fermé",
+    },
+    {
+      hiragana: "付ける",
+      romaji: "tsukemasu",
+      english: "attacher qlq chose",
+    },
+    {
+      hiragana: "消す",
+      romaji: "keshimasu",
+      english: "effacer qlq chose",
+    },
+    {
+      hiragana: "消える",
+      romaji: "kiemasu",
+      english: "disparaître, etre éteint",
+    },
+    {
+      hiragana: "かかります",
+      romaji: "kakarimasu",
+      english: "verrouiller",
+    },
   ],
+  /*   quizMinnaVocab: [
+    {
+      hiragana: "落とす",
+      romaji: "otoshimasu",
+      english: "laisser tomber, perdre",
+    },
+    {
+      hiragana: "落ちる",
+      romaji: "ochimasu",
+      english: "tomber",
+    },
+    {
+      hiragana: "出す",
+      romaji: "dashimasu",
+      english: "sortir qlq chose",
+    },
+    {
+      hiragana: "出る",
+      romaji: "demasu",
+      english: "sortir soi meme",
+    },
+    {
+      hiragana: "入れる",
+      romaji: "iremasu",
+      english: "insérer, mettre dans",
+    },
+    {
+      hiragana: "入る",
+      romaji: "hairimasu",
+      english: "entrer dans",
+    },
+    {
+      hiragana: "開ける",
+      romaji: "akemasu",
+      english: "ouvrir qlq chose",
+    },
+    {
+      hiragana: "開く",
+      romaji: "akimasu",
+      english: "être ouvert",
+    },
+    {
+      hiragana: "閉める",
+      romaji: "shimemasu",
+      english: "fermer qlq chose",
+    },
+    {
+      hiragana: "閉まる",
+      romaji: "shimarimasu",
+      english: "etre fermé",
+    },
+    {
+      hiragana: "付ける",
+      romaji: "tsukemasu",
+      english: "attacher qlq chose",
+    },
+    {
+      hiragana: "付く",
+      romaji: "tsukimasu",
+      english: "être attaché",
+    },
+    {
+      hiragana: "消す",
+      romaji: "keshimasu",
+      english: "effacer qlq chose",
+    },
+    {
+      hiragana: "消える",
+      romaji: "kiemasu",
+      english: "disparaître, etre éteint",
+    },
+    {
+      hiragana: "つきます",
+      romaji: "tsukimasu",
+      english: "etre allumé",
+    },
+    {
+      hiragana: "こわれます",
+      romaji: "kowaremasu",
+      english: "se briser, se casser, etre cassé, detruit (immatériel)",
+    },
+    {
+      hiragana: "われます",
+      romaji: "waremasu",
+      english: "briser, casser (vaisselle)",
+    },
+    {
+      hiragana: "おれます",
+      romaji: "oremasu",
+      english: "etre cassé, tordu, plié (arbre, os)",
+    },
+    {
+      hiragana: "やぶれます",
+      romaji: "yaburemasu",
+      english: "etre dechiré",
+    },
+    {
+      hiragana: "よごれます",
+      romaji: "yogoremasu",
+      english: "etre salie, taché",
+    },
+    {
+      hiragana: "はずれます",
+      romaji: "hazuremasu",
+      english:
+        "etre détaché, être déconnecté, défaire (bouton de chemise qui saute)",
+    },
+    {
+      hiragana: "とまります",
+      romaji: "tomarimasu",
+      english: "s'arreter, etre arreté",
+    },
+    {
+      hiragana: "まちがえます",
+      romaji: "machigaemasu",
+      english: "faire une erreur, se tromper",
+    },
+    {
+      hiragana: "かかります",
+      romaji: "kakarimasu",
+      english: "verrouiller",
+    },
+    {
+      hiragana: "ふきます",
+      romaji: "fukimasu",
+      english: "essuyer qlq chose",
+    },
+    {
+      hiragana: "とりかえます",
+      romaji: "torikaemasu",
+      english: "echanger qlq chose (taille de vetement etc)",
+    },
+  ],
+ */
 };
 
 const quizSlice = createSlice({

@@ -5,7 +5,7 @@ import {} from "../quizSlice.js";
 
 function Quiz() {
   const quizStore = useSelector((store) => store.quiz);
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   const targetQuiz = isOn ? quizStore.quizMinnaVocab : quizStore.quizHiraganas;
   const [currentWord, setCurrentWord] = useState(targetQuiz[0]);
   const [previousWord, setPreviousWord] = useState();
