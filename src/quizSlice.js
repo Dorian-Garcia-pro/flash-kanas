@@ -36,17 +36,17 @@ const initialState = {
     { hiragana: "グレー", romaji: "guree", english: "gray" },
   ],
   quizKanjis: [
-    /*  {
+    {
       hiragana: "皿",
       romaji: "sara",
       english: "assiette",
-    }, */
+    },
     {
       hiragana: "隅",
       romaji: "sumi",
       english: "coin",
     },
-    /*     {
+    {
       hiragana: "机",
       romaji: "tsukue",
       english: "bureau",
@@ -55,7 +55,7 @@ const initialState = {
       hiragana: "引く",
       romaji: "hiku",
       english: "tirer",
-    }, */
+    },
     {
       hiragana: "箱",
       romaji: "hako",
@@ -86,11 +86,11 @@ const initialState = {
       romaji: "yoyaku",
       english: "réservation",
     },
-    /*     {
+    {
       hiragana: "並べる",
       romaji: "naraberu",
       english: "aligner",
-    }, */
+    },
     {
       hiragana: "連れて",
       romaji: "tsurete",
@@ -101,22 +101,22 @@ const initialState = {
       romaji: "renraku",
       english: "contact",
     },
-    /*     {
+    {
       hiragana: "元の所",
       romaji: "motonotokoro",
       english: "endroit d'origine",
-    }, */
+    },
     {
       hiragana: "お知らせ",
       romaji: "oshirase",
       english: "notification",
     },
-    /*     {
+    {
       hiragana: "動物園",
       romaji: "doubutsuen",
       english: "zoo",
-    }, */
-    /*     {
+    },
+    {
       hiragana: "飛ぶ",
       romaji: "tobu",
       english: "voler",
@@ -125,7 +125,7 @@ const initialState = {
       hiragana: "飛行機",
       romaji: "hikouki",
       english: "avion",
-    }, */
+    },
     {
       hiragana: "将来",
       romaji: "shourai",
