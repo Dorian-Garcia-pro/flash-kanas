@@ -35,6 +35,143 @@ const initialState = {
     { hiragana: "オレンジ", romaji: "orenji", english: "orange" },
     { hiragana: "グレー", romaji: "guree", english: "gray" },
   ],
+  quizKanjis: [
+    /*  {
+      hiragana: "皿",
+      romaji: "sara",
+      english: "assiette",
+    }, */
+    {
+      hiragana: "隅",
+      romaji: "sumi",
+      english: "coin",
+    },
+    /*     {
+      hiragana: "机",
+      romaji: "tsukue",
+      english: "bureau",
+    },
+    {
+      hiragana: "引く",
+      romaji: "hiku",
+      english: "tirer",
+    }, */
+    {
+      hiragana: "箱",
+      romaji: "hako",
+      english: "boîte",
+    },
+    {
+      hiragana: "置く",
+      romaji: "oku",
+      english: "placer",
+    },
+    {
+      hiragana: "片付ける",
+      romaji: "katazukeru",
+      english: "rangé",
+    },
+    {
+      hiragana: "復習",
+      romaji: "fukushuu",
+      english: "révision",
+    },
+    {
+      hiragana: "予習",
+      romaji: "yoshuu",
+      english: "préparation",
+    },
+    {
+      hiragana: "予約",
+      romaji: "yoyaku",
+      english: "réservation",
+    },
+    /*     {
+      hiragana: "並べる",
+      romaji: "naraberu",
+      english: "aligner",
+    }, */
+    {
+      hiragana: "連れて",
+      romaji: "tsurete",
+      english: "emmener",
+    },
+    {
+      hiragana: "連絡",
+      romaji: "renraku",
+      english: "contact",
+    },
+    /*     {
+      hiragana: "元の所",
+      romaji: "motonotokoro",
+      english: "endroit d'origine",
+    }, */
+    {
+      hiragana: "お知らせ",
+      romaji: "oshirase",
+      english: "notification",
+    },
+    /*     {
+      hiragana: "動物園",
+      romaji: "doubutsuen",
+      english: "zoo",
+    }, */
+    /*     {
+      hiragana: "飛ぶ",
+      romaji: "tobu",
+      english: "voler",
+    },
+    {
+      hiragana: "飛行機",
+      romaji: "hikouki",
+      english: "avion",
+    }, */
+    {
+      hiragana: "将来",
+      romaji: "shourai",
+      english: "avenir",
+    },
+    {
+      hiragana: "神社",
+      romaji: "jinja",
+      english: "sanctuaire",
+    },
+    {
+      hiragana: "予定",
+      romaji: "yotei",
+      english: "plan",
+    },
+    {
+      hiragana: "顔",
+      romaji: "kao",
+      english: "visage",
+    },
+    {
+      hiragana: "受ける",
+      romaji: "ukeru",
+      english: "recevoir",
+    },
+    {
+      hiragana: "決める",
+      romaji: "kimeru",
+      english: "décider",
+    },
+    {
+      hiragana: "小説",
+      romaji: "shousetsu",
+      english: "roman",
+    },
+    {
+      hiragana: "本社",
+      romaji: "honsha",
+      english: "siège social",
+    },
+    {
+      hiragana: "大学院",
+      romaji: "daigakuin",
+      english: "école supérieure",
+    },
+  ],
   quizFood: [
     { hiragana: "すし", romaji: "sushi", english: "sushi" },
     { hiragana: "てんぷら", romaji: "tenpura", english: "tempura" },

@@ -1,5 +1,5 @@
 import "./Quiz.scss";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import {} from "../quizSlice.js";
 
@@ -10,7 +10,7 @@ function Quiz() {
   /*   let selectedQuizzesContent =  */
   const [allQuizs, setAllQuizs] = useState([
     {
-      selected: false,
+      selected: true,
       type: "lecture",
       name: "hiraganas",
       content: quizStore.quizHiraganas,
@@ -25,23 +25,30 @@ function Quiz() {
       selected: false,
       type: "lecture",
       name: "kanjis",
-      content: quizStore.quizKatakanas,
+      content: quizStore.quizKanjis,
     },
-    { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
-    { selected: true, name: "couleurs", content: quizStore.quizColors },
-    { selected: true, name: "animaux", content: quizStore.quizAnimals },
-    { selected: true, name: "objets", content: quizStore.quizObjects },
     { selected: false, name: "adjectifs", content: quizStore.quizAdjectives },
-    { selected: false, name: "verbes", content: quizStore.quizVerbs },
-    { selected: false, name: "nourriture", content: quizStore.quizFood },
+    { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
+    /*     { selected: false, name: "couleurs", content: quizStore.quizColors },*/
+    { selected: false, name: "animaux", content: quizStore.quizAnimals },
     { selected: false, name: "vetements", content: quizStore.quizClothes },
+    { selected: false, name: "objets", content: quizStore.quizObjects },
+    { selected: false, name: "verbes", content: quizStore.quizVerbs },
+    /*     { selected: false, name: "nourriture", content: quizStore.quizFood }, */
   ]);
 
   const selectedQuizzesContent = allQuizs
     .filter((quiz) => quiz.selected === true)
     .reduce((acc, quiz) => acc.concat(quiz.content), []);
 
-  const [currentWord, setCurrentWord] = useState(selectedQuizzesContent[0]);
+  const [currentWord, setCurrentWord] = useState(
+    selectedQuizzesContent[0] || {
+      hiragana: "いえ",
+      romaji: "ie",
+      english: "maison",
+    }
+  );
+
   const [previousWord, setPreviousWord] = useState();
   const [inputValue, setInputValue] = useState("");
   const [isCorrect, setIsCorrect] = useState();
@@ -71,7 +78,6 @@ function Quiz() {
     setMauvaiseReponse(inputValue);
     setInputValue("");
     setStreak(0);
-    console.log(selectedQuizzesContent);
   };
 
   const handleKeyDown = (event) => {
@@ -107,36 +113,18 @@ function Quiz() {
 
   document.onkeydown = checkKey;
 
-  /*   const handleQuizChange = (event) => {
-    let temp = event.target.value;
-    switch (event.target.value) {
-      case "hiragana":
-        temp = quizStore.quizHiraganas;
-        setIsOn(false);
-        break;
-      case "katakana":
-        temp = quizStore.quizKatakanas;
-        setIsOn(false);
-        break;
-      case "hiraKata":
-        temp = [...quizStore.quizKatakanas, ...quizStore.quizHiraganas];
-        break;
-      case "daz":
-        temp = quizStore.quizMinnaVocab;
-        setIsOn(true);
-        break;
-      default:
-        break;
-    }
-    selectedQuizzesContent = temp;
-  }; */
-
   useEffect(() => {
-    handleSkip();
+    memoizedHandleSkip();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allQuizs]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const memoizedHandleSkip = useMemo(() => handleSkip, [allQuizs]);
+
   const handleToggleSelected = (name) => {
+    if (!isOn) {
+      setIsOn(true);
+    }
     const selectedCount = allQuizs.reduce((count, quiz) => {
       if (quiz.selected) {
         return count + 1;
@@ -146,16 +134,81 @@ function Quiz() {
     }, 0);
 
     const updatedQuizs = allQuizs.map((quiz) => {
-      if (quiz.name === name && selectedCount > 1) {
-        return { ...quiz, selected: !quiz.selected };
-      } else if (quiz.name === name && selectedCount > 0) {
-        return { ...quiz, selected: true };
+      if (
+        allQuizs
+          .filter((obj) => obj.type === "lecture")
+          .every((obj) => obj.selected === false)
+      ) {
+        if (quiz.name === name && selectedCount > 1) {
+          return { ...quiz, selected: !quiz.selected };
+        } else if (quiz.name === name && selectedCount > 0) {
+          return { ...quiz, selected: true };
+        }
       } else {
-        return quiz;
+        let temp = allQuizs.forEach((quiz) => {
+          if (quiz.type === "lecture") {
+            quiz.selected = false;
+          }
+        });
+        setAllQuizs(temp);
       }
+      return quiz;
     });
 
-    setAllQuizs(updatedQuizs);
+    const isDifferent = updatedQuizs.some(
+      (quiz, index) => quiz.selected !== allQuizs[index].selected
+    );
+
+    if (isDifferent) {
+      setAllQuizs(updatedQuizs);
+    }
+  };
+
+  const handleToggleSelectedKanas = (name) => {
+    if (isOn) {
+      setIsOn(false);
+    }
+    const selectedCount = allQuizs.reduce((count, quiz) => {
+      if (quiz.selected) {
+        return count + 1;
+      } else {
+        return count;
+      }
+    }, 0);
+
+    const updatedQuizs = allQuizs.map((quiz) => {
+      if (
+        allQuizs
+          .filter((obj) => obj.type !== "lecture")
+          .every((obj) => obj.selected === false)
+      ) {
+        if (quiz.name === name && selectedCount > 1) {
+          return { ...quiz, selected: !quiz.selected };
+        } else if (quiz.name === name && selectedCount > 0) {
+          return { ...quiz, selected: true };
+        }
+      } else {
+        if (quiz.name === name && selectedCount > 1) {
+          return { ...quiz, selected: !quiz.selected };
+        } else if (quiz.name === name && selectedCount > 0) {
+          return { ...quiz, selected: true };
+        }
+        let temp = allQuizs.forEach((quiz) => {
+          if (quiz.type !== "lecture") {
+            quiz.selected = false;
+          }
+        });
+        setAllQuizs(temp);
+      }
+      return quiz;
+    });
+    const isDifferent = updatedQuizs.some(
+      (quiz, index) => quiz.selected !== allQuizs[index].selected
+    );
+
+    if (isDifferent) {
+      setAllQuizs(updatedQuizs);
+    }
   };
 
   return (
@@ -172,12 +225,14 @@ function Quiz() {
       <div className="leftCol-quiz">
         {previousWord ? (
           <div className="previousWord">
-            <p className=""> Mot précédent :</p>
-            <p>
-              {previousWord ? previousWord.hiragana : ""} (
-              {previousWord ? previousWord.romaji : ""})
-            </p>
-            <p> {previousWord ? previousWord.english : ""}</p>
+            <p> Mot précédent :</p>
+            <div id="previousWordText">
+              <p>
+                {previousWord ? previousWord.hiragana : ""} (
+                {previousWord ? previousWord.romaji : ""})
+              </p>
+              <p> {previousWord ? previousWord.english : ""}</p>
+            </div>
           </div>
         ) : (
           ""
@@ -186,7 +241,7 @@ function Quiz() {
       {/*========================== LEFT COLUMN - END ========================== */}
       {/*========================== MID COLUMN - START ========================== */}
       <div className="midCol-quiz">
-        <p> {isOn ? currentWord.english : currentWord.hiragana}</p>
+        <p>{isOn ? currentWord.english : currentWord.hiragana}</p>
         <form onSubmit={handleSubmit} ref={formRef}>
           <label
             className={` ${isCorrect ? "correct " : ""} ${
@@ -228,17 +283,20 @@ function Quiz() {
         </select> */}
 
         <div id="filtersQuiz">
-          <p>Lecture : </p>
+          <p>Lecture (Réponses en romajis): </p>
           <div className="filterQuizCat" id="filterQuizHiraKata">
             {allQuizs
               .filter((quiz) => quiz.type === "lecture")
               .map((quiz) => (
-                <button>
+                <button
+                  className={quiz.selected ? "" : "fliterQuizButtonSelected"}
+                  onClick={() => handleToggleSelectedKanas(quiz.name)}
+                >
                   {quiz.name.charAt(0).toUpperCase() + quiz.name.slice(1)}
                 </button>
               ))}
           </div>
-          <p>Categories : </p>
+          <p>Vocabulaire (Réponses en romajis) : </p>
           <div className="filterQuizCat" id="filterQuizOthers">
             {allQuizs
               .filter((quiz) => quiz.type !== "lecture")
