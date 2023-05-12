@@ -158,6 +158,10 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     outline: 1px solid rgb(96, 104, 108);
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    &:focus {
+      outline: 2px solid rgb(120, 129, 134);
+    }
     &.fliterQuizButtonSelected {
       background-color: transparent;
     }

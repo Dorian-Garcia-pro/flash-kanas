@@ -68,6 +68,7 @@ function Quiz() {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
   const handleSkip = () => {
     /*     event.preventDefault(); */
     setPreviousWord(currentWord);
@@ -80,7 +81,22 @@ function Quiz() {
     setStreak(0);
   };
 
-  const handleKeyDown = (event) => {
+  useEffect(() => {
+    if (inputValue === currentWord.romaji) {
+      setIsCorrect(true);
+      setPreviousWord(currentWord);
+      const nextWordIndex = Math.floor(
+        Math.random() * selectedQuizzesContent.length
+      );
+      setCurrentWord(selectedQuizzesContent[nextWordIndex]);
+      setInputValue("");
+      setStreak((prev) => prev + 1);
+      setMauvaiseReponse();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputValue]);
+
+  /*   const handleKeyDown = (event) => {
     if (event.keyCode === 13 && inputValue === currentWord.romaji) {
       handleSubmit(event);
       setIsCorrect(true);
@@ -92,18 +108,26 @@ function Quiz() {
       setInputValue("");
       setStreak((prev) => prev + 1);
       setMauvaiseReponse();
-    } else if (event.keyCode === 13 && inputValue !== currentWord) {
+    } else if (event.keyCode === 13 && inputValue !== currentWord.romaji) {
       setIsCorrect(false);
       setMauvaiseReponse(inputValue);
       setInputValue("");
       setStreak(0);
     }
-  };
+  }; */
+  /*   const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      handleSkip();
+    }
+  }; */
 
   const checkKey = (e) => {
     e = e || window.event;
     switch (e.keyCode) {
       case 222: // escape key
+        handleSkip(e);
+        break;
+      case 13: // escape key
         handleSkip(e);
         break;
       default:
@@ -213,14 +237,6 @@ function Quiz() {
 
   return (
     <div className="quiz-container">
-      {/*       <label className="switch">
-        <input
-          type="checkbox"
-          checked={isOn}
-          onChange={() => setIsOn((prev) => !prev)}
-        ></input>
-        <span className="slider"></span>
-      </label> */}
       {/*========================== LEFT COLUMN - START ========================== */}
       <div className="leftCol-quiz">
         {previousWord ? (
@@ -252,8 +268,8 @@ function Quiz() {
               type="text"
               value={inputValue}
               onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              placeholder="Entrée pour valider"
+              /*   onKeyDown={handleKeyDown} */
+              placeholder="Réponse en romaji"
               autoFocus
             />
             <div className="btn" onClick={handleSkip}>
