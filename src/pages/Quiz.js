@@ -299,7 +299,7 @@ function Quiz() {
         </select> */}
 
         <div id="filtersQuiz">
-          <p>Lecture (Réponses en romajis): </p>
+          <p>Lecture : </p>
           <div className="filterQuizCat" id="filterQuizHiraKata">
             {allQuizs
               .filter((quiz) => quiz.type === "lecture")
@@ -312,7 +312,7 @@ function Quiz() {
                 </button>
               ))}
           </div>
-          <p>Vocabulaire (Réponses en romajis) : </p>
+          <p>Vocabulaire : </p>
           <div className="filterQuizCat" id="filterQuizOthers">
             {allQuizs
               .filter((quiz) => quiz.type !== "lecture")

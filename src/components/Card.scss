@@ -48,7 +48,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 6em;
+  font-size: clamp(1rem, 6rem, 100px);
   font-weight: bold;
   color: whitesmoke;
   backface-visibility: hidden;
