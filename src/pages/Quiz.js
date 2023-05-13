@@ -29,12 +29,12 @@ function Quiz() {
     },
     { selected: false, name: "adjectifs", content: quizStore.quizAdjectives },
     { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
-    /*     { selected: false, name: "couleurs", content: quizStore.quizColors },*/
+    { selected: false, name: "couleurs", content: quizStore.quizColors },
     { selected: false, name: "animaux", content: quizStore.quizAnimals },
     { selected: false, name: "vetements", content: quizStore.quizClothes },
     { selected: false, name: "objets", content: quizStore.quizObjects },
     { selected: false, name: "verbes", content: quizStore.quizVerbs },
-    /*     { selected: false, name: "nourriture", content: quizStore.quizFood }, */
+    { selected: false, name: "nourriture", content: quizStore.quizFood },
   ]);
 
   const selectedQuizzesContent = allQuizs
