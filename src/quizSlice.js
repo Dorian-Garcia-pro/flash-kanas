@@ -171,6 +171,253 @@ const initialState = {
       romaji: "daigakuin",
       english: "école supérieure",
     },
+
+    {
+      hiragana: "会議",
+      romaji: "kaigi",
+      english: "réunion",
+    },
+    {
+      hiragana: "駐車場",
+      romaji: "chuushajou",
+      english: "parking",
+    },
+    {
+      hiragana: "帽子",
+      romaji: "boushi",
+      english: "chapeau",
+    },
+    {
+      hiragana: "市役所",
+      romaji: "shiyakusho",
+      english: "mairie",
+    },
+    {
+      hiragana: "捨てる",
+      romaji: "suteru",
+      english: "jeter",
+    },
+    {
+      hiragana: "遅れる",
+      romaji: "okureru",
+      english: "être en retard",
+    },
+    {
+      hiragana: "遠い",
+      romaji: "tooi",
+      english: "loin",
+    },
+    {
+      hiragana: "歳",
+      romaji: "sai",
+      english: "~ans",
+    },
+    {
+      hiragana: "運動会",
+      romaji: "undoukai",
+      english: "journée sportive",
+    },
+    {
+      hiragana: "気分",
+      romaji: "kibun",
+      english: "état d'esprit",
+    },
+    {
+      hiragana: "声",
+      romaji: "koe",
+      english: "voix",
+    },
+    {
+      hiragana: "道具",
+      romaji: "dougu",
+      english: "outil",
+    },
+    {
+      hiragana: "鳥",
+      romaji: "tori",
+      english: "oiseau",
+    },
+
+    {
+      hiragana: "夢",
+      romaji: "yume",
+      english: "rêve",
+    },
+    {
+      hiragana: "週末",
+      romaji: "shuumatsu",
+      english: "week-end",
+    },
+    {
+      hiragana: "座る",
+      romaji: "suwaru",
+      english: "s'asseoir",
+    },
+    {
+      hiragana: "走る",
+      romaji: "hashiru",
+      english: "courir",
+    },
+    {
+      hiragana: "登る",
+      romaji: "noboru",
+      english: "grimper",
+    },
+    {
+      hiragana: "修理する",
+      romaji: "shuurisuru",
+      english: "réparer",
+    },
+    {
+      hiragana: "お願い",
+      romaji: "onegai",
+      english: "demande",
+    },
+    {
+      hiragana: "形",
+      romaji: "katachi",
+      english: "forme",
+    },
+    {
+      hiragana: "品物",
+      romaji: "shinamono",
+      english: "goods",
+    },
+    {
+      hiragana: "力",
+      romaji: "chikara",
+      english: "force",
+    },
+    {
+      hiragana: "熱い",
+      romaji: "atsui",
+      english: "chaud",
+    },
+    {
+      hiragana: "熱",
+      romaji: "netsu",
+      english: "fièvre",
+    },
+    {
+      hiragana: "熱心",
+      romaji: "nesshin",
+      english: "zélé",
+    },
+    {
+      hiragana: "心",
+      romaji: "kokoro",
+      english: "cœur, esprit",
+    },
+    {
+      hiragana: "経験",
+      romaji: "keiken",
+      english: "expérience",
+    },
+    {
+      hiragana: "景色",
+      romaji: "keshiki",
+      english: "paysage",
+    },
+    {
+      hiragana: "眠い",
+      romaji: "nemui",
+      english: "somnolent",
+    },
+    {
+      hiragana: "説明する",
+      romaji: "setsumeisuru",
+      english: "expliquer",
+    },
+    {
+      hiragana: "選ぶ",
+      romaji: "erabu",
+      english: "choisir",
+    },
+    {
+      hiragana: "通う",
+      romaji: "kayou",
+      english: "fréquenter (ex: fréquenter une école)",
+    },
+    {
+      hiragana: "番号",
+      romaji: "bangou",
+      english: "numéro",
+    },
+    {
+      hiragana: "袋",
+      romaji: "fukuro",
+      english: "sac, poche",
+    },
+    {
+      hiragana: "忘れる",
+      romaji: "wasureru",
+      english: "oublier",
+    },
+    {
+      hiragana: "落とす",
+      romaji: "otosu",
+      english: "faire tomber",
+    },
+    {
+      hiragana: "汚れる",
+      romaji: "yogoreru",
+      english: "se salir",
+    },
+    {
+      hiragana: "洗う",
+      romaji: "arau",
+      english: "laver",
+    },
+    {
+      hiragana: "着く",
+      romaji: "tsuku",
+      english: "arriver (à destination)",
+    },
+    {
+      hiragana: "覚える",
+      romaji: "oboeru",
+      english: "mémoriser, se souvenir",
+    },
+    {
+      hiragana: "調べる",
+      romaji: "shiraberu",
+      english: "rechercher, enquêter",
+    },
+    {
+      hiragana: "取る",
+      romaji: "toru",
+      english: "prendre",
+    },
+    {
+      hiragana: "辺",
+      romaji: "atari",
+      english: "alentours",
+    },
+    {
+      hiragana: "左側",
+      romaji: "hidarigawa",
+      english: "côté gauche",
+    },
+    {
+      hiragana: "住所",
+      romaji: "juusho",
+      english: "adresse",
+    },
+    {
+      hiragana: "外れる",
+      romaji: "hazureru",
+      english: "se déconnecter, être détaché",
+    },
+    {
+      hiragana: "隅",
+      romaji: "sumi",
+      english: "coin, recoin",
+    },
+    {
+      hiragana: "机",
+      romaji: "tsukue",
+      english: "bureau, table",
+    },
   ],
   quizFood: [
     { hiragana: "すし", romaji: "sushi", english: "sushi" },
