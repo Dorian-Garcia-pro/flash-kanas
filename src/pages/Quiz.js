@@ -28,7 +28,7 @@ function Quiz() {
       content: quizStore.quizKanjis,
     },
     { selected: false, name: "adjectifs", content: quizStore.quizAdjectives },
-    { selected: false, name: "daz", content: quizStore.quizMinnaVocab },
+    { selected: false, name: "minna 26-31", content: quizStore.quizMinnaVocab },
     { selected: false, name: "couleurs", content: quizStore.quizColors },
     { selected: false, name: "animaux", content: quizStore.quizAnimals },
     { selected: false, name: "vetements", content: quizStore.quizClothes },

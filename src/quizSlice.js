@@ -1138,12 +1138,12 @@ const initialState = {
     {
       hiragana: "遅れます",
       romaji: "okuremasu",
-      english: "être en retard",
+      english: "être en retard [jikanni~]",
     },
     {
       hiragana: "間に合います",
       romaji: "maniaimasu",
-      english: "être à l'heure",
+      english: "être à l'heure [jikanni~]",
     },
     {
       hiragana: "やります",
@@ -1151,9 +1151,9 @@ const initialState = {
       english: "faire (familier)",
     },
     {
-      hiragana: "広います",
+      hiragana: "拾います",
       romaji: "hiroimasu",
-      english: "s'étendre",
+      english: "rammasser ",
     },
     {
       hiragana: "連絡します",
@@ -1196,6 +1196,16 @@ const initialState = {
       english: "ordures",
     },
     {
+      hiragana: "フリーマーケット",
+      romaji: "furiimaaketto",
+      english: "flee market",
+    },
+    {
+      hiragana: "ボランティア ",
+      romaji: "borantia",
+      english: "volunteer",
+    },
+    {
       hiragana: "国会議事堂",
       romaji: "kokkaigijidou",
       english: "bâtiment du Parlement",
@@ -1208,7 +1218,7 @@ const initialState = {
     {
       hiragana: "今度",
       romaji: "kondo",
-      english: "cette fois-ci",
+      english: "cette fois-ci / prochaine fois / une autre fois",
     },
     {
       hiragana: "随分",
@@ -1248,7 +1258,7 @@ const initialState = {
     {
       hiragana: "だします",
       romaji: "dashimasu",
-      english: "envoyer",
+      english: "sortir (poubelle, feuille du sac etc)",
     },
     {
       hiragana: "もえるゴミ",
@@ -1263,7 +1273,7 @@ const initialState = {
     {
       hiragana: "よこ",
       romaji: "yoko",
-      english: "côté",
+      english: "côté (gauche, droite)",
     },
     {
       hiragana: "びん",
@@ -1293,7 +1303,7 @@ const initialState = {
     {
       hiragana: "ちがいます",
       romaji: "chigaimasu",
-      english: "être différent",
+      english: "être différent, etre incorrect",
     },
     {
       hiragana: "うちゅうひこうし",
@@ -1301,14 +1311,14 @@ const initialState = {
       english: "astronaute",
     },
     {
-      hiragana: "買います",
+      hiragana: "買います / 飼います",
       romaji: "kaimasu",
-      english: "acheter, élever (un animal)",
+      english: "acheter / élever,avoir (un animal)",
     },
     {
       hiragana: "走ります",
       romaji: "hashirimasu",
-      english: "courir",
+      english: "courir [machi wo ~]",
     },
     {
       hiragana: "見えます",
@@ -1323,12 +1333,12 @@ const initialState = {
     {
       hiragana: "出来ます",
       romaji: "dekimasu",
-      english: "pouvoir faire",
+      english: "pouvoir faire / etre construit",
     },
     {
       hiragana: "開きます",
       romaji: "hirakimasu",
-      english: "s'ouvrir",
+      english: "ouvrir un livre,yeux,classe",
     },
     {
       hiragana: "心配",
@@ -1391,9 +1401,9 @@ const initialState = {
       english: "un jour",
     },
     {
-      hiragana: "立てます",
+      hiragana: "立てます / 建てます",
       romaji: "tatemasu",
-      english: "se lever",
+      english: "se lever / to build,be construct",
     },
     {
       hiragana: "素晴らしい",
@@ -1426,6 +1436,11 @@ const initialState = {
       romaji: "tsukaimasu",
       english: "utiliser",
     },
+    {
+      hiragana: "付けます",
+      romaji: "tsukemasu",
+      english: "attacher qlq chose ",
+    },
 
     {
       hiragana: "空",
@@ -1451,6 +1466,721 @@ const initialState = {
       hiragana: "将来",
       romaji: "shourai",
       english: "avenir",
+    },
+    {
+      hiragana: "うれます",
+      romaji: "uremasu",
+      english: "être vendu",
+    },
+    {
+      hiragana: "おどります",
+      romaji: "odorimasu",
+      english: "danser",
+    },
+    {
+      hiragana: "かみます",
+      romaji: "kamimasu",
+      english: "macher/mordre",
+    },
+    {
+      hiragana: "えらびます",
+      romaji: "erabimasu",
+      english: "choisir",
+    },
+    {
+      hiragana: "かよいます",
+      romaji: "kayoimasu",
+      english: "se rendre quelque part aller et retour",
+    },
+    {
+      hiragana: "まじめ",
+      romaji: "majime",
+      english: "sérieux",
+    },
+    {
+      hiragana: "ねっしん",
+      romaji: "nesshin",
+      english: "déterminé, sincere, serieux",
+    },
+    {
+      hiragana: "えらい",
+      romaji: "erai",
+      english: "formidable, admirable",
+    },
+    {
+      hiragana: "ちょうどいい",
+      romaji: "choudoii",
+      english: "juste bien",
+    },
+    {
+      hiragana: "けしき",
+      romaji: "keshiki",
+      english: "paysage",
+    },
+    {
+      hiragana: "びよういん",
+      romaji: "biyouin",
+      english: "salon de beauté",
+    },
+    {
+      hiragana: "だいどころ",
+      romaji: "daidokoro",
+      english: "cuisine",
+    },
+    {
+      hiragana: "けいけん",
+      romaji: "keiken",
+      english: "expérience",
+    },
+    {
+      hiragana: "ちから",
+      romaji: "chikara",
+      english: "force",
+    },
+    {
+      hiragana: "にんき",
+      romaji: "ninki",
+      english: "popularité",
+    },
+    {
+      hiragana: "あじ",
+      romaji: "aji",
+      english: "goût",
+    },
+    {
+      hiragana: "しなもの",
+      romaji: "shinamono",
+      english: "produit, goods, marchandises",
+    },
+    {
+      hiragana: "ねだん",
+      romaji: "nedan",
+      english: "prix",
+    },
+    {
+      hiragana: "きゅうりょう",
+      romaji: "kyuuryou",
+      english: "salaire",
+    },
+    {
+      hiragana: "ばんぐみ",
+      romaji: "bangumi",
+      english: "programme télévisé",
+    },
+    {
+      hiragana: "かしゅ",
+      romaji: "kashu",
+      english: "chanteur",
+    },
+    {
+      hiragana: "しょうせつ",
+      romaji: "shousetsu",
+      english: "roman",
+    },
+    {
+      hiragana: "しょうせつか",
+      romaji: "shousetsuka",
+      english: "écrivain",
+    },
+    {
+      hiragana: "むすこ",
+      romaji: "musuko",
+      english: "fils",
+    },
+    {
+      hiragana: "むすめ",
+      romaji: "musume",
+      english: "fille",
+    },
+    {
+      hiragana: "しばらく",
+      romaji: "shibaraku",
+      english: "un moment, quelques temps",
+    },
+    {
+      hiragana: "たいてい",
+      romaji: "taitei",
+      english: "généralement",
+    },
+    {
+      hiragana: "それに",
+      romaji: "soreni",
+      english: "en outre",
+    },
+    {
+      hiragana: "それで",
+      romaji: "sorede",
+      english: "ainsi",
+    },
+    {
+      hiragana: "かいわ",
+      romaji: "kaiwa",
+      english: "conversation",
+    },
+    {
+      hiragana: "おしらせ",
+      romaji: "oshirase",
+      english: "annonce",
+    },
+    {
+      hiragana: "さんかします",
+      romaji: "sankashimasu",
+      english: "participer",
+    },
+    {
+      hiragana: "ひにち",
+      romaji: "hinichi",
+      english: "date",
+    },
+    {
+      hiragana: "ど",
+      romaji: "do",
+      english: "sol",
+    },
+    {
+      hiragana: "たいいくかん",
+      romaji: "taiikukan",
+      english: "salle de sport",
+    },
+    {
+      hiragana: "むりょう",
+      romaji: "muryou",
+      english: "gratuit",
+    },
+    {
+      hiragana: "さそいます",
+      romaji: "sasoimasu",
+      english: "inviter",
+    },
+
+    {
+      hiragana: "あきます",
+      romaji: "akimasu",
+      english: "etre ouvert",
+    },
+    {
+      hiragana: "しまいます",
+      romaji: "shimaimasu",
+      english: "etre fermé",
+    },
+    {
+      hiragana: "つきます",
+      romaji: "tsukimasu",
+      english: "etre allumé, etre attaché",
+    },
+    {
+      hiragana: "こわれます",
+      romaji: "kowaremasu",
+      english: "se briser, se casser, etre cassé, detruit (immatériel)",
+    },
+    {
+      hiragana: "われます",
+      romaji: "waremasu",
+      english: "briser, casser (vaisselle)",
+    },
+    {
+      hiragana: "おれます",
+      romaji: "oremasu",
+      english: "etre cassé, tordu, plié (arbre, os etc)",
+    },
+    {
+      hiragana: "やぶれます",
+      romaji: "yaburemasu",
+      english: "etre dechiré",
+    },
+    {
+      hiragana: "よごれます",
+      romaji: "yogoremasu",
+      english: "etre sale",
+    },
+    {
+      hiragana: "はずれます",
+      romaji: "hazuremasu",
+      english:
+        "etre détaché, être déconnecté, défaire (bouton de chemise qui saute)",
+    },
+    {
+      hiragana: "とまります",
+      romaji: "tomarimasu",
+      english: "s'arreter, etre arreté",
+    },
+    {
+      hiragana: "まちがえます",
+      romaji: "machigaemasu",
+      english: "faire une erreur, se tromper",
+    },
+    {
+      hiragana: "おとしました",
+      romaji: "otoshimasu",
+      english: "faire tomber, laisser tomber, perdre",
+    },
+    {
+      hiragana: "かかります",
+      romaji: "kakarimasu",
+      english: "etre accroché",
+    },
+    {
+      hiragana: "ふきます",
+      romaji: "fukimasu",
+      english: "essuyer qlq chose",
+    },
+    {
+      hiragana: "とりかえます",
+      romaji: "torikaemasu",
+      english: "echanger qlq chose (taille de vetement etc)",
+    },
+    {
+      hiragana: "かたづけます",
+      romaji: "katazukemasu",
+      english: "ranger",
+    },
+    {
+      hiragana: "さら",
+      romaji: "sara",
+      english: "assiette",
+    },
+    {
+      hiragana: "ちゃわん",
+      romaji: "chawan",
+      english: "bol à riz",
+    },
+    {
+      hiragana: "ふくろ",
+      romaji: "fukuro",
+      english: "poche, sac (en plastique / papier)",
+    },
+    {
+      hiragana: "しょるい",
+      romaji: "shorui",
+      english: "document",
+    },
+    {
+      hiragana: "えだ",
+      romaji: "eda",
+      english: "branche",
+    },
+    {
+      hiragana: "えきいん",
+      romaji: "ekiin",
+      english: "membre du personnel de la gare",
+    },
+    {
+      hiragana: "こうばん",
+      romaji: "kouban",
+      english: "poste de police",
+    },
+    {
+      hiragana: "おさきにどうぞ",
+      romaji: "osakinidouzo",
+      english: "Après vous, je vous en prie.",
+    },
+    {
+      hiragana: "わすれもの",
+      romaji: "wasuremono",
+      english: "objet oublié",
+    },
+    {
+      hiragana: "のくらい",
+      romaji: "nokurai",
+      english: "~environ de cette taille",
+    },
+    {
+      hiragana: "がわ",
+      romaji: "gawa",
+      english: "côté",
+    },
+    {
+      hiragana: "へん",
+      romaji: "hen",
+      english: "étrange",
+    },
+    {
+      hiragana: "あみだな",
+      romaji: "amidana",
+      english: "étagére",
+    },
+    {
+      hiragana: "たしか",
+      romaji: "tashika",
+      english: "certain",
+    },
+    {
+      hiragana: "じしん",
+      romaji: "jishin",
+      english: "tremblement de terre",
+    },
+    {
+      hiragana: "かべ",
+      romaji: "kabe",
+      english: "mur",
+    },
+    {
+      hiragana: "はり",
+      romaji: "hari",
+      english: "aiguille d'horloge",
+    },
+    {
+      hiragana: "さします",
+      romaji: "sashimasu",
+      english: "pointer du doigt",
+    },
+    {
+      hiragana: "はります",
+      romaji: "harimasu",
+      english: "coller",
+    },
+    {
+      hiragana: "かけます",
+      romaji: "kakemasu",
+      english: "accrocher quelque chose",
+    },
+    {
+      hiragana: "かざります",
+      romaji: "kazarimasu",
+      english: "décorer",
+    },
+    {
+      hiragana: "ならべます",
+      romaji: "narabemasu",
+      english: "aligner",
+    },
+    {
+      hiragana: "うえます",
+      romaji: "uemasu",
+      english: "planter, faire pousser des fleurs",
+    },
+    {
+      hiragana: "もどします",
+      romaji: "modoshimasu",
+      english: "rendre, remettre a sa place ",
+    },
+    {
+      hiragana: "まとめます",
+      romaji: "matomemasu",
+      english: "rassembler, mettre en forme, resumer",
+    },
+    {
+      hiragana: "しまいます",
+      romaji: "shimaimasu",
+      english: "ranger, mettre les choses a leurs place",
+    },
+    {
+      hiragana: "きめます",
+      romaji: "kimemasu",
+      english: "décider",
+    },
+    {
+      hiragana: "よしゅうします",
+      romaji: "yoshuushimasu",
+      english: "reviser avant un cours, préparer une lesson",
+    },
+    {
+      hiragana: "ふくしゅうします",
+      romaji: "fukushuushimasu",
+      english: "réviser",
+    },
+    {
+      hiragana: "そのままにします",
+      romaji: "sonomamanishimasu",
+      english: "laisser tel quel",
+    },
+    {
+      hiragana: "じゅぎょう",
+      romaji: "jugyou",
+      english: "leçon",
+    },
+    {
+      hiragana: "こうぎ",
+      romaji: "kougi",
+      english: "une lesson / a lecture",
+    },
+    {
+      hiragana: "よてい",
+      romaji: "yotei",
+      english: "emploi du temps",
+    },
+    {
+      hiragana: "おしらせ",
+      romaji: "oshirase",
+      english: "annonce",
+    },
+    {
+      hiragana: "ごみばこ",
+      romaji: "gomibako",
+      english: "poubelle",
+    },
+    {
+      hiragana: "にんぎょう",
+      romaji: "ningyou",
+      english: "poupée",
+    },
+    {
+      hiragana: "かびん",
+      romaji: "kabin",
+      english: "vase",
+    },
+    {
+      hiragana: "かがみ",
+      romaji: "kagami",
+      english: "miroir",
+    },
+    {
+      hiragana: "ひきだし",
+      romaji: "hikidashi",
+      english: "tiroir",
+    },
+    {
+      hiragana: "ろうか",
+      romaji: "rouka",
+      english: "couloir",
+    },
+    {
+      hiragana: "いけ",
+      romaji: "ike",
+      english: "bassin, etang",
+    },
+    {
+      hiragana: "もとのところ",
+      romaji: "motonotokoro",
+      english: "position initiale",
+    },
+
+    {
+      hiragana: "まわり",
+      romaji: "mawari",
+      english: "autour",
+    },
+    {
+      hiragana: "まんなか",
+      romaji: "mannaka",
+      english: "milieu",
+    },
+    {
+      hiragana: "すみ",
+      romaji: "sumi",
+      english: "coin",
+    },
+    {
+      hiragana: "まだ",
+      romaji: "mada",
+      english: "encore, deja",
+    },
+    {
+      hiragana: "まるい",
+      romaji: "marui",
+      english: "rond",
+    },
+    {
+      hiragana: "うれしい",
+      romaji: "ureshii",
+      english: "heureux",
+    },
+    {
+      hiragana: "いや",
+      romaji: "iya",
+      english: "hateful / desagréable",
+    },
+    {
+      hiragana: "すると",
+      romaji: "suruto",
+      english: "alors",
+    },
+    {
+      hiragana: "めがさめします",
+      romaji: "megasameshimasu",
+      english: "se réveiller",
+    },
+
+    {
+      hiragana: "つづけます",
+      romaji: "tsuzukemasu",
+      english: "continuer",
+    },
+    {
+      hiragana: "みつけます",
+      romaji: "mitsukemasu",
+      english: "trouver",
+    },
+    {
+      hiragana: "とります",
+      romaji: "torimasu",
+      english: "prendre ",
+    },
+    {
+      hiragana: "うけます",
+      romaji: "ukemasu",
+      english: "take an exam",
+    },
+    {
+      hiragana: "もうしこみます",
+      romaji: "moushikomimasu",
+      english: "postuler",
+    },
+    {
+      hiragana: "きゅうけいします",
+      romaji: "kyuukeishimasu",
+      english: "prendre un congé",
+    },
+    {
+      hiragana: "れんきゅう",
+      romaji: "renkyuu",
+      english: "congé",
+    },
+    {
+      hiragana: "さくぶん",
+      romaji: "sakubun",
+      english: "essai, composition",
+    },
+    {
+      hiragana: "はっぴょう",
+      romaji: "happyou",
+      english: "présentation",
+    },
+    {
+      hiragana: "てんらんかい",
+      romaji: "tenrankai",
+      english: "exposition",
+    },
+    {
+      hiragana: "けっこんしき",
+      romaji: "kekkonshiki",
+      english: "cérémonie de mariage",
+    },
+    {
+      hiragana: "そうしき",
+      romaji: "soushiki",
+      english: "funerailles",
+    },
+    {
+      hiragana: "しき",
+      romaji: "shiki",
+      english: "cérémonie",
+    },
+    {
+      hiragana: "ほんしゃ",
+      romaji: "honsha",
+      english: "siège social",
+    },
+    {
+      hiragana: "してん",
+      romaji: "shiten",
+      english: "succursale",
+    },
+    {
+      hiragana: "きょうかい",
+      romaji: "kyoukai",
+      english: "église",
+    },
+    {
+      hiragana: "だいがくいん",
+      romaji: "daigakuin",
+      english: "école supérieure",
+    },
+    {
+      hiragana: "どうぶつえん",
+      romaji: "doubutsuen",
+      english: "zoo",
+    },
+    {
+      hiragana: "かえり",
+      romaji: "kaeri",
+      english: "retour",
+    },
+    {
+      hiragana: "ずっと",
+      romaji: "zutto",
+      english: "tout le temps, tout du long",
+    },
+
+    {
+      hiragana: "のこります",
+      romaji: "nokorimasu",
+      english: "rester (to remain, to be left)",
+    },
+    {
+      hiragana: "にゅうがくしけん",
+      romaji: "nyuugakushiken",
+      english: "examen d'entrée",
+    },
+    {
+      hiragana: "つきに",
+      romaji: "tsukini",
+      english: "mensuellement",
+    },
+    {
+      hiragana: "むら",
+      romaji: "mura",
+      english: "village",
+    },
+    {
+      hiragana: "そつぎょう",
+      romaji: "sotsugyou",
+      english: "diplômé",
+    },
+    {
+      hiragana: "えいがかん",
+      romaji: "eigakan",
+      english: "cinéma",
+    },
+    {
+      hiragana: "とじます",
+      romaji: "tojimasu",
+      english: "fermer(yeux, livres etc)",
+    },
+    {
+      hiragana: "とかい",
+      romaji: "tokai",
+      english: "ville",
+    },
+    {
+      hiragana: "落ちる",
+      romaji: "ochimasu",
+      english: "tomber",
+    },
+    {
+      hiragana: "出る",
+      romaji: "demasu",
+      english: "sortir soi meme",
+    },
+    {
+      hiragana: "入る",
+      romaji: "hairimasu",
+      english: "entrer dans",
+    },
+    {
+      hiragana: "開ける",
+      romaji: "akemasu",
+      english: "ouvrir qlq chose",
+    },
+    {
+      hiragana: "閉める",
+      romaji: "shimemasu",
+      english: "fermer qlq chose",
+    },
+    {
+      hiragana: "閉まる",
+      romaji: "shimarimasu",
+      english: "etre fermé",
+    },
+    {
+      hiragana: "付ける",
+      romaji: "tsukemasu",
+      english: "attacher qlq chose",
+    },
+    {
+      hiragana: "消す",
+      romaji: "keshimasu",
+      english: "effacer qlq chose",
+    },
+    {
+      hiragana: "消える",
+      romaji: "kiemasu",
+      english: "disparaître, etre éteint",
+    },
+    {
+      hiragana: "かかります",
+      romaji: "kakarimasu",
+      english: "verrouiller",
     },
   ],
   quizMinnaVocab: [
@@ -1607,7 +2337,7 @@ const initialState = {
     {
       hiragana: "よこ",
       romaji: "yoko",
-      english: "côté",
+      english: "côté (gauche, droite)",
     },
     {
       hiragana: "びん",
@@ -2085,7 +2815,7 @@ const initialState = {
     {
       hiragana: "ふくろ",
       romaji: "fukuro",
-      english: "sac",
+      english: "poche, sac (en plastique / papier)",
     },
     {
       hiragana: "しょるい",
@@ -2427,7 +3157,7 @@ const initialState = {
     {
       hiragana: "ずっと",
       romaji: "zutto",
-      english: "tout le temps",
+      english: "tout le temps, tout du long",
     },
 
     {
@@ -2469,11 +3199,6 @@ const initialState = {
       hiragana: "とかい",
       romaji: "tokai",
       english: "ville",
-    },
-    {
-      hiragana: "じゅうに",
-      romaji: "juuni",
-      english: "librement",
     },
     {
       hiragana: "落ちる",
