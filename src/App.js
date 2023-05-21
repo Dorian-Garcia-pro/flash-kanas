@@ -3,6 +3,7 @@ import Nav from "./components/Nav.js";
 import Deck from "./components/Deck.js";
 import Quiz from "./pages/Quiz";
 import Grammaire from "./pages/Grammaire";
+import Admin from "./pages/Admin";
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,6 +25,7 @@ function App() {
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/histoires" element={<Histoires />} />
             <Route path="/grammaire" element={<Grammaire />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<Deck />} />
           </Routes>
         </Router>
