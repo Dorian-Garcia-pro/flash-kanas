@@ -10,6 +10,7 @@ import {
   serverTimestamp,
   updateDoc,
 } from "@firebase/firestore";
+
 import db from "./firebase";
 
 export const handleNew = async () => {
@@ -28,12 +29,12 @@ export const handleEdit = async (id) => {
   updateDoc(docref, payload);
 };
 
-export const handleDelete = async (id) => {
-  const docref = doc(db, "colors", id);
+export const handleDelete = async (id, base) => {
+  const docref = doc(db, base, id);
   await deleteDoc(docref);
 };
 
-export const handleQueryDelete = async () => {
+/* export const handleQueryDelete = async () => {
   const userInputName = prompt("Color name query?");
   const collectionRef = collection(db, "colors");
   const q = query(collectionRef, where("name", "==", userInputName));
@@ -43,33 +44,12 @@ export const handleQueryDelete = async () => {
   results.forEach(async (result) => {
     await deleteDoc(doc(db, "colors", result.id));
   });
-};
+}; */
 
-export const handleQueryAdd = async () => {
-  const listHiraganas = [
-    { hiragana: "いぬ", romaji: "inu", english: "chien" },
-    { hiragana: "ねこ", romaji: "neko", english: "chat" },
-    { hiragana: "とり", romaji: "tori", english: "oiseau" },
-    { hiragana: "さる", romaji: "saru", english: "singe" },
-    { hiragana: "くま", romaji: "kuma", english: "ours" },
-    { hiragana: "ぞう", romaji: "zou", english: "elephant" },
-    { hiragana: "たこ", romaji: "tako", english: "octopus" },
-    { hiragana: "さめ", romaji: "same", english: "requin" },
-    { hiragana: "とら", romaji: "tora", english: "tigre" },
-    { hiragana: "ひつじ", romaji: "hitsuji", english: "mouton" },
-    { hiragana: "とんぼ", romaji: "tonbo", english: "libellule" },
-    { hiragana: "さかな", romaji: "sakana", english: "poisson" },
-    { hiragana: "へび", romaji: "hebi", english: "serpent" },
-    { hiragana: "たぬき", romaji: "tanuki", english: "raton laveur" },
-    { hiragana: "たいらいし", romaji: "tairaisi", english: "hippocampe" },
-    { hiragana: "うさぎ", romaji: "usagi", english: "lapin" },
-    { hiragana: "かめ", romaji: "kame", english: "tortue" },
-    { hiragana: "あざらし", romaji: "azarashi", english: "phoque" },
-    { hiragana: "かえる", romaji: "kaeru", english: "grenouille" },
-  ];
-  const collectionRef = collection(db, "quizs/animaux/childrens");
+export const handleQueryAdd = async (base, input) => {
+  const collectionRef = collection(db, base);
 
-  listHiraganas.forEach(async (kana) => {
+  input.forEach(async (kana) => {
     await addDoc(collectionRef, kana);
   });
 };

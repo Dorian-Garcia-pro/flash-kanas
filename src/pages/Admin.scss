@@ -1,0 +1,33 @@
+#adminContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10vh;
+  & > .colAdmin {
+    width: 100%;
+    & textarea {
+      resize: vertical;
+      min-height: 1ch;
+      height: auto;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 4px;
+      &::placeholder {
+        vertical-align: middle;
+      }
+      &#jsonInput {
+        overflow: auto;
+        width: 80%;
+        min-height: 12rem;
+      }
+    }
+  }
+  & > .colAdmin.right {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+  }
+}
