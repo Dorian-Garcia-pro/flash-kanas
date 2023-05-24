@@ -47,9 +47,23 @@ export const handleDelete = async (id, base) => {
 }; */
 
 export const handleQueryAdd = async (base, input) => {
+  const collectionRef = doc(db, base);
+  await setDoc(collectionRef, { name: base });
+
+  const dovRef = collection(db, base + "/childrens");
+  input.forEach(async (kana) => {
+    await addDoc(dovRef, kana);
+  });
+
+  /*   const docRef = collection(db, base);
+  input.forEach(async (kana) => {
+    await addDoc(docRef, kana);
+  }); */
+};
+/* export const handleQueryAdd = async (base, input) => {
   const collectionRef = collection(db, base);
 
   input.forEach(async (kana) => {
     await addDoc(collectionRef, kana);
   });
-};
+}; */

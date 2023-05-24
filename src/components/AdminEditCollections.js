@@ -18,7 +18,7 @@ import {
   collectionList,
 } from "../util";
 import "firebase/compat/firestore";
-function Admin() {
+function AdminEditCollection() {
   const [selectedOption, setSelectedOption] = useState("");
   const [inputArray, setInputArray] = useState();
   const [createBaseField, setCreateBaseField] = useState(false);
@@ -36,6 +36,28 @@ function Admin() {
     { name: "Loading...", id: "initial" },
   ]);
 
+  useEffect(() => {
+    const baseHiraganas = "kanas/hiraganas/childrens";
+    const baseKatakanas = "kanas/katakanas/childrens";
+    onSnapshot(collection(db, baseHiraganas), (snapshot) => {
+      setHiraganas(
+        snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+          base: baseHiraganas,
+        }))
+      );
+    });
+    onSnapshot(collection(db, baseKatakanas), (snapshot) => {
+      setKatananas(
+        snapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+          base: baseKatakanas,
+        }))
+      );
+    });
+  }, []);
   useEffect(() => {
     const base = "quizs/animaux/childrens";
     onSnapshot(collection(db, base), (snapshot) => {
@@ -187,4 +209,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminEditCollection;
