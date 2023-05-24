@@ -1,17 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {
-  collection,
-  onSnapshot,
-  getFirestore,
-  doc,
-  getDocs,
-} from "@firebase/firestore";
+import { collection, onSnapshot } from "@firebase/firestore";
 import "../pages/Admin.scss";
 import db from "../firebase";
-import "firebase/compat/firestore";
 import { handleQueryAdd } from "../util";
-function AdminEditCollections() {
+import "firebase/compat/firestore";
+
+function AdminAddCollections() {
   const [inputArray, setInputArray] = useState([
     {
       romaji: "",
@@ -19,11 +14,47 @@ function AdminEditCollections() {
       english: "",
     },
   ]);
+  const [createBaseField, setCreateBaseField] = useState(false);
+  const [errorInput, setErrorInput] = useState(false);
+  const [inputArrayBase, setInputArrayBase] = useState("/quizs/exemple");
+
+  /*   useEffect(() => {
+    const base = "quizs/animaux/childrens";
+    onSnapshot(collection(db, base), (snapshot) => {
+      setAnimaux(
+        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, base }))
+      );
+    });
+  }, []); */
+
+  const handleInputJson = (event) => {
+    try {
+      const parsedJson = JSON.parse(event.target.value);
+      setInputArray(parsedJson);
+      setErrorInput(false);
+    } catch (error) {
+      setInputArray([]);
+      setErrorInput(true);
+    }
+  };
+
+  const handleChangeOptions = (e) => {
+    if (e !== "create") {
+      setInputArrayBase(e);
+      setCreateBaseField(false);
+    } else {
+      setCreateBaseField(true);
+    }
+  };
+
   const [collectionsList, setCollectionsList] = useState();
-  const [selectedCollection, setSelectedCollection] = useState(
-    "/quizs/animaux/childrens"
-  );
-  const [selectedCollectionList, setSelectedCollectionList] = useState();
+
+  const handleCellValueChange = (index, field, value) => {
+    const updatedData = [...inputArray];
+    updatedData[index][field] = value;
+    setInputArray(updatedData);
+    console.log(inputArray);
+  };
 
   useEffect(() => {
     const base = "quizs";
@@ -34,42 +65,18 @@ function AdminEditCollections() {
     });
   }, []);
 
-  useEffect(() => {
-    const base = selectedCollection;
-    onSnapshot(collection(db, base), (snapshot) => {
-      setInputArray(
-        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, base }))
-      );
-    });
-  }, [selectedCollection]);
-
-  const handleChangeOptions = (e) => {
-    setSelectedCollection(e + "/childrens");
-    console.log(collectionsList); // liste des collections
-    console.log(selectedCollection);
-    console.log(selectedCollectionList); //liste des mots
-  };
-
-  const handleCellValueChange = (index, field, value) => {
-    const updatedData = [...inputArray];
-    updatedData[index][field] = value;
-    setInputArray(updatedData);
-    console.log(inputArray);
-  };
-
   return (
-    <div id="adminContainer">
+    <div id="adminMenuAddCollection">
       <div className="colAdmin left">
-        {/*         <button
+        <button
           className="button"
           onClick={() => handleQueryAdd(inputArrayBase, inputArray)}
         >
           add kanas
-        </button> */}
+        </button>
         <div className="dropdown-menu">
-          {/*      <p>{selectedCollection.id}</p> */}
           <select onChange={(event) => handleChangeOptions(event.target.value)}>
-            <option value="exemple" defaultChecked disabled>
+            <option value="exemple" defaultChecked>
               Select an option
             </option>
             {collectionsList?.map((base, index) => (
@@ -77,8 +84,25 @@ function AdminEditCollections() {
                 {base.id}
               </option>
             ))}
+            <option value="create">New quiz</option>
           </select>
         </div>
+        {createBaseField ? (
+          <textarea
+            placeholder={"Nom de la base a créér"}
+            onChange={(event) =>
+              setInputArrayBase("/quizs/" + event.target.value)
+            }
+          ></textarea>
+        ) : null}
+
+        <p>{inputArrayBase}</p>
+        <textarea
+          id="jsonInput"
+          placeholder={"Insérer un JSON"}
+          onChange={(event) => handleInputJson(event)}
+        ></textarea>
+        {errorInput ? <p>JSON invalide</p> : null}
       </div>
 
       <div className="colAdmin right">
@@ -131,4 +155,4 @@ function AdminEditCollections() {
   );
 }
 
-export default AdminEditCollections;
+export default AdminAddCollections;
