@@ -18,12 +18,17 @@ export const handleNew = async () => {
   const docRef = await addDoc(collectionRef, payload);
 };
 
-export const handleEdit = async (id) => {
-  const name = prompt("Color name?");
-  const value = prompt("Color value?");
-  const docref = doc(db, "colors", id);
-  const payload = { name, value };
-  updateDoc(docref, payload);
+export const handleEdit = async (input) => {
+  input.forEach(async (e) => {
+    console.log(e);
+    const docref = doc(db, e.base, e.id);
+    const payload = {
+      english: e.english,
+      hiragana: e.hiragana,
+      romaji: e.romaji,
+    };
+    await updateDoc(docref, payload);
+  });
 };
 
 export const handleDelete = async (id, base) => {
@@ -48,8 +53,17 @@ export const handleQueryAdd = async (base, input) => {
   await setDoc(collectionRef, { name: base });
 
   const dovRef = collection(db, base + "/childrens");
+
   input.forEach(async (kana) => {
-    await addDoc(dovRef, kana);
+    const payload = {
+      english: kana.english,
+      romaji: kana.romaji,
+      hiragana: kana.hiragana,
+      time: serverTimestamp(),
+    };
+
+    await addDoc(dovRef, payload);
+    console.log(kana);
   });
 
   /*   const docRef = collection(db, base);

@@ -6,7 +6,7 @@ import AdminAddCollections from "../components/AdminAddCollections";
 import AdminEditCollections from "../components/AdminEditCollections";
 function Admin() {
   return (
-    <div id="adminContainer">
+    <div id="adminMainContainer">
       {/*      <AdminAddCollections /> */}
       <AdminEditCollections />
     </div>

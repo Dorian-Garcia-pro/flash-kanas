@@ -1,10 +1,16 @@
+#adminMainContainer {
+  width: 100%;
+  height: 88vh;
+  margin-top: 12vh;
+}
+
 #adminContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   justify-content: center;
-  margin-top: 10vh;
+  height: 100%;
   & > .colAdmin {
     width: 100%;
     & textarea {
@@ -27,7 +33,31 @@
   }
   & > .colAdmin.right {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     font-size: 1rem;
+    align-items: flex-end;
+    height: 100%;
   }
+
+  & .adminContainerEdit {
+    margin-top: 0;
+  }
+}
+
+#tableAdmin {
+  & > tbody {
+    display: block;
+    max-height: 75vh;
+    overflow-y: scroll;
+  }
+}
+
+#containerInputsNewWord {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#containerInputsNewWordTableAdmin {
+  width: fit-content;
 }
