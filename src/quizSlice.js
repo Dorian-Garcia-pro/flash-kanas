@@ -3723,7 +3723,7 @@ const initialState = {
     {
       hiragana: "伝える",
       romaji: "tsutaeru",
-      english: "communiquer",
+      english: "communiquer, transmettre",
     },
 
     {
@@ -3839,13 +3839,8 @@ const initialState = {
     },
     {
       hiragana: "組み立てる",
-      romaji: "kumitatateru",
+      romaji: "kumitateru",
       english: "assembler",
-    },
-    {
-      hiragana: "降りる",
-      romaji: "oriru",
-      english: "plier, plier, casser, se casser",
     },
     {
       hiragana: "気がつく",
@@ -3864,17 +3859,17 @@ const initialState = {
     },
     {
       hiragana: "質問する",
-      romaji: "shitsumon suru",
+      romaji: "shitsumonsuru",
       english: "poser une question",
     },
     {
       hiragana: "スポーツクラブ",
-      romaji: "supōtsu kurabu",
+      romaji: "supoutsukurabu",
       english: "club de sport",
     },
     {
       hiragana: "説明書",
-      romaji: "setsumei sho",
+      romaji: "setsumeisho",
       english: "brochure explicative, manuel d'instructions",
     },
     {
@@ -3929,17 +3924,17 @@ const initialState = {
     },
     {
       hiragana: "しょうゆ",
-      romaji: "shōyu",
+      romaji: "shouyu",
       english: "sauce soja",
     },
     {
       hiragana: "ソース",
-      romaji: "sōsu",
+      romaji: "sousu",
       english: "sauce, sauce Worcestershire",
     },
     {
       hiragana: "ゆうべ",
-      romaji: "yūbe",
+      romaji: "yuube",
       english: "hier soir",
     },
     {
@@ -3949,7 +3944,7 @@ const initialState = {
     },
     {
       hiragana: "茶道",
-      romaji: "sadō",
+      romaji: "sadou",
       english: "cérémonie du thé",
     },
     {
@@ -3969,7 +3964,7 @@ const initialState = {
     },
     {
       hiragana: "これでいいですか",
-      romaji: "kore de ii desu ka",
+      romaji: "koredeiidesuka",
       english: "Est-ce que cela convient ?",
     },
     {
@@ -3979,12 +3974,12 @@ const initialState = {
     },
     {
       hiragana: "親子どんぶり",
-      romaji: "oyako donburi",
+      romaji: "oyakodonburi",
       english: "bol de riz avec du poulet et de l'œuf",
     },
     {
       hiragana: "材料",
-      romaji: "zairyō",
+      romaji: "zairyou",
       english: "matériau, ingrédient",
     },
     {
@@ -4014,7 +4009,7 @@ const initialState = {
     },
     {
       hiragana: "調味料",
-      romaji: "chōmiryō",
+      romaji: "choumiryou",
       english: "assaisonnement, condiment",
     },
     {
@@ -4054,7 +4049,7 @@ const initialState = {
     },
     {
       hiragana: "適当な大きさに",
-      romaji: "tekitouna ookisani",
+      romaji: "tekitounaookisani",
       english: "à une taille appropriée",
     },
 
@@ -4310,7 +4305,7 @@ const initialState = {
     },
     {
       hiragana: "絶対に",
-      romaji: "zettai ni",
+      romaji: "zettaini",
       english: "absolutely (used with negatives)",
     },
     {
