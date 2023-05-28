@@ -28,7 +28,7 @@ function Quiz() {
       content: quizStore.quizKanjis,
     },
     { selected: false, name: "adjectifs", content: quizStore.quizAdjectives },
-    { selected: false, name: "minna 26-31", content: quizStore.quizMinnaVocab },
+    { selected: false, name: "minna 32-36", content: quizStore.quizMinnaVocab },
     { selected: false, name: "couleurs", content: quizStore.quizColors },
     { selected: false, name: "animaux", content: quizStore.quizAnimals },
     { selected: false, name: "vetements", content: quizStore.quizClothes },
@@ -157,7 +157,7 @@ function Quiz() {
       }
     }, 0);
 
-    const updatedQuizs = allQuizs.map((quiz) => {
+    const updatedQuizs = allQuizs?.map((quiz) => {
       if (
         allQuizs
           .filter((obj) => obj.type === "lecture")
@@ -200,7 +200,7 @@ function Quiz() {
       }
     }, 0);
 
-    const updatedQuizs = allQuizs.map((quiz) => {
+    const updatedQuizs = allQuizs?.map((quiz) => {
       if (
         allQuizs
           .filter((obj) => obj.type !== "lecture")
@@ -303,7 +303,7 @@ function Quiz() {
           <div className="filterQuizCat" id="filterQuizHiraKata">
             {allQuizs
               .filter((quiz) => quiz.type === "lecture")
-              .map((quiz) => (
+              ?.map((quiz) => (
                 <button
                   className={quiz.selected ? "" : "fliterQuizButtonSelected"}
                   onClick={() => handleToggleSelectedKanas(quiz.name)}
@@ -316,7 +316,7 @@ function Quiz() {
           <div className="filterQuizCat" id="filterQuizOthers">
             {allQuizs
               .filter((quiz) => quiz.type !== "lecture")
-              .map((quiz) => (
+              ?.map((quiz) => (
                 <button
                   className={quiz.selected ? "" : "fliterQuizButtonSelected"}
                   onClick={() => handleToggleSelected(quiz.name)}
