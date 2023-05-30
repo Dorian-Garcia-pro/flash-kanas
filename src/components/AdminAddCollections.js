@@ -50,6 +50,7 @@ function AdminAddCollections() {
 
   const handleCellValueChange = (index, field, value) => {
     const updatedData = [...inputArray];
+    console.log(updatedData);
     updatedData[index][field] = value;
     setInputArray(updatedData);
   };

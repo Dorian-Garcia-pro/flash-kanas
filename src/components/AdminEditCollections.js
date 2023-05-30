@@ -20,6 +20,13 @@ function AdminEditCollections() {
       english: "",
     },
   ]);
+  const [addNewWordLeVrai, setAddNewWordLeVrai] = useState([
+    {
+      romaji: "",
+      hiragana: "",
+      english: "",
+    },
+  ]);
   const [collectionsList, setCollectionsList] = useState();
   const [selectedCollection, setSelectedCollection] = useState(
     "/quizs/adjectifs/childrens"
@@ -35,6 +42,7 @@ function AdminEditCollections() {
       );
     });
   }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const base = selectedCollection;
@@ -44,7 +52,6 @@ function AdminEditCollections() {
           ...doc.data(),
           id: doc.id,
           base,
-          /*     time: doc.time, */
         }))
       );
     });
@@ -53,16 +60,18 @@ function AdminEditCollections() {
   const handleChangeOptions = (e) => {
     setSelectedCollection(e + "/childrens");
     setSelectedCollectionShort(e);
-    console.log(collectionsList); // liste des collections
-    console.log(selectedCollection);
-    console.log(inputArray); //liste des mots
   };
 
   const handleCellValueChange = (index, field, value) => {
-    const updatedData = [...addNewWord];
+    const updatedData = [...inputArray];
     updatedData[index][field] = value;
     setAddNewWord(updatedData);
-    console.log(addNewWord);
+  };
+
+  const handleAddNewWord = (index, field, value) => {
+    const updatedData = [...addNewWord];
+    updatedData[index][field] = value;
+    setAddNewWordLeVrai(updatedData);
   };
 
   return (
@@ -90,25 +99,19 @@ function AdminEditCollections() {
           <div id="containerInputsNewWord">
             <input
               type="text"
-              onChange={(e) =>
-                handleCellValueChange(0, "hiragana", e.target.value)
-              }
+              onChange={(e) => handleAddNewWord(0, "hiragana", e.target.value)}
             />
             <input
               type="text"
-              onChange={(e) =>
-                handleCellValueChange(0, "romaji", e.target.value)
-              }
+              onChange={(e) => handleAddNewWord(0, "romaji", e.target.value)}
             />
             <input
               type="text"
-              onChange={(e) =>
-                handleCellValueChange(0, "english", e.target.value)
-              }
+              onChange={(e) => handleAddNewWord(0, "english", e.target.value)}
             />
             <button
               onClick={() =>
-                handleQueryAdd(selectedCollectionShort, addNewWord)
+                handleQueryAdd(selectedCollectionShort, addNewWordLeVrai)
               }
             >
               Add
