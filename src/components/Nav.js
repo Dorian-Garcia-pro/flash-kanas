@@ -56,7 +56,9 @@ function Nav() {
               <li key={route.route}>
                 <Link
                   to={route.route}
-                  className={location.pathname === route.route ? "active" : ""}
+                  className={
+                    location.pathname.includes(route.route) ? "active" : ""
+                  }
                 >
                   {route.name}
                 </Link>

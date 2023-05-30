@@ -1,7 +1,23 @@
 #adminMainContainer {
   width: 100%;
-  height: 88vh;
-  margin-top: 12vh;
+  height: 90vh;
+  margin-top: 10vh;
+}
+
+#dropdownMenuSelectQuiz {
+  padding: 4px;
+}
+#inputCreateQuiz {
+  overflow: unset;
+  padding: 4px;
+  min-width: 20ch;
+}
+
+#jsonInput {
+  overflow: auto;
+  width: 80%;
+  min-height: 20vh;
+  max-width: 40vw;
 }
 
 #adminContainer {
@@ -10,9 +26,10 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  height: 100%;
+
   & > .colAdmin {
     width: 100%;
+
     & textarea {
       resize: vertical;
       min-height: 1ch;
@@ -24,11 +41,6 @@
       &::placeholder {
         vertical-align: middle;
       }
-      &#jsonInput {
-        overflow: auto;
-        width: 80%;
-        min-height: 12rem;
-      }
     }
   }
   & > .colAdmin.right {
@@ -36,7 +48,7 @@
     flex-direction: column;
     justify-content: flex-start;
     font-size: 1rem;
-    align-items: flex-end;
+    align-items: center;
     height: 100%;
   }
 
@@ -48,7 +60,7 @@
 #tableAdmin {
   & > tbody {
     display: block;
-    max-height: 75vh;
+    max-height: 72vh;
     overflow-y: scroll;
   }
 }
@@ -60,4 +72,72 @@
 
 #containerInputsNewWordTableAdmin {
   width: fit-content;
+}
+
+#navMenuDesktopAdmin {
+  height: 8vh;
+  & > #drawerDesktop {
+    padding-right: 0rem;
+  }
+  & > #drawerDesktop > ul > li > a {
+    padding: 0rem 0rem 2rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+#adminMenuAddCollection {
+  display: flex;
+  height: 82vh;
+  & > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  & > .colAdmin.right {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+#tableAdmin.adminAddTable {
+  display: block;
+}
+
+#tableAdmin.adminAddTable {
+  & > thead {
+    display: block;
+    width: 100%;
+    & > tr {
+      padding-right: 1rem;
+      display: flex;
+      justify-content: space-around;
+
+      & > th {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 0 0.5rem 0;
+      }
+    }
+  }
+
+  & > tbody {
+    display: block;
+    max-height: 72vh;
+    overflow-y: scroll;
+    width: fit-content;
+  }
+  & tr {
+    height: 100%;
+    & > td {
+      height: 100%;
+
+      & > input {
+        display: block;
+        height: 100%;
+      }
+    }
+  }
 }

@@ -26,6 +26,8 @@ function App() {
             <Route path="/histoires" element={<Histoires />} />
             <Route path="/grammaire" element={<Grammaire />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/creer" element={<Admin />} />
+            <Route path="/admin/modifier" element={<Admin />} />
             <Route path="*" element={<Deck />} />
           </Routes>
         </Router>

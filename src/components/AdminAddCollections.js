@@ -16,7 +16,8 @@ function AdminAddCollections() {
   ]);
   const [createBaseField, setCreateBaseField] = useState(false);
   const [errorInput, setErrorInput] = useState(false);
-  const [inputArrayBase, setInputArrayBase] = useState("/quizs/exemple");
+  const [inputArrayBase, setInputArrayBase] = useState("");
+  const [collectionsList, setCollectionsList] = useState();
 
   /*   useEffect(() => {
     const base = "quizs/animaux/childrens";
@@ -47,13 +48,10 @@ function AdminAddCollections() {
     }
   };
 
-  const [collectionsList, setCollectionsList] = useState();
-
   const handleCellValueChange = (index, field, value) => {
     const updatedData = [...inputArray];
     updatedData[index][field] = value;
     setInputArray(updatedData);
-    console.log(inputArray);
   };
 
   useEffect(() => {
@@ -74,26 +72,30 @@ function AdminAddCollections() {
         >
           add kanas
         </button>
-        <div className="dropdown-menu">
-          <select onChange={(event) => handleChangeOptions(event.target.value)}>
+        <div>
+          <select
+            id="dropdownMenuSelectQuiz"
+            onChange={(event) => handleChangeOptions(event.target.value)}
+          >
             <option value="exemple" defaultChecked>
-              Select an option
+              Selectionner un quiz
             </option>
             {collectionsList?.map((base, index) => (
               <option key={index} value={base.name}>
                 {base.id}
               </option>
             ))}
-            <option value="create">New quiz</option>
+            <option value="create">Créer un nouveau quiz</option>
           </select>
         </div>
         {createBaseField ? (
-          <textarea
+          <input
+            id="inputCreateQuiz"
             placeholder={"Nom de la base a créér"}
             onChange={(event) =>
               setInputArrayBase("/quizs/" + event.target.value)
             }
-          ></textarea>
+          ></input>
         ) : null}
 
         <p>{inputArrayBase}</p>
@@ -107,7 +109,7 @@ function AdminAddCollections() {
 
       <div className="colAdmin right">
         {inputArray ? (
-          <table>
+          <table id="tableAdmin" className="adminAddTable">
             <thead>
               <tr>
                 <th>Hiragana</th>

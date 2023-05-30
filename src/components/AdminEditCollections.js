@@ -126,51 +126,58 @@ function AdminEditCollections() {
               </tr>
             </thead> */}
               <tbody>
-                {/*   .sort((a, b) => a.time.seconds - b.time.seconds) */}
-                {inputArray?.map((item, index) => (
-                  <tr key={index}>
-                    <td>
-                      <input
-                        type="text"
-                        value={item.hiragana}
-                        onChange={(e) =>
-                          handleCellValueChange(
-                            index,
-                            "hiragana",
-                            e.target.value
-                          )
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        value={item.romaji}
-                        onChange={(e) =>
-                          handleCellValueChange(index, "romaji", e.target.value)
-                        }
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        value={item.english}
-                        onChange={(e) =>
-                          handleCellValueChange(
-                            index,
-                            "english",
-                            e.target.value
-                          )
-                        }
-                      />
-                    </td>
-                    <td>
-                      <button onClick={() => handleDelete(item.id, item.base)}>
-                        X
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                {inputArray
+                  ?.sort((a, b) => b.time - a.time)
+                  .map((item, index) => (
+                    <tr key={index}>
+                      <td>
+                        <input
+                          type="text"
+                          value={item.hiragana}
+                          onChange={(e) =>
+                            handleCellValueChange(
+                              index,
+                              "hiragana",
+                              e.target.value
+                            )
+                          }
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={item.romaji}
+                          onChange={(e) =>
+                            handleCellValueChange(
+                              index,
+                              "romaji",
+                              e.target.value
+                            )
+                          }
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          value={item.english}
+                          onChange={(e) =>
+                            handleCellValueChange(
+                              index,
+                              "english",
+                              e.target.value
+                            )
+                          }
+                        />
+                      </td>
+                      <td>
+                        <button
+                          onClick={() => handleDelete(item.id, item.base)}
+                        >
+                          X
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           ) : null}
