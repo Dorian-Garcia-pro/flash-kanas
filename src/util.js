@@ -2,6 +2,7 @@ import {
   collection,
   addDoc,
   setDoc,
+  getDocs,
   doc,
   deleteDoc,
   serverTimestamp,
@@ -31,26 +32,23 @@ export const handleEdit = async (input) => {
   });
 };
 
+export const handleToggleSelectQuiz = async (input) => {
+  console.log(input);
+  const docref = doc(db, input.base, input.id);
+  const payload = {
+    selected: !input.selected,
+  };
+  await updateDoc(docref, payload);
+};
+
 export const handleDelete = async (id, base) => {
   const docref = doc(db, base, id);
   await deleteDoc(docref);
 };
 
-/* export const handleQueryDelete = async () => {
-  const userInputName = prompt("Color name query?");
-  const collectionRef = collection(db, "colors");
-  const q = query(collectionRef, where("name", "==", userInputName));
-  const snapshot = await getDocs(q);
-  const results = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-  console.log(results);
-  results.forEach(async (result) => {
-    await deleteDoc(doc(db, "colors", result.id));
-  });
-}; */
-
 export const handleQueryAdd = async (base, input) => {
   const collectionRef = doc(db, base);
-  await setDoc(collectionRef, { name: base });
+  await setDoc(collectionRef, { name: base, selected: false });
 
   const dovRef = collection(db, base + "/childrens");
 
@@ -65,16 +63,19 @@ export const handleQueryAdd = async (base, input) => {
     await addDoc(dovRef, payload);
     console.log(kana);
   });
-
-  /*   const docRef = collection(db, base);
-  input.forEach(async (kana) => {
-    await addDoc(docRef, kana);
-  }); */
 };
-/* export const handleQueryAdd = async (base, input) => {
+export const handleEmptyCollection = async (base) => {
   const collectionRef = collection(db, base);
 
-  input.forEach(async (kana) => {
-    await addDoc(collectionRef, kana);
-  });
-}; */
+  try {
+    // Fetch and delete each document in the collection
+    const querySnapshot = await getDocs(collectionRef);
+    querySnapshot.forEach(async (documentSnapshot) => {
+      await deleteDoc(documentSnapshot.ref);
+    });
+
+    console.log("Collection emptied successfully.");
+  } catch (error) {
+    console.error("Error emptying collection:", error);
+  }
+};

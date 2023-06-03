@@ -19,15 +19,6 @@ function AdminAddCollections() {
   const [inputArrayBase, setInputArrayBase] = useState("");
   const [collectionsList, setCollectionsList] = useState();
 
-  /*   useEffect(() => {
-    const base = "quizs/animaux/childrens";
-    onSnapshot(collection(db, base), (snapshot) => {
-      setAnimaux(
-        snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id, base }))
-      );
-    });
-  }, []); */
-
   const handleInputJson = (event) => {
     try {
       const parsedJson = JSON.parse(event.target.value);

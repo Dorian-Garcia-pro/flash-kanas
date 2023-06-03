@@ -4,7 +4,12 @@ import { collection, onSnapshot } from "@firebase/firestore";
 import "../pages/Admin.scss";
 import db from "../firebase";
 import "firebase/compat/firestore";
-import { handleEdit, handleDelete, handleQueryAdd } from "../util";
+import {
+  handleEdit,
+  handleDelete,
+  handleQueryAdd,
+  handleEmptyCollection,
+} from "../util";
 function AdminEditCollections() {
   const [inputArray, setInputArray] = useState([
     {
@@ -74,6 +79,19 @@ function AdminEditCollections() {
     setAddNewWordLeVrai(updatedData);
   };
 
+  const handleDeleteAll = () => {
+    const confirmed = window.confirm(
+      "Certain de vouloir vider la collection ?" + selectedCollection
+    );
+    if (confirmed) {
+      handleEmptyCollection(selectedCollection);
+      console.log("Proceeding...");
+    } else {
+      // Code to execute if the user cancels
+      console.log("Cancelled");
+    }
+  };
+
   return (
     <div id="adminContainer" className="adminContainerEdit">
       <div className="colAdmin left">
@@ -92,6 +110,7 @@ function AdminEditCollections() {
         <button className="button" onClick={() => handleEdit(inputArray)}>
           Valider modifs
         </button>
+        <button onClick={() => handleDeleteAll()}>Delete all</button>
       </div>
 
       <div className="colAdmin right">

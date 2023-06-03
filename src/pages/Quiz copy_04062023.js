@@ -5,7 +5,6 @@ import {} from "../quizSlice.js";
 import { collection, onSnapshot } from "@firebase/firestore";
 import db from "../firebase";
 import "firebase/compat/firestore";
-import { handleToggleSelectQuiz } from "../util";
 
 function Quiz() {
   const quizStore = useSelector((store) => store.quiz);
@@ -113,6 +112,16 @@ function Quiz() {
         romaji: "ie",
         english: "maison",
       },
+      {
+        hiragana: "いえ",
+        romaji: "ie",
+        english: "maison",
+      },
+      {
+        hiragana: "いえ",
+        romaji: "ie",
+        english: "maison",
+      },
     ]
   );
   /*   const selectedQuizzesContent = allQuizs
@@ -202,7 +211,7 @@ function Quiz() {
     if (!isOn) {
       setIsOn(true);
     }
-    const selectedCount = quizListFS.reduce((count, quiz) => {
+    const selectedCount = allQuizs.reduce((count, quiz) => {
       if (quiz.selected) {
         return count + 1;
       } else {
@@ -210,9 +219,9 @@ function Quiz() {
       }
     }, 0);
 
-    const updatedQuizs = quizListFS?.map((quiz) => {
+    const updatedQuizs = allQuizs?.map((quiz) => {
       if (
-        quizListFS
+        allQuizs
           .filter((obj) => obj.type === "lecture")
           .every((obj) => obj.selected === false)
       ) {
@@ -222,7 +231,7 @@ function Quiz() {
           return { ...quiz, selected: true };
         }
       } else {
-        let temp = quizListFS.forEach((quiz) => {
+        let temp = allQuizs.forEach((quiz) => {
           if (quiz.type === "lecture") {
             quiz.selected = false;
           }
@@ -370,15 +379,17 @@ function Quiz() {
           </div>
           <p>Vocabulaire : </p>
           <div className="filterQuizCat" id="filterQuizOthers">
-            {quizListFS.map((quiz) => (
-              <button
-                key={quiz.name}
-                className={quiz.selected ? "" : "fliterQuizButtonSelected"}
-                onClick={() => handleToggleSelectQuiz(quiz)}
-              >
-                {quiz.id.charAt(0).toUpperCase() + quiz.id.slice(1)}
-              </button>
-            ))}
+            {allQuizs
+              .filter((quiz) => quiz.type !== "lecture")
+              .map((quiz) => (
+                <button
+                  key={quiz.name}
+                  className={quiz.selected ? "" : "fliterQuizButtonSelected"}
+                  onClick={() => handleToggleSelected(quiz.name)}
+                >
+                  {quiz.name.charAt(0).toUpperCase() + quiz.name.slice(1)}
+                </button>
+              ))}
           </div>
         </div>
       </div>
