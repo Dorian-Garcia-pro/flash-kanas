@@ -418,6 +418,406 @@ const initialState = {
       romaji: "tsukue",
       english: "bureau, table",
     },
+    {
+      hiragana: "星",
+      romaji: "hoshi",
+      english: "étoile",
+    },
+    {
+      hiragana: "雪",
+      romaji: "yuki",
+      english: "neige",
+    },
+    {
+      hiragana: "空",
+      romaji: "sora",
+      english: "ciel",
+    },
+    {
+      hiragana: "夕方",
+      romaji: "yuugata",
+      english: "soir",
+    },
+    {
+      hiragana: "経済",
+      romaji: "keizai",
+      english: "économie",
+    },
+    {
+      hiragana: "試合",
+      romaji: "shiai",
+      english: "match",
+    },
+    {
+      hiragana: "間に合う",
+      romaji: "maniau",
+      english: "arriver à temps",
+    },
+    {
+      hiragana: "込む",
+      romaji: "komu",
+      english: "être bondé",
+    },
+    {
+      hiragana: "冷やす",
+      romaji: "hiyasu",
+      english: "refroidir",
+    },
+    {
+      hiragana: "練習",
+      romaji: "renshuu",
+      english: "exercice, entraînement",
+    },
+    {
+      hiragana: "勝つ",
+      romaji: "katsu",
+      english: "gagner",
+    },
+    {
+      hiragana: "続く",
+      romaji: "tsuzuku",
+      english: "continuer",
+    },
+    {
+      hiragana: "続ける",
+      romaji: "tsuzukeru",
+      english: "continuer à faire",
+    },
+    {
+      hiragana: "遊ぶ",
+      romaji: "asobu",
+      english: "jouer",
+    },
+    {
+      hiragana: "最近",
+      romaji: "saikin",
+      english: "récemment",
+    },
+    {
+      hiragana: "国際",
+      romaji: "kokusai",
+      english: "international",
+    },
+    {
+      hiragana: "水道",
+      romaji: "suidou",
+      english: "eau courante",
+    },
+    {
+      hiragana: "十分",
+      romaji: "juubun",
+      english: "suffisant",
+    },
+    {
+      hiragana: "調子",
+      romaji: "choushi",
+      english: "condition, état",
+    },
+    {
+      hiragana: "今夜",
+      romaji: "konya",
+      english: "ce soir",
+    },
+    {
+      hiragana: "運動",
+      romaji: "undou",
+      english: "exercice physique",
+    },
+    {
+      hiragana: "出席",
+      romaji: "shusseki",
+      english: "présence",
+    },
+    {
+      hiragana: "荷物",
+      romaji: "nimotsu",
+      english: "bagage",
+    },
+    {
+      hiragana: "危険",
+      romaji: "kiken",
+      english: "danger",
+    },
+    {
+      hiragana: "立入禁止",
+      romaji: "tachiirikinshi",
+      english: "accès interdit",
+    },
+    {
+      hiragana: "触る",
+      romaji: "sawaru",
+      english: "toucher",
+    },
+    {
+      hiragana: "投げる",
+      romaji: "nageru",
+      english: "jeter",
+    },
+    {
+      hiragana: "吸う",
+      romaji: "suu",
+      english: "inhaler",
+    },
+    {
+      hiragana: "伝える",
+      romaji: "tsutaeru",
+      english: "communiquer",
+    },
+    {
+      hiragana: "曲がる",
+      romaji: "magaru",
+      english: "tourner",
+    },
+    {
+      hiragana: "戻る",
+      romaji: "modoru",
+      english: "retourner",
+    },
+    {
+      hiragana: "番組",
+      romaji: "bangumi",
+      english: "émission (TV/radio)",
+    },
+    {
+      hiragana: "歯",
+      romaji: "ha",
+      english: "dent",
+    },
+    {
+      hiragana: "お菓子",
+      romaji: "okashi",
+      english: "bonbon",
+    },
+    {
+      hiragana: "甘い",
+      romaji: "amai",
+      english: "sucré",
+    },
+    {
+      hiragana: "苦い",
+      romaji: "nigai",
+      english: "amer",
+    },
+    {
+      hiragana: "磨く",
+      romaji: "migaku",
+      english: "brosser, polir",
+    },
+    {
+      hiragana: "浴びる",
+      romaji: "abiru",
+      english: "prendre un bain de",
+    },
+    {
+      hiragana: "踊る",
+      romaji: "odoru",
+      english: "danser",
+    },
+    {
+      hiragana: "質問",
+      romaji: "shitsumon",
+      english: "question",
+    },
+    {
+      hiragana: "回す",
+      romaji: "mawasu",
+      english: "tourner, faire tourner",
+    },
+    {
+      hiragana: "次",
+      romaji: "tsugi",
+      english: "prochain",
+    },
+    {
+      hiragana: "葉",
+      romaji: "ha",
+      english: "feuille",
+    },
+    {
+      hiragana: "紅葉",
+      romaji: "kouyou",
+      english: "feuilles d'automne",
+    },
+    {
+      hiragana: "橋",
+      romaji: "hashi",
+      english: "pont",
+    },
+    {
+      hiragana: "向こう",
+      romaji: "mukou",
+      english: "de l'autre côté",
+    },
+    {
+      hiragana: "島",
+      romaji: "shima",
+      english: "île",
+    },
+    {
+      hiragana: "港",
+      romaji: "minato",
+      english: "port",
+    },
+    {
+      hiragana: "空港",
+      romaji: "kuukou",
+      english: "aéroport",
+    },
+    {
+      hiragana: "生活",
+      romaji: "seikatsu",
+      english: "vie quotidienne",
+    },
+    {
+      hiragana: "お湯",
+      romaji: "oyu",
+      english: "eau chaude",
+    },
+    {
+      hiragana: "昔",
+      romaji: "mukashi",
+      english: "autrefois",
+    },
+    {
+      hiragana: "涼しい",
+      romaji: "suzushii",
+      english: "frais",
+    },
+    {
+      hiragana: "結婚",
+      romaji: "kekkon",
+      english: "mariage",
+    },
+    {
+      hiragana: "変",
+      romaji: "hen",
+      english: "étrange",
+    },
+    {
+      hiragana: "変える",
+      romaji: "kaeru",
+      english: "changer (transitif)",
+    },
+    {
+      hiragana: "換える",
+      romaji: "kaeru",
+      english: "changer (intransitif)",
+    },
+    {
+      hiragana: "押す",
+      romaji: "osu",
+      english: "pousser",
+    },
+    {
+      hiragana: "受付",
+      romaji: "uketsuke",
+      english: "réception",
+    },
+    {
+      hiragana: "近所",
+      romaji: "kinjo",
+      english: "voisinage",
+    },
+    {
+      hiragana: "夜行バス",
+      romaji: "yakoubasu",
+      english: "bus de nuit",
+    },
+    {
+      hiragana: "熱い",
+      romaji: "atsui",
+      english: "chaud",
+    },
+    {
+      hiragana: "入力",
+      romaji: "nyuuryoku",
+      english: "saisie, entrée",
+    },
+    {
+      hiragana: "屋上",
+      romaji: "okujou",
+      english: "toit",
+    },
+    {
+      hiragana: "所",
+      romaji: "tokoro",
+      english: "endroit",
+    },
+    {
+      hiragana: "機会",
+      romaji: "kikai",
+      english: "occasion",
+    },
+    {
+      hiragana: "正しい",
+      romaji: "tadashii",
+      english: "correct",
+    },
+    {
+      hiragana: "付ける",
+      romaji: "tsukeru",
+      english: "attacher",
+    },
+    {
+      hiragana: "野菜",
+      romaji: "yasai",
+      english: "légume",
+    },
+    {
+      hiragana: "船",
+      romaji: "fune",
+      english: "bateau",
+    },
+    {
+      hiragana: "日記",
+      romaji: "nikki",
+      english: "journal",
+    },
+    {
+      hiragana: "水泳",
+      romaji: "suiei",
+      english: "natation",
+    },
+    {
+      hiragana: "泳ぐ",
+      romaji: "oyogu",
+      english: "nager",
+    },
+    {
+      hiragana: "初め",
+      romaji: "hajime",
+      english: "début",
+    },
+    {
+      hiragana: "特別",
+      romaji: "tokubetsu",
+      english: "spécial",
+    },
+    {
+      hiragana: "渡る",
+      romaji: "wataru",
+      english: "traverser",
+    },
+    {
+      hiragana: "過ぎる",
+      romaji: "sugiru",
+      english: "passer",
+    },
+    {
+      hiragana: "違う",
+      romaji: "chigau",
+      english: "être différent",
+    },
+    {
+      hiragana: "慣れる",
+      romaji: "nareru",
+      english: "s'habituer",
+    },
+    {
+      hiragana: "必ず",
+      romaji: "kanarazu",
+      english: "certainement",
+    },
   ],
   quizFood: [
     { hiragana: "すし", romaji: "sushi", english: "sushi" },
