@@ -4050,11 +4050,11 @@ const initialState = {
       romaji: "i",
       english: "estomac",
     },
-    {
+    /*     {
       hiragana: "星占い",
       romaji: "hoshiuranai",
       english: "Fortune telling",
-    },
+    }, */
     {
       hiragana: "働きすぎ",
       romaji: "hatarakisugi",
@@ -4065,11 +4065,11 @@ const initialState = {
       romaji: "komaru",
       english: "être en difficulté",
     },
-    {
+    /*     {
       hiragana: "宝くじ",
       romaji: "takarakuji",
       english: "Lottery",
-    },
+    }, */
     {
       hiragana: "健康",
       romaji: "kenkou",
@@ -4108,7 +4108,7 @@ const initialState = {
     {
       hiragana: "守る",
       romaji: "mamoru",
-      english: "protéger",
+      english: "protéger, respecter (une règle)",
     },
     {
       hiragana: "始まる",
@@ -4139,7 +4139,7 @@ const initialState = {
     {
       hiragana: "戻る",
       romaji: "modoru",
-      english: "retourner",
+      english: "retourner, revenir",
     },
     {
       hiragana: "駄目",
@@ -4151,11 +4151,11 @@ const initialState = {
       romaji: "onaji",
       english: "même",
     },
-    {
+    /*     {
       hiragana: "乗降",
       romaji: "jokou",
       english: "embarquement et débarquement",
-    },
+    }, */
     {
       hiragana: "非常口",
       romaji: "hijouguchi",
@@ -4171,11 +4171,11 @@ const initialState = {
       romaji: "waribiki",
       english: "réduction",
     },
-    {
+    /*     {
       hiragana: "飲み放題",
       romaji: "nomihoudai",
       english: "à volonté (boissons)",
-    },
+    }, */
     {
       hiragana: "使用中",
       romaji: "shiyouchuu",
@@ -4206,11 +4206,11 @@ const initialState = {
       romaji: "bakkin",
       english: "somme importante d'argent",
     },
-    {
+    /*     {
       hiragana: "助け合う",
       romaji: "tasukeau",
       english: "s'entraider",
-    },
+    }, */
     {
       hiragana: "悲しい",
       romaji: "kanashii",
@@ -4231,7 +4231,6 @@ const initialState = {
       romaji: "kimochi",
       english: "sentiment",
     },
-
     {
       hiragana: "磨く", //chapitre 34
       romaji: "migaku",
@@ -4285,9 +4284,9 @@ const initialState = {
     {
       hiragana: "矢印",
       romaji: "yajirushi",
-      english: "flèche (signe)",
+      english: "flèche (signe, symbole)",
     },
-    {
+    /*  {
       hiragana: "黒",
       romaji: "kuro",
       english: "noir",
@@ -4306,7 +4305,7 @@ const initialState = {
       hiragana: "青",
       romaji: "ao",
       english: "bleu",
-    },
+    }, */
     {
       hiragana: "紺",
       romaji: "kon",
@@ -4383,17 +4382,17 @@ const initialState = {
       english: "matériau, ingrédient",
     },
     {
-      hiragana: "ー分",
+      hiragana: "-分",
       romaji: "bun",
       english: "portion (utilisé pour indiquer la quantité)",
     },
     {
-      hiragana: "ーグラム",
+      hiragana: "-グラム",
       romaji: "guramu",
       english: "-gramme",
     },
     {
-      hiragana: "ー個",
+      hiragana: "-個",
       romaji: "ko",
       english: "(compteur pour de petits objets)",
     },
@@ -4673,11 +4672,11 @@ const initialState = {
       romaji: "kusaru",
       english: "rot",
     },
-    {
+    /*     {
       hiragana: "剣道",
       romaji: "kendo",
       english: "Japanese style fencing",
-    },
+    }, */
     {
       hiragana: "柔道",
       romaji: "juudou",
@@ -4691,7 +4690,7 @@ const initialState = {
     {
       hiragana: "やっと",
       romaji: "yatto",
-      english: "finally",
+      english: "enfin, finalement",
     },
     {
       hiragana: "かなり",
@@ -4758,7 +4757,7 @@ const initialState = {
       romaji: "mezurashii",
       english: "rare",
     },
-    {
+    /*     {
       hiragana: "汽車",
       romaji: "kisha",
       english: "steam locomotive",
@@ -4767,7 +4766,7 @@ const initialState = {
       hiragana: "汽船",
       romaji: "kisen",
       english: "steamship",
-    },
+    }, */
     {
       hiragana: "大勢の",
       romaji: "oozeino",
