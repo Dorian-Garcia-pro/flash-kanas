@@ -1,5 +1,4 @@
-import Card from "./Card.js";
-import "./Deck.scss";
+// Standard imports
 import { useSelector, useDispatch } from "react-redux";
 import {
   rndCard,
@@ -8,6 +7,9 @@ import {
   resetToRecto,
   toggleSubFilters,
 } from "../cardSlice.js";
+
+// Component imports
+import Card from "./Card.js";
 import FilterHiraganas from "./FilterHiraganas.js";
 import FilterKatakanas from "./FilterKatakanas.js";
 import GramCombis from "./GramCombis.js";
@@ -15,23 +17,36 @@ import GramModifs from "./GramModifs.js";
 import GramPauses from "./GramPauses.js";
 import GramAllongs from "./GramAllongs.js";
 
+// Styles
+import "./Deck.scss";
+
 function Deck({ front, back }) {
+  // Using selectors and dispatch from Redux
   const cardStore = useSelector((store) => store.card);
   const dispatch = useDispatch();
 
+  // Function to handle random card selection and animation
   function handleRndInvertInfinite() {
-    dispatch(rndCard());
+    dispatch(rndCard()); // Dispatching random card selection
     setTimeout(() => {
-      dispatch(resetToRecto());
+      dispatch(resetToRecto()); // Resetting card after a delay
     }, 1);
-    dispatch(swipeCard());
+    dispatch(swipeCard()); // Dispatching card swipe
     setTimeout(() => {
-      dispatch(swipeCard());
+      dispatch(swipeCard()); // Dispatching another card swipe after a delay
     }, 500);
   }
 
-  const selectedInfinite = (kana) => {
-    cardStore.rectoVerso ? dispatch(flipCard()) : handleRndInvertInfinite();
+  // if 1 or less card selected, flip it, else randomize another card
+  const handleNextClick = () => {
+    const selectedCards = cardStore.listHiraganas
+      .concat(cardStore.listKatakanas)
+      .filter((e) => e.selected === true).length;
+    if (selectedCards <= 1) {
+      dispatch(flipCard());
+    } else {
+      cardStore.rectoVerso ? dispatch(flipCard()) : handleRndInvertInfinite();
+    }
   };
 
   return (
@@ -63,35 +78,12 @@ function Deck({ front, back }) {
                 <p>Modifications</p>
               </div>
             </div>
-
-            {/*             <div className="leftColBtnRowAll ">
-              <div
-                className={
-                  cardStore.toggleAllongements
-                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                    : "btn btnToggleFilterHiraganas"
-                }
-                onClick={() => dispatch(toggleSubFilters("toggleAllongements"))}
-              >
-                <p>Allongements</p>
-              </div>
-              <div
-                className={
-                  cardStore.toggleGramPauses
-                    ? "btn btnToggleFilterHiraganas btnToggleFilterSelected "
-                    : "btn btnToggleFilterHiraganas"
-                }
-                onClick={() => dispatch(toggleSubFilters("toggleGramPauses"))}
-              >
-                <p>Pauses</p>
-              </div>
-            </div> */}
           </div>
-
-          {cardStore.toggleGramCombis ? <GramCombis /> : null}
-          {cardStore.toggleGramModifs ? <GramModifs /> : null}
-          {cardStore.toggleGramPauses ? <GramPauses /> : null}
-          {cardStore.toggleAllongements ? <GramAllongs /> : null}
+          {/* Conditional rendering of grammar components */}
+          {cardStore.toggleGramCombis && <GramCombis />}
+          {cardStore.toggleGramModifs && <GramModifs />}
+          {cardStore.toggleGramPauses && <GramPauses />}
+          {cardStore.toggleAllongements && <GramAllongs />}
 
           {/*============== GRAMMAR - END ============== */}
         </div>
@@ -102,20 +94,10 @@ function Deck({ front, back }) {
         <div className="card-container">
           <Card />
         </div>
-        <button
-          className="btn"
-          onClick={() =>
-            cardStore.listHiraganas
-              .concat(cardStore.listKatakanas)
-              .filter((e) => e.selected === true).length <= 1
-              ? dispatch(flipCard())
-              : selectedInfinite()
-          }
-        >
+        <button className="btn" onClick={handleNextClick}>
           Next
         </button>
       </div>
-
       {/*========================== MID COLUMN - END ========================== */}
       {/*========================== RIGHT COLUMN - START ========================== */}
       <div className="filtersContainer">
@@ -135,6 +117,7 @@ function Deck({ front, back }) {
               }
             >
               <p>ひらがな</p>
+              {/* Displaying count of selected Hiraganas */}
               <p>
                 ( {cardStore.listHiraganas.filter((e) => e.selected).length} /{" "}
                 {cardStore.listHiraganas.length} )
@@ -151,16 +134,16 @@ function Deck({ front, back }) {
               }
             >
               <p>カタカナ</p>
+              {/* Displaying count of selected Katakanas */}
               <p>
                 ( {cardStore.listKatakanas.filter((e) => e.selected).length} /{" "}
                 {cardStore.listKatakanas.length} )
               </p>
             </div>
           </div>
-
-          {cardStore.toggleFilterHiraganas ? <FilterHiraganas /> : null}
-
-          {cardStore.toggleFilterKatakanas ? <FilterKatakanas /> : null}
+          {/* Conditional rendering of Kana filters */}
+          {cardStore.toggleFilterHiraganas && <FilterHiraganas />}
+          {cardStore.toggleFilterKatakanas && <FilterKatakanas />}
           {/*============== HIRAGANAS FILTERS - END ============== */}
         </div>
 
