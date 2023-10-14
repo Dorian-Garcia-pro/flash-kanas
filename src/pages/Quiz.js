@@ -96,38 +96,13 @@ function Quiz() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputValue]);
 
-  /*   const handleKeyDown = (event) => {
-    if (event.keyCode === 13 && inputValue === currentWord.romaji) {
-      handleSubmit(event);
-      setIsCorrect(true);
-      setPreviousWord(currentWord);
-      const nextWordIndex = Math.floor(
-        Math.random() * selectedQuizzesContent.length
-      );
-      setCurrentWord(selectedQuizzesContent[nextWordIndex]);
-      setInputValue("");
-      setStreak((prev) => prev + 1);
-      setMauvaiseReponse();
-    } else if (event.keyCode === 13 && inputValue !== currentWord.romaji) {
-      setIsCorrect(false);
-      setMauvaiseReponse(inputValue);
-      setInputValue("");
-      setStreak(0);
-    }
-  }; */
-  /*   const handleKeyDown = (event) => {
-    if (event.keyCode === 13) {
-      handleSkip();
-    }
-  }; */
-
   const checkKey = (e) => {
     e = e || window.event;
     switch (e.keyCode) {
       case 222: // escape key
         handleSkip(e);
         break;
-      case 13: // escape key
+      case 13: // enter key
         handleSkip(e);
         break;
       default:
@@ -288,16 +263,6 @@ function Quiz() {
       {/*========================== MID COLUMN - END ========================== */}
       {/*========================== RIGHT COLUMN - START ========================== */}
       <div className="rightCol-quiz">
-        {/*         <select onChange={handleQuizChange}>
-          <option value="" disabled style={{ display: "none" }}>
-            Select an option
-          </option>
-          <option value="hiragana">Hiraganas</option>
-          <option value="katakana">Katakanas</option>
-          <option value="hiraKata">Les deux</option>
-          <option value="daz">Daz mode</option>
-        </select> */}
-
         <div id="filtersQuiz">
           <p>Lecture : </p>
           <div className="filterQuizCat" id="filterQuizHiraKata">

@@ -1,18 +1,37 @@
-#histoiresMainContainer {
-  margin: 2rem 0 0 0;
+// Define mixins and variables
+@mixin user-no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#histoiresMainContainer::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+$modal-style: rgba(24, 24, 24, 0.85);
+$btnCarrousel-style: transparent;
+$small-screen: 500px;
+
+// Styles start here
+#histoiresMainContainer {
+  margin: 2rem 0 0 0;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 #histoiresContainer {
   display: grid;
-  /*   margin: 24px 0 0 0;
- */
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 12px;
+
   & > img {
     width: 100%;
     cursor: pointer;
@@ -26,53 +45,49 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(24, 24, 24, 0.85);
+  background-color: $modal-style;
   z-index: 200;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center(column);
   gap: 12px;
+
   & > img {
     width: 80%;
     aspect-ratio: 3/4;
   }
+
   & > p {
     width: 80%;
   }
+
   & .btnCarrouselPrevSuiv {
     height: 65%;
     width: 50vw;
-    display: flex;
-    align-items: center;
+    @include flex-center;
     cursor: pointer;
     font-size: 2rem;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
+    @include user-no-select;
+    -webkit-tap-highlight-color: $btnCarrousel-style;
+
     &.prev {
       justify-content: flex-start;
-
       position: absolute;
       left: 0;
     }
+
     &.suiv {
       justify-content: flex-end;
-
       position: absolute;
       right: 0;
+
       & > img {
         transform: rotate(180deg);
       }
     }
   }
+
   & .btnCarrouselQuit {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     bottom: 4vh;
     right: 50%;
     transform: translateX(50%);
@@ -82,6 +97,7 @@
     cursor: pointer;
     border-radius: 50%;
     background-color: rgba(15, 15, 15, 0.681);
+
     & > p {
       margin: 0;
       padding: 0;
@@ -91,31 +107,32 @@
 
 .filterHistoires {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  @include flex-center;
   gap: 1rem;
   justify-content: center;
   margin: 0 0 2rem 0;
+
   & > div {
     width: 100px;
   }
 }
 
 .histoire {
-  user-select: none;
+  @include user-no-select;
 }
-@media only screen and (min-width: 500px) {
+
+@media only screen and (min-width: $small-screen) {
   #histoiresMainContainer {
     margin: 5rem 0 0 0;
   }
 
   #histoiresContainer {
     padding: 0rem 1rem;
-    display: flex;
-    flex-direction: row;
+    @include flex-center;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+
     & > img {
       width: 5rem;
       aspect-ratio: 1/1.5;
@@ -123,58 +140,38 @@
   }
 
   #modalHistoires {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(24, 24, 24, 0.85);
-    z-index: 200;
-    display: flex;
-    flex-direction: row;
+    @include flex-center;
     justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+
     & > img {
       height: 80vh;
       width: auto;
       min-width: 300px;
-      aspect-ratio: 1/2;
     }
-    & > p {
-      width: 80%;
-    }
+
     & .btnCarrouselPrevSuiv {
       position: relative;
       height: 100%;
       width: 30vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
       cursor: pointer;
       font-size: 10rem;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      background-color: none;
+      @include user-no-select;
+      background-color: $btnCarrousel-style;
 
-      &.prev {
-        position: relative;
-        justify-content: center;
-      }
+      &.prev,
       &.suiv {
         position: relative;
         justify-content: center;
+      }
 
-        & > img {
-          transform: rotate(180deg);
-        }
+      &.suiv > img {
+        transform: rotate(180deg);
       }
     }
+
     & .btnCarrouselQuit {
       position: absolute;
-      display: flex;
       top: 0;
       right: 0;
       bottom: auto;
@@ -182,19 +179,13 @@
       width: 100px;
       font-size: 5rem;
       cursor: pointer;
-      background-color: transparent;
+      background-color: $btnCarrousel-style;
       transform: translate(0);
       font-size: 2rem;
     }
   }
 
   .filterHistoires {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
-    margin: 0 0 2rem 0;
     & > div {
       width: 200px;
     }

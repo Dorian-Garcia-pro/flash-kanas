@@ -1,5 +1,18 @@
 $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 
+@mixin user-no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard syntax */
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .leftCol {
   display: none;
 }
@@ -7,23 +20,23 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 .deck-container {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
   padding-top: 8vh;
 }
+
 .midCol {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
+
   & > .btn {
     min-width: 200px;
     width: 300px;
   }
 }
+
 .card-container {
   background-color: rgb(28, 115, 141);
   border-radius: 5px;
@@ -31,19 +44,18 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 
 .deckBtnContainer {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  @include flex-center;
 }
-.btn {
-  border: 1px solid #ccc; /* bordure */
-  padding: 10px 20px; /* espacement intérieur */
-  border-radius: 4px; /* bordure arrondie */
-  text-decoration: none; /* pas de soulignement de texte */
-  font-size: 16px; /* taille du texte */
-  font-weight: bold; /* graisse du texte */
-  cursor: pointer; /* curseur en forme de main au survol */
-  transition: all 0.2s ease-in-out; /* animation de transition au survol */
 
+.btn {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
   background-color: rgb(96, 104, 108);
   border-color: rgb(62, 68, 70);
   color: rgb(232, 230, 227);
@@ -59,6 +71,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
   & > button {
     width: 100%;
   }
@@ -69,18 +82,22 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   gap: 0.5rem;
   justify-content: center;
   margin: 0 0 1rem 0;
+
   & > button {
     width: 100%;
   }
+
   &.hiraganasSubFilters {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     & > label {
       display: flex;
       align-items: center;
       flex-direction: row-reverse;
       gap: 0.5rem;
+
       & > input {
         margin-right: 0;
       }
@@ -94,6 +111,7 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0.2rem;
   grid-row-gap: 0.2rem;
+
   & > p {
     cursor: pointer;
     padding: 4px;
@@ -102,13 +120,11 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     color: whitesmoke;
     border: 1px solid whitesmoke;
     border-color: rgb(51, 55, 57);
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    @include user-no-select;
+
     &.kanaSelected {
       padding: 4px;
       border-radius: 2px;
-
       background-color: rgb(56, 134, 77);
       color: rgb(226, 223, 219);
     }
@@ -127,21 +143,16 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   gap: 0.5rem;
 }
+
 .btnToggleFilterHiraganas {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   text-align: start;
   padding: 0.5rem;
   font-size: large;
   cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-
+  @include user-no-select;
   background-color: rgb(53, 57, 59);
   color: rgb(232, 230, 227);
 }
@@ -164,8 +175,9 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       flex-grow: 1;
     }
   }
+
   .leftCol {
-    display: flex;
+    @include flex-center;
     flex-direction: column;
     justify-content: center;
     color: transparent;
@@ -173,9 +185,11 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 
   .buttonsFiltersContainer {
     flex-direction: column;
+
     & > div {
       flex-grow: 1;
     }
+
     &.rightColKanas {
       flex-direction: row;
     }
@@ -191,11 +205,13 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     grid-row-gap: 0.1rem;
     grid-column-gap: 0.1rem;
   }
+
   .filtersContainer {
     width: auto;
     height: 100%;
     display: flex;
   }
+
   .allFilters {
     width: 100%;
     display: flex;
@@ -208,13 +224,16 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     display: flex;
     gap: 0.5rem;
     justify-content: center;
+
     & > button {
       width: 100%;
     }
+
     &.hiraganasSubFilters {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+
       &:last-child {
         margin: 0;
       }
@@ -222,9 +241,9 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       & > label {
         display: flex;
         align-items: center;
-
         flex-direction: row-reverse;
         gap: 0.5rem;
+
         & > input {
           margin-right: 0;
         }
@@ -233,20 +252,17 @@ $soft-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   }
 
   .btnToggleFilterHiraganas {
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     text-align: start;
     padding: 0.5rem;
     font-size: large;
     cursor: pointer;
-
     background-color: rgb(53, 57, 59);
     color: rgb(232, 230, 227);
+
     &:hover {
-      /*    transform: scale(1.02); */
       border: 1px solid rgb(96, 104, 108);
       box-shadow: $soft-shadow;
     }
